@@ -1,0 +1,32 @@
+/******************************************************************************/
+/********************** CSS of alert message UNISG ****************************/
+/******************************************************************************/
+
+.unisg-alert {
+    background-color: #9FF781;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+    margin: 8px;
+    padding: 10px;
+    position: relative;
+    opacity: 1;
+}
+
+.unisg-alert a {
+    color: #000;
+    text-decoration: underline;
+}
+
+.unisg-alert-close {
+    margin-left: 15px;
+    color: #000;
+    float: right;
+    cursor: pointer;
+}
+
+.unisg-alert-close:hover {
+    color: #00802F; 
+}
+
+.unisg-no-margin {
+    margin: 0px;
+}

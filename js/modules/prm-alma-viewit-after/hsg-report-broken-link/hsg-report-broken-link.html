@@ -1,0 +1,11 @@
+<div layout="row">
+	<a href="javascript:;" ng-click="$ctrl.reportLink($event);$event.preventDefault();">
+		<prm-icon external-link icon-type="svg" aria-label="mail" svg-icon-set="primo-ui"
+			icon-definition="envelope-outline">
+		</prm-icon>
+		<span>{{::$ctrl.translate('linkText')}} {{$ctrl.getStatus()}}</span>
+	</a>
+</div>
+<div ng-if="$ctrl.errorMessage" layout="row">
+	<p ng-if="$ctrl.errorMessage">{{$ctrl.errorMessage}}</p>
+</div>

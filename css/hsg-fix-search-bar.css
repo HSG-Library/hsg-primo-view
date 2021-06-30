@@ -1,0 +1,10 @@
+@media (min-width: 600px) and (max-width: 959px) {
+
+	.search-input.flex-sm-40 {
+		max-width: 100%;
+	}
+
+	.search-options.flex-sm-40 {
+		flex: 0;
+	}
+}

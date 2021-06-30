@@ -1,0 +1,16 @@
+### Project ###
+css/custom1.css
+js/custom.js
+js/custom.js.map
+
+### OS ###
+Thumbs.db
+.DS_Store
+
+### VisualStudioCode ###
+.vscode/*
+*.code-workspace
+.settings/*
+.classpath
+.factorypath
+.project

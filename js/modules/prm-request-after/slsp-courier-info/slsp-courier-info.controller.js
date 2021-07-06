@@ -3,21 +3,21 @@ export class slspCourierInfoController {
 	constructor($element) {
 		this.parentCtrl = this.afterCtrl.parentCtrl;
 		this.$element = $element;
-		this.form = $element[0].parentElement.parentElement;
+		this.prmRequestElement = $element[0].parentElement.parentElement;
 	}
 
 	//function for inserting block
 	$doCheck() {
 		let form = false;
-		if (this.form.children[1].children[1] !== undefined &&
-			this.form.children[1].children[1].children[0] !== undefined) {
-			form = this.form.children[1].children[1].children[0];
+		let allForms = this.prmRequestElement.querySelectorAll('form');
+		if (allForms) {
+			allForms.forEach(f => {
+				if (f.length > 0) {
+					form = f;
+				}
+			});
 		}
-		else if (this.form.children[1].children[0] !== undefined &&
-			this.form.children[1].children[0].children[0] !== undefined) {
-			form = this.form.children[1].children[0].children[0];
-		}
-
+		
 		//create and insert info block if not present
 		if (form && !form.querySelector('.courier-info') && form.querySelector('.layout-align-end-stretch')) {
 			let info = document.createElement('DIV');

@@ -7,7 +7,7 @@ A quick A short guide on how to install the dev environment can be found in the 
 ### Development
 * Clone this repository into the 'primo-explore/custom' directory of the Primo DevEnv and name the new directory after the target view. E.g. (note, that the colon is replaced by a dash):
 
-		git clone <repo> 41SLSP_HSG-HSGswisscovery		
+		git clone git@github.com:HSG-Library/hsg-primo-view.git 41SLSP_HSG-HSGswisscovery		
 * Make changes
 * To run the current state of development use the following gulp task in the root directory of the Primo DevEnv:
 

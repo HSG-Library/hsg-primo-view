@@ -1,9 +1,10 @@
 export class slspEditPersonalDetailsController {
 
-	constructor() {
+	constructor(hsgTranslatorService) {
+		let lang = hsgTranslatorService.getLang();
 		this.parentCtrl = this.afterCtrl.parentCtrl;
-		this.detailsBaseEdu = "https:\/\/eduid.ch";
-		this.detailsBaseReg = "https:\/\/registration.slsp.ch\/library-card\/";
+		this.detailsBaseEdu = "https:\/\/eduid.ch\/web\/change-account-data\/2\/?lang=" + lang;
+		this.detailsBaseReg = "https:\/\/registration.slsp.ch\/library-card\/?lang=" + lang;
 		this.exclude = ['STAFF', '11', '12', '13', '14', '15', '16', '91', '92', '99'];
 		this.grpA = ['11', '91', '92'];
 		this.grpB = ['12', '13', '14', '15', '16'];
@@ -48,3 +49,5 @@ export class slspEditPersonalDetailsController {
 		return false;
 	}
 }
+
+slspEditPersonalDetailsController.$inject = ['hsgTranslatorService'];

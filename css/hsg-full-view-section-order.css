@@ -9,48 +9,59 @@
 
 #brief {
 	order: 0 !important;
+	margin-bottom: -40px;
 }
 
 #action_list {
 	order: 1 !important;
+	margin-bottom: -30px;
 }
 
 #searchWithinJournal {
 	order: 2 !important;
+	margin-bottom: -30px;
 }
 
 /*View Online*/
 #getit_link1_0 { 
 	order: 3 !important;
+	margin-bottom: -30px;
 }
 
 /*Loan and request options*/
 #getit_link1_1 {
 	order: 4 !important;
+	margin-bottom: -30px;
 }
 
 #details {
 	order: 5 !important;
+	margin-bottom: -30px;
 }
 
 #moreFromTheSameCollection {
 	order: 6 !important;
+	margin-bottom: -30px;
 }
 
 #virtualBrowse {
 	order: 7 !important;
+	margin-bottom: -30px;
 }
 
 #citationTrails {
 	order: 8 !important;
+	margin-bottom: -30px;
 }
 
 #links {
 	order: 9 !important;
+	margin-bottom: -30px;
 }
 
 #moreFromTheSameCourse {
 	order: 10 !important;
+	margin-bottom: -30px;
 }
 
 /* Change of links in left navigation bar ENG */

@@ -2,6 +2,7 @@
 import { hsgHowovpAfterModule } from './modules/alma-howovp-after/hsg-howovp-after.module';
 import { hsgExceptionHandlerModule } from './modules/hsg-exception-handler/hsg-exception-handler.module';
 import { hsgAlmaViewitAfterModule } from './modules/prm-alma-viewit-after/hsg-alma-viewit-after.module';
+import { hsgJournalsAfterModule } from './modules/prm-journals-after/hsg-journals-after.module';
 import { hsgLocationItemsAfterModule } from './modules/prm-location-items-after/hsg-location-items-after.module';
 import { hsgLocationsAfterModule } from './modules/prm-locations-after/hsg-locations-after.module';
 import { hsgPersonalInfoAfterModule } from './modules/prm-personal-info-after/hsg-personal-info-after.module';
@@ -13,6 +14,7 @@ let app = angular.module('viewCustom', ['angularLoad'])
 app.requires.push(hsgExceptionHandlerModule.name);
 app.requires.push(hsgHowovpAfterModule.name);
 app.requires.push(hsgAlmaViewitAfterModule.name);
+app.requires.push(hsgJournalsAfterModule.name);
 app.requires.push(hsgLocationItemsAfterModule.name);
 app.requires.push(hsgLocationsAfterModule.name);
 app.requires.push(hsgPersonalInfoAfterModule.name);

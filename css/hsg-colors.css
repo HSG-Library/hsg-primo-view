@@ -7,7 +7,7 @@
 .prm-primary-bg, prm-atoz-search-bar, prm-browse-search-bar, prm-collection-gallery-header .collection-header-inner, prm-search-bar, prm-newspapers-search-bar,
 prm-spinner.overlay-cover.light-on-dark:after, prm-tags-search-bar, prm-tree-nav prm-spinner .diamond, .prm-primary-bg, md-checkbox.md-checked .md-icon,
 md-tabs md-ink-bar, md-radio-button.md-checked .md-on, button.switch-to-simple, .md-button.button-confirm,
-prm-request-services .md-button.button-as-link, md-tabs.tabs-as-app .back-button {
+prm-request-services .md-button.button-as-link, prm-location-items md-list prm-service-button .md-button.button-as-link {
     background-color: #00802F !important;
 }
 
@@ -19,7 +19,7 @@ prm-request-services .md-button.button-as-link, md-tabs.tabs-as-app .back-button
 
 /*****************This entry is the mouse over background of the links and buttons*******************/
 md-card.prm-primary-bg.psfooter > md-card-content a:hover, md-icon.ps_icon:hover, a.ps_link:hover, a.ps_link.legal:hover, span.legal a:hover, button.switch-to-advanced:hover,
-button.switch-to-simple:hover, .md-button.button-confirm:hover, md-tabs.tabs-as-app .back-button:hover:not([disabled]), .md-button.button-as-link:hover:not([disabled]) {
+button.switch-to-simple:hover, .md-button.button-confirm:hover, .md-button.button-as-link:hover:not([disabled]) {
     background-color: #4dbb5a !important;
 }
 
@@ -27,7 +27,9 @@ button.switch-to-simple:hover, .md-button.button-confirm:hover, md-tabs.tabs-as-
 .prm-primary-bg, prm-atoz-search-bar, prm-browse-search-bar, prm-collection-gallery-header .collection-header-inner, prm-newspapers-search-bar,
 prm-spinner.overlay-cover.light-on-dark:after, prm-tags-search-bar, prm-tree-nav prm-spinner .diamond, .prm-primary-bg, md-checkbox.md-checked .md-icon:after, .md-button.switch-to-advanced, button.switch-to-simple,
 span.legal, span.legal > a, a.ps_link.legal, .ps_icon, md-card.prm-primary-bg.psfooter > md-card-content a, .md-button.button-confirm,
-md-tabs.tabs-as-app .back-button, prm-request-services .md-button.button-as-link {
+prm-request-services .md-button.button-as-link, prm-request-services .md-button.button-as-link:hover:not([disabled]),
+prm-service-button .md-button.button-as-link:hover:not([disabled]),
+prm-location-items md-list prm-service-button .md-button.button-as-link {
     color: #ffffff !important;
 }
 

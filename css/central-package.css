@@ -377,7 +377,7 @@ md-tabs.tabs-as-app .back-button, prm-location-holdings .md-button.button-as-lin
     color: #111111 !important;
     /* background: rgba(17, 17, 17, 0.20) !important;
     line-height: 24px; */
-    /* border: 1px solid rgba(0, 0, 0, 0.59); */
+    border: 1px solid rgba(0, 0, 0, 0.59);
 }
 
 md-tabs.tabs-as-app:hover .back-button:hover, prm-location-holdings .md-button.button-as-link:hover:not([disabled]), prm-location-items .button-link:hover:not([disabled]) {

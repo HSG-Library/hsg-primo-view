@@ -1,0 +1,31 @@
+/**********************/
+/* Pagination Buttons */
+/**********************/
+
+.counter-main a.md-button,
+.results-per-page button.md-button {
+	border: 1px solid rgba(0, 0, 0, 0.59);
+}
+
+.counter-main a.md-button:hover,
+.results-per-page button.md-button:hover {
+	background-color: #ddd;
+	color: #000;
+}
+
+.counter-nav a.md-button:hover {
+	background-color: #ddd;
+	color: #000;
+}
+
+.counter-main a.md-button.current-page,
+.results-per-page button.md-button.current-bulk {
+	border: 1px solid rgba(0, 0, 0, 0.59);
+	box-shadow: none;
+	background-color: #ddd;
+}
+
+.counter-main a.md-button.current-page:hover,
+.results-per-page button.md-button.current-bulk:hover {
+	box-shadow: none;
+}

@@ -28,14 +28,12 @@ export class hsgReportBrokenLinkController {
 
 	collectInfo() {
 		let display = this.parentCtrl.item.pnx.display;
-		let delivery = this.parentCtrl.item.delivery;
 		this.info.mmsId = this.parentCtrl.item.pnx.control.recordid[0];
 		this.info.title = this.getTitle(display);
 		this.info.creationdate = this.getCreationdate(display);
 		this.info.creator = this.getCreator(display);
 		this.info.type = this.getType(display);
 		this.info.identifier = this.getIdentifier(display);
-		this.info.packageNames = this.getPackages(delivery);
 		this.info.reportDate = new Date(Date.now()).toLocaleDateString() + ' ' + new Date(Date.now()).toLocaleTimeString();
 		this.info.onCampus = this.hsgUserService.isOnCampus();
 		this.info.userAgent = navigator.userAgent;
@@ -93,14 +91,6 @@ export class hsgReportBrokenLinkController {
 		return '';
 	}
 
-	getPackages(delivery) {
-		let es = delivery.electronicServices;
-		if (es) {
-			return es.map(service => service.packageName).join(', ')
-		}
-		return '';
-	}
-
 	getStatus() {
 		return this.status;
 	}
@@ -111,17 +101,19 @@ export class hsgReportBrokenLinkController {
 			return;
 		}
 		let that = this;
-		let confirm = this.$mdDialog.confirm()
+		let confirm = this.$mdDialog.prompt()
 			.title(this.translate('popupTitle'))
 			.htmlContent(this.getInfoText())
 			.ariaLabel('report broken link')
 			.targetEvent(event)
+			.placeholder(this.translate('commentLabel'))
 			.ok(this.translate('okLabel'))
 			.cancel(this.translate('cancelLabel'))
 			.multiple('true');
 
 		this.$mdDialog.show(confirm)
-			.then(function () { // send
+			.then(function (comment) { // send
+				that.info.comment = comment;
 				that.$http.post(
 					that.config.reportEndpoint,
 					that.info,
@@ -186,9 +178,9 @@ class LinkInfo {
 		this.type;
 		this.mmsId;
 		this.identifier;
-		this.packages;
 		this.onCampus;
 		this.userAgent;
 		this.url;
+		this.comment;
 	}
 }

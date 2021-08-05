@@ -17,6 +17,10 @@ export const hsgReportBrokenLinkConfig = {
 			de: 'Abbrechen',
 			en: 'Cancel'
 		},
+		commentLabel: {
+			de: 'Kommentar/Kontakt-Email (optional)',
+			en: 'Comment/Contact-Email (optional)'
+		},
 		errorMessage: {
 			de: 'Fehler beim Senden des Reports.',
 			en: 'Error sending report.'

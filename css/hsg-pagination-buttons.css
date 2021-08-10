@@ -4,7 +4,7 @@
 
 .counter-main a.md-button,
 .results-per-page button.md-button {
-	border: 1px solid rgba(0, 0, 0, 0.59);
+	border: none;
 }
 
 .counter-main a.md-button:hover,
@@ -22,7 +22,7 @@
 .results-per-page button.md-button.current-bulk {
 	border: 1px solid rgba(0, 0, 0, 0.59);
 	box-shadow: none;
-	background-color: #ddd;
+	background-color: transparent;
 }
 
 .counter-main a.md-button.current-page:hover,

@@ -1,0 +1,11 @@
+<md-content ng-show="$ctrl.showMessage" class="_md md-primoExplore-theme {{$ctrl.showMessageClass}}">
+	<div class="unisg-alert">
+		<span onclick="this.parentElement.parentElement.parentElement.classList.add('unisg-alert-hidden');this.parentElement.parentElement.parentElement.classList.remove('unisg-alert-voila');" class="unisg-alert-close">
+			<prm-icon class="padding-right-small" icon-type="svg" svg-icon-set="primo-ui" icon-definition="close">
+				<md-icon md-svg-icon='primo-ui:close'></md-icon>
+			</prm-icon>
+		</span>
+		<div ng-bind-html="$ctrl.htmlMessage">
+		</div>
+	</div>
+</md-content>

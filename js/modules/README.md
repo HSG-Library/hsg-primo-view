@@ -2,6 +2,8 @@
 * **`alma-howovp-after`** *hook*
 	* **`slsp-ill-signin-order-alert`** *module*\
 	Adapted from SLSP, see: https://github.com/Swiss-Library-Service-Platform/Swisscovery-Network-Zone/tree/main/41SLSP_NETWORK-VU1_UNION/js/slsp-ill-signin-order-alert
+* **`hsg-alert-message`** *global module*\
+Module used on the homepage to display (alert) messages to the users. The messages can be edited in SharePoint, and will be retrieved via ajax. 
 * **`hsg-exception-handler`** *global module*\
 Global exception handler which logs exceptions and adds a marker (`**HSG-SWISSCOVERY**`) in front of all console logs if the error originates from a custom file.\
 There is a proof of concept to report exceptions to a remote serivce via http, in order to centrally collect and analyze errors.

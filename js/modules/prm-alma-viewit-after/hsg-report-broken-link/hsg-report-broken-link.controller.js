@@ -141,6 +141,7 @@ export class hsgReportBrokenLinkController {
 
 	getInfoText() {
 		return `
+<p>${this.translate('popupInfo')}</p>		
 <dl class="hsg-broken-link-info-list">
 	<dt>Report Date</dt><dd>${this.info.reportDate}</dd>
 	<dt>Title</dt><dd>${this.info.title}</dd>
@@ -149,7 +150,6 @@ export class hsgReportBrokenLinkController {
 	<dt>Type</dt><dd>${this.info.type}</dd>
 	<dt>MMS-ID</dt><dd>${this.info.mmsId}</dd>
 	<dt>Identifier</dt><dd>${this.info.identifier}</dd>
-	<dt>Package Names</dt><dd>${this.info.packageNames}</dd>
 	<dt>On Campus</dt><dd>${this.info.onCampus}</dd>
 	<dt>User Agent</dt><dd>${this.info.userAgent}</dd>
 	<dt>URL</dt><dd>${this.info.url}</dd>

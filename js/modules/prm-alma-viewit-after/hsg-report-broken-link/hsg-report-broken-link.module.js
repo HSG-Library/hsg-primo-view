@@ -1,6 +1,6 @@
 import { hsgTranslatorService } from '../../../services/hsg-translator.service';
 import { hsgReportBrokenLinkConfig } from './hsg-report-broken-link.config';
-import { hsgReportBrokenLinkController } from './hsg-report-broken-link.controller';
+import { hsgReportBrokenLinkDialogController, hsgReportBrokenLinkController } from './hsg-report-broken-link.controller';
 import { hsgReportBrokenLinkHtml } from './hsg-report-broken-link.html';
 
 
@@ -9,6 +9,7 @@ export const hsgReportBrokenLinkModule = angular
 	.constant('hsgReportBrokenLinkConfig', hsgReportBrokenLinkConfig)
 	.factory('hsgTranslatorService', hsgTranslatorService)
 	.controller('hsgReportBrokenLinkController', hsgReportBrokenLinkController)
+	.controller('hsgReportBrokenLinkDialogController', hsgReportBrokenLinkDialogController)
 	.component('hsgReportBrokenLinkComponent', {
 		bindings: { afterCtrl: '<' },
 		controller: 'hsgReportBrokenLinkController',

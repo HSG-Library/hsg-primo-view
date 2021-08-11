@@ -1,7 +1,8 @@
 export class hsgReportBrokenLinkController {
 
-	constructor($mdDialog, $http, hsgTranslatorService, hsgUserService, hsgReportBrokenLinkConfig) {
+	constructor($mdDialog, $mdMedia, $http, hsgTranslatorService, hsgUserService, hsgReportBrokenLinkConfig) {
 		this.$mdDialog = $mdDialog;
+		this.$mdMedia = $mdMedia;
 		this.$http = $http;
 		this.config = hsgReportBrokenLinkConfig;
 		this.translator = hsgTranslatorService;
@@ -9,13 +10,11 @@ export class hsgReportBrokenLinkController {
 
 		this.status = '';
 		this.errorMessage;
-		this.sent = false;
 		this.info = new LinkInfo();
 		this.parentCtrl = this.afterCtrl.parentCtrl;
 	}
 
 	$onInit() {
-		this.sent = false;
 		// not for open access
 		if (this.parentCtrl.item.pnx.addata.openaccess && this.parentCtrl.item.pnx.addata.openaccess[0] === 'true') {
 			return;
@@ -97,21 +96,19 @@ export class hsgReportBrokenLinkController {
 
 	reportLink(event) {
 		this.collectInfo();
-		if (this.sent) {
-			return;
-		}
 		let that = this;
-		let confirm = this.$mdDialog.prompt()
-			.title(this.translate('popupTitle'))
-			.htmlContent(this.getInfoText())
-			.ariaLabel('report broken link')
-			.targetEvent(event)
-			.placeholder(this.translate('commentLabel'))
-			.ok(this.translate('okLabel'))
-			.cancel(this.translate('cancelLabel'))
-			.multiple('true');
 
-		this.$mdDialog.show(confirm)
+		let dialogConfig = {
+			template: this.getTemplate(),
+			controller: 'hsgReportBrokenLinkDialogController',
+			controllerAs: 'dialog',
+			ariaLabel: 'report broken link',
+			targetEvent: event,
+			multiple: 'true',
+			fullscreen: this.$mdMedia('xs')
+		}
+
+		this.$mdDialog.show(dialogConfig)
 			.then(function (comment) { // send
 				that.info.comment = comment;
 				that.$http.post(
@@ -126,7 +123,6 @@ export class hsgReportBrokenLinkController {
 					function (success) {
 						console.info(success);
 						that.status = '✓';
-						that.sent = true;
 					},
 					function (error) {
 						console.error(error);
@@ -139,22 +135,40 @@ export class hsgReportBrokenLinkController {
 			});
 	}
 
-	getInfoText() {
+	getTemplate() {
 		return `
-<p>${this.translate('popupInfo')}</p>		
-<dl class="hsg-broken-link-info-list">
-	<dt>Report Date</dt><dd>${this.info.reportDate}</dd>
-	<dt>Title</dt><dd>${this.info.title}</dd>
-	<dt>Creator</dt><dd>${this.info.creator}</dd>
-	<dt>Creation Date</dt><dd>${this.info.creationdate}</dd>
-	<dt>Type</dt><dd>${this.info.type}</dd>
-	<dt>MMS-ID</dt><dd>${this.info.mmsId}</dd>
-	<dt>Identifier</dt><dd>${this.info.identifier}</dd>
-	<dt>On Campus</dt><dd>${this.info.onCampus}</dd>
-	<dt>User Agent</dt><dd>${this.info.userAgent}</dd>
-	<dt>URL</dt><dd>${this.info.url}</dd>
-</dl>
-`;
+		<md-dialog md-theme="primoExplore" aria-label="report broken link" ng-class="dialog.css" class="_md md-primoExplore-theme md-content-overflow md-transition-in" role="dialog">
+		<md-dialog-content class="md-dialog-content" role="document" tabindex="-1">
+		<h2 class="md-title">${this.translate('popupTitle')}</h2>
+		<div class="md-dialog-content-body">
+		<p>${this.translate('popupInfo')}</p>
+		<dl class="hsg-broken-link-info-list">
+			<dt>Report Date</dt><dd>${this.info.reportDate}</dd>
+			<dt>Title</dt><dd>${this.info.title}</dd>
+			<dt>Creator</dt><dd>${this.info.creator}</dd>
+			<dt>Creation Date</dt><dd>${this.info.creationdate}</dd>
+			<dt>Type</dt><dd>${this.info.type}</dd>
+			<dt>MMS-ID</dt><dd>${this.info.mmsId}</dd>
+			<dt>Identifier</dt><dd>${this.info.identifier}</dd>
+			<dt>On Campus</dt><dd>${this.info.onCampus}</dd>
+			<dt>User Agent</dt><dd>${this.info.userAgent}</dd>
+			<dt>URL</dt><dd>${this.info.url}</dd>
+		</dl>
+		</div>
+		<md-input-container class="md-prompt-input-container md-input-has-placeholder md-primoExplore-theme">
+			<input md-autofocus="true" ng-model="dialog.result" placeholder="${this.translate('commentLabel')}" class="ng-pristine md-autofocus md-input ng-empty ng-valid ng-valid-required ng-touched">
+		</md-input-container
+		</md-dialog-content>
+		<md-dialog-actions>
+		<button class="md-primary md-cancel-button md-button md-primoExplore-theme md-ink-ripple" type="button" ng-click="dialog.abort()">
+			${this.translate('cancelLabel')}
+		</button>
+		<button class="md-primary md-confirm-button md-button md-ink-ripple md-primoExplore-theme" type="button" ng-click="dialog.hide()">
+			${this.translate('okLabel')}
+		</button>
+		</md-dialog-actions>
+		</md-dialog>
+		`;
 	}
 
 	translate(key) {
@@ -166,7 +180,23 @@ export class hsgReportBrokenLinkController {
 	}
 }
 
-hsgReportBrokenLinkController.$inject = ['$mdDialog', '$http', 'hsgTranslatorService', 'hsgUserService', 'hsgReportBrokenLinkConfig'];
+hsgReportBrokenLinkController.$inject = ['$mdDialog', '$mdMedia', '$http', 'hsgTranslatorService', 'hsgUserService', 'hsgReportBrokenLinkConfig'];
+
+export class hsgReportBrokenLinkDialogController {
+
+	constructor($mdDialog) {
+		this.$mdDialog = $mdDialog;
+		this.result = '';
+	}
+
+	abort() {
+		return this.$mdDialog.cancel();
+	}
+
+	hide() {
+		return this.$mdDialog.hide(this.result);
+	}
+}
 
 
 class LinkInfo {

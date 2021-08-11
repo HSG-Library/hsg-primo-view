@@ -10,8 +10,8 @@ export const hsgReportBrokenLinkConfig = {
 			en: 'Report broken link'
 		},
 		popupInfo: {
-			de: 'Folgende Daten werden übermittelt. Die Daten werden ausschliesslich zur Nachvollziehbarkeit des gemeldeten Problems verwendet.',
-			en: 'The following data will be transmitted. The data will only be used to track the reported problem.'
+			de: 'Folgende Daten werden übermittelt:',
+			en: 'The following data will be transmitted:'
 		},
 		okLabel: {
 			de: 'Senden',

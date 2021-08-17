@@ -3,50 +3,20 @@
 		<md-card class="default-card hsg-card hsg-card-journals">
 			<md-card-title flex="none" class="hsg-card-title">
 				<md-card-title-text>
-					<span class="md-headline" role="heading"
-						aria-level="2">{{::$ctrl.translate('main')}}</span>
+					<span class="md-headline" role="heading" aria-level="2">{{::$ctrl.translate('title')}}</span>
 				</md-card-title-text>
 			</md-card-title>
 			<md-card-content>
 				<p>
-					{{::$ctrl.translate('main')}}
+					{{::$ctrl.translate('mainText')}}
 				</p>
-				<md-card-title-text>
-					<span class="md-headline" role="heading"
-						aria-level="3">{{::$ctrl.translate('main')}}</span>
-				</md-card-title-text>
+				<p>
+					{{::$ctrl.translate('infoTitle')}}
+				</p>
 				<ul>
-					<li>
-						<strong>{{::$ctrl.translate('main')}}</strong>
-						<br>
-						{{::$ctrl.translate('main')}}
-						<a target="_blank" href="{{::$ctrl.translate('main')}}"
-							class="arrow-link" rel="external">
-							{{::$ctrl.translate('main')}}
-							<prm-icon external-link icon-type="svg" svg-icon-set="primo-ui"
-								icon-definition="open-in-new"></prm-icon>
-						</a>.
+					<li ng-bind-html="::$ctrl.translate('info01')">
 					</li>
-					<li>
-						<strong>{{::$ctrl.translate('main')}}</strong>
-						<br>
-						{{::$ctrl.translate('main')}}
-					</li>
-					<li>
-						<strong>{{::$ctrl.translate('main')}}</strong>
-						<br>
-						{{::$ctrl.translate('main')}}
-					</li>
-					<li>
-						<strong>{{::$ctrl.translate('main')}}</strong>
-						<br>
-						{{::$ctrl.translate('main')}}
-						<a target="_blank" href="{{::$ctrl.translate('main')}}"
-							class="arrow-link" rel="external">
-							{{::$ctrl.translate('main')}}
-							<prm-icon external-link icon-type="svg" svg-icon-set="primo-ui"
-								icon-definition="open-in-new"></prm-icon>
-						</a>.
+					<li ng-bind-html="::$ctrl.translate('info02')">
 					</li>
 				</ul>
 			</md-card-content>

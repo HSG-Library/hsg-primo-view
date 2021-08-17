@@ -1,13 +1,19 @@
 export class hsgJournalsStartpageController {
-	constructor(hsgTranslatorService, hsgJournalsStartpageConfig) {
+	constructor($sce, hsgTranslatorService, hsgJournalsStartpageConfig) {
+		this.$sce = $sce;
 		this.translator = hsgTranslatorService;
 		this.config = hsgJournalsStartpageConfig;
 	}
 
 	translate(key) {
-		return this.translator.getLabel(key, this.config);
+		if (!this.config) {
+			console.log("config missing");
+			return;
+		}
+		let msg = this.translator.getLabel(key, this.config);
+		return this.$sce.trustAsHtml(msg);
 	}
 
 }
 
-hsgJournalsStartpageController.$inject = ['hsgTranslatorService', 'hsgJournalsStartpageConfig'];
+hsgJournalsStartpageController.$inject = ['$sce', 'hsgTranslatorService', 'hsgJournalsStartpageConfig'];

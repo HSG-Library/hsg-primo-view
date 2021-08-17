@@ -1,5 +1,0 @@
-/* See: https://knowledge.exlibrisgroup.com/Primo/Product_Documentation/020Primo_VE/Primo_VE_(English)/030Primo_VE_User_Interface/010Primo_VE_Customization_-_Best_Practices#Hiding_the_Sign-In_Link */
-/* Hides login hint on search results page, but still shows on the fullview */
-prm-search .alert-bar {
-	display: none;
-}

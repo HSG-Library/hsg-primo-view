@@ -5,7 +5,7 @@ export const hsgJournalsStartpageConfig = {
 			en: 'Journal Search HSG Libray'
 		},
 		mainText: {
-			de: 'Mit der Zeitschriftensuche können Sie nach allen Zeitschriften suchen, welche durch die HSG- Bibliothek zur Verfügung gestellt werden in den Zeitschriftenbeständen der HSG- Bibliothek suchen – sowohl E- Journals wie auch gedruckte Zeitschriften.',
+			de: 'Mit der Zeitschriftensuche können Sie nach allen Zeitschriften suchen, welche durch die HSG-Bibliothek zur Verfügung gestellt werden - sowohl E-Journals wie auch gedruckte Zeitschriften.',
 			en: 'The Journal Search lets you search all titles that the HSG Library is providing access to, electronic or print. '
 		},
 		infoTitle: {

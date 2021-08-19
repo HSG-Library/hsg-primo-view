@@ -49,6 +49,6 @@ JS Documentation from ExLibris: [https://github.com/ExLibrisGroup/primo-explore-
 HSGswisscovery modules: [README.md](js/modules/README.md)
 
 ## Links
-* SLSP Swisscovery: https://github.com/Swiss-Library-Service-Platform/Swisscovery-Network-Zone
+* SLSP Swisscovery: https://github.com/Swiss-Library-Service-Platform/swisscovery
 * BCUF customization: https://github.com/BCUF/bcufr-primo-views
 * ETH customization: https://gitlab.com/ethlibrary/slsp/customization-eth-view

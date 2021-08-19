@@ -40,7 +40,7 @@
 }
 
 .unisg-alert-voila {
-    max-height: 100px;
+    max-height: 1000px;
     transform: scaleY(1);
     transform-origin: top;
     transition: transform 0.2s linear, max-height 0.2s linear;

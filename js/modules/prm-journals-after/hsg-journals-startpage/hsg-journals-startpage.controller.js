@@ -1,8 +1,14 @@
 export class hsgJournalsStartpageController {
-	constructor($sce, hsgTranslatorService, hsgJournalsStartpageConfig) {
+	constructor($element, $sce, hsgTranslatorService, hsgJournalsStartpageConfig) {
+		this.$element = $element;
 		this.$sce = $sce;
 		this.translator = hsgTranslatorService;
 		this.config = hsgJournalsStartpageConfig;
+	}
+
+	showStartPage() {
+		let elements = this.$element.parent().parent().query('md-content');
+		return elements == null || elements.length == 0;
 	}
 
 	translate(key) {
@@ -16,4 +22,4 @@ export class hsgJournalsStartpageController {
 
 }
 
-hsgJournalsStartpageController.$inject = ['$sce', 'hsgTranslatorService', 'hsgJournalsStartpageConfig'];
+hsgJournalsStartpageController.$inject = ['$element', '$sce', 'hsgTranslatorService', 'hsgJournalsStartpageConfig'];

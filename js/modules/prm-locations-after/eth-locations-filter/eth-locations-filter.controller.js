@@ -8,16 +8,20 @@ export class ethLocationsFilterController {
 	$onInit() {
 		try {
 			this.parentCtrl = this.afterCtrl.parentCtrl;
-			this.$scope.$watch('this.$ctrl.parentCtrl.locations[0].location.librarycodeTranslation', (newValue, oldValue, scope) => {
+			this.$scope.$watch('this.$ctrl.parentCtrl.loc.location.librarycodeTranslation', (newValue, oldValue, scope) => {
 				if (!scope.$ctrl.parentCtrl.isLocationsFilterVisible && newValue && newValue != '') {
-					this.$timeout(() => {
-						scope.$ctrl.parentCtrl.isLocationsFilterVisible = true;
-					}, 0);
+					this.$scope.$watch('this.$ctrl.parentCtrl.loc.items', (currentItemsArray) => {
+						if (angular.isArray(currentItemsArray) && currentItemsArray.length > 1) {
+							this.$timeout(() => {
+								scope.$ctrl.parentCtrl.isLocationsFilterVisible = true;
+							}, 0);
+						}
+					})
 				}
 			}, true);
 		}
 		catch (e) {
-			console.error("***ETH*** an error occured: ethLocationsFilterController\n\n");
+			console.error("***SLSP*** an error occured: ethLocationItemsFilterController\n\n");
 			console.error(e.message);
 		}
 	}

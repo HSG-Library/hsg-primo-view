@@ -2,7 +2,7 @@ export const hsgJournalsStartpageConfig = {
 	labels: {
 		title: {
 			de: 'Zeitschriftensuche HSG-Bibliothek',
-			en: 'Journal Search HSG Libray'
+			en: 'Journal Search HSG Library'
 		},
 		mainText: {
 			de: 'Mit der Zeitschriftensuche können Sie nach allen Zeitschriften suchen, welche durch die HSG-Bibliothek zur Verfügung gestellt werden - sowohl E-Journals wie auch gedruckte Zeitschriften.',

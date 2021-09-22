@@ -109,8 +109,11 @@ export class hsgReportBrokenLinkController {
 		}
 
 		this.$mdDialog.show(dialogConfig)
-			.then(function (comment) { // send
-				that.info.comment = comment;
+			.then(function (dialogModel) { // send
+				that.info.comment = dialogModel.comment + " " || '';
+				if (dialogModel.contact) {
+					that.info.comment += dialogModel.contact;
+				}
 				that.$http.post(
 					that.config.reportEndpoint,
 					that.info,
@@ -155,9 +158,18 @@ export class hsgReportBrokenLinkController {
 			<dt>URL</dt><dd>${this.info.url}</dd>
 		</dl>
 		</div>
-		<md-input-container class="md-prompt-input-container md-input-has-placeholder md-primoExplore-theme">
-			<input md-autofocus="true" ng-model="dialog.result" placeholder="${this.translate('commentLabel')}" class="ng-pristine md-autofocus md-input ng-empty ng-valid ng-valid-required ng-touched">
-		</md-input-container
+		<div>
+		<div flex="">
+		<md-input-container class="md-prompt-input-container md-primoExplore-theme">
+			<input md-autofocus="true" ng-model="dialog.result.comment" placeholder="${this.translate('commentLabel')}">
+		</md-input-container>
+		</div>
+		<div flex="">
+		<md-input-container class="md-prompt-input-container md-primoExplore-theme">
+			<input ng-model="dialog.result.contact" placeholder="${this.translate('contactLabel')}">
+		</md-input-container>
+		</div>
+		</div>
 		</md-dialog-content>
 		<md-dialog-actions>
 		<button class="md-primary md-cancel-button md-button md-primoExplore-theme md-ink-ripple" type="button" ng-click="dialog.abort()">
@@ -186,7 +198,7 @@ export class hsgReportBrokenLinkDialogController {
 
 	constructor($mdDialog) {
 		this.$mdDialog = $mdDialog;
-		this.result = '';
+		this.result = {};
 	}
 
 	abort() {

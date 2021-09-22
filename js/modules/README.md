@@ -25,7 +25,7 @@ There is a proof of concept to report exceptions to a remote serivce via http, i
   * **`slsp-edit-personal-details`** *module*\
 	Adapted from SLSP, see: https://github.com/Swiss-Library-Service-Platform/Swisscovery-Network-Zone/tree/main/41SLSP_NETWORK-VU1_UNION/js/slsp-edit-personal-details
 * **`prm-request-after`** *hook*
-	* **`hsg-reading-room-info`** *module*\
+	* **`hsg-reading-room-info` (not active)** *module*\
 	Message which is displayed if all available items are unvailable, but there is a 'reading room only' item which a user can request without waiting: *"The loanable items are not available. To order the non-loanable copy to the Service Point for viewing, select the pick-up location HSG Reading Room. If you choose the pick-up location HSG, you will be placed on the waiting list."*
 	* **`sls-courier-info`** *module*\
 	Adapted from SLSP, see: https://github.com/Swiss-Library-Service-Platform/Swisscovery-Network-Zone/tree/main/41SLSP_NETWORK-VU1_UNION/js/slsp-courier-info 

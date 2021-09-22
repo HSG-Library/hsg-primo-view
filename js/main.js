@@ -8,6 +8,7 @@ import { hsgLocationItemsAfterModule } from './modules/prm-location-items-after/
 import { hsgLocationsAfterModule } from './modules/prm-locations-after/hsg-locations-after.module';
 import { hsgPersonalInfoAfterModule } from './modules/prm-personal-info-after/hsg-personal-info-after.module';
 import { hsgRequestAfterModule } from './modules/prm-request-after/hsg-request-after.module';
+import { hsgStackMapAfterModule } from './modules/prm-stack-map-after/hsg-stack-map-after.module';
 import { hsgUserAreaExpandableAfterModule } from './modules/prm-user-area-expandable-after/hsg-user-ara-expandable-after.module';
 
 let app = angular.module('viewCustom', ['angularLoad'])
@@ -21,6 +22,7 @@ app.requires.push(hsgLocationItemsAfterModule.name);
 app.requires.push(hsgLocationsAfterModule.name);
 app.requires.push(hsgPersonalInfoAfterModule.name);
 app.requires.push(hsgRequestAfterModule.name);
+app.requires.push(hsgStackMapAfterModule.name);
 app.requires.push(hsgUserAreaExpandableAfterModule.name);
 
 app.run(function () { console.log('** app running **') });

@@ -31,7 +31,7 @@ jobs:
       with:
         push: true
         tags: ghcr.io/${{ secrets.AzureAppService_ContainerUsername_895b76b8337a43d6981b2bb37fb50c8f }}/primo-dev:${{ github.sha }}
-        file: ./Dockerfile
+        file: ./.ci/Dockerfile
 
   deploy:
     runs-on: ubuntu-latest

@@ -8,8 +8,8 @@ export const hsgReportBrokenLinkModule = angular
 	.module('hsgReportBrokenLinkModule', [])
 	.constant('hsgReportBrokenLinkConfig', hsgReportBrokenLinkConfig)
 	.factory('hsgTranslatorService', hsgTranslatorService)
-	.controller('hsgReportBrokenLinkController', hsgReportBrokenLinkController)
 	.controller('hsgReportBrokenLinkDialogController', hsgReportBrokenLinkDialogController)
+	.controller('hsgReportBrokenLinkController', hsgReportBrokenLinkController)
 	.component('hsgReportBrokenLinkComponent', {
 		bindings: { afterCtrl: '<' },
 		controller: 'hsgReportBrokenLinkController',

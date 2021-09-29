@@ -210,6 +210,8 @@ export class hsgReportBrokenLinkDialogController {
 	}
 }
 
+hsgReportBrokenLinkDialogController.$inject = ['$mdDialog'];
+
 
 class LinkInfo {
 	constructor() {

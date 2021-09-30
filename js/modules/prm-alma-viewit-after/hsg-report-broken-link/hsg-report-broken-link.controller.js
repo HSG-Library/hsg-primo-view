@@ -144,6 +144,22 @@ export class hsgReportBrokenLinkController {
 		<md-dialog-content class="md-dialog-content" role="document" tabindex="-1">
 		<h2 class="md-title">${this.translate('popupTitle')}</h2>
 		<div class="md-dialog-content-body">
+		<div>
+			<div flex="">
+			<md-input-container class="md-prompt-input-container md-primoExplore-theme">
+				<label style="font-weight: bold">${this.translate('commentLabel')}</label>
+				<md-icon md-svg-icon="primo-actions:citation" class="md-primoExplore-theme"></md-icon>
+				<input md-autofocus="true" ng-model="dialog.result.comment" placeholder="&#8230;">
+			</md-input-container>
+			</div>
+			<div flex="">
+			<md-input-container class="md-prompt-input-container md-primoExplore-theme">
+				<label style="font-weight: bold">${this.translate('contactLabel')}</label>
+				<md-icon md-svg-icon="primo-actions:email" class="md-primoExplore-theme"></md-icon>
+				<input ng-model="dialog.result.contact" placeholder="name@email.com">
+			</md-input-container>
+			</div>
+		</div>
 		<p>${this.translate('popupInfo')}</p>
 		<dl class="hsg-broken-link-info-list">
 			<dt>Report Date</dt><dd>${this.info.reportDate}</dd>
@@ -157,18 +173,6 @@ export class hsgReportBrokenLinkController {
 			<dt>User Agent</dt><dd>${this.info.userAgent}</dd>
 			<dt>URL</dt><dd>${this.info.url}</dd>
 		</dl>
-		</div>
-		<div>
-		<div flex="">
-		<md-input-container class="md-prompt-input-container md-primoExplore-theme">
-			<input md-autofocus="true" ng-model="dialog.result.comment" placeholder="${this.translate('commentLabel')}">
-		</md-input-container>
-		</div>
-		<div flex="">
-		<md-input-container class="md-prompt-input-container md-primoExplore-theme">
-			<input ng-model="dialog.result.contact" placeholder="${this.translate('contactLabel')}">
-		</md-input-container>
-		</div>
 		</div>
 		</md-dialog-content>
 		<md-dialog-actions>

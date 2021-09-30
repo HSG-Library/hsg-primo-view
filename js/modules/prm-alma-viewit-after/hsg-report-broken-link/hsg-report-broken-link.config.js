@@ -26,8 +26,8 @@ export const hsgReportBrokenLinkConfig = {
 			en: 'Comment, problem description'
 		},
 		contactLabel: {
-			de: 'Kontakt-Email (für Unterstützung, oder Information wenn der Link wieder verfügbar ist)',
-			en: 'Contact-Email (for support, or information when the link is available again)'
+			de: 'Kontakt-Email (für Unterstützung/Feeback zu ihrer Meldung)',
+			en: 'Contact-Email (for support/feedback regarding your report)'
 		},
 		errorMessage: {
 			de: 'Fehler beim Senden des Reports.',

@@ -29,6 +29,9 @@ There is a proof of concept to report exceptions to a remote serivce via http, i
 	Message which is displayed if all available items are unvailable, but there is a 'reading room only' item which a user can request without waiting: *"The loanable items are not available. To order the non-loanable copy to the Service Point for viewing, select the pick-up location HSG Reading Room. If you choose the pick-up location HSG, you will be placed on the waiting list."*
 	* **`sls-courier-info`** *module*\
 	Adapted from SLSP, see: https://github.com/Swiss-Library-Service-Platform/Swisscovery-Network-Zone/tree/main/41SLSP_NETWORK-VU1_UNION/js/slsp-courier-info 
+* **`prm-stack-map-after`** *hook*	
+  * **`hsg-stack-map-link`** *module*\
+  The stack map (MediaScout) opens in a modal dialog instead of a new tab/window.	
 * **`prm-user-area-expandable-after`** *hook*
   * **`sls-ill-signin-order-logged-out`** *module*\
 	Adapted from SLSP, see: https://github.com/Swiss-Library-Service-Platform/Swisscovery-Network-Zone/tree/main/41SLSP_NETWORK-VU1_UNION/js/slsp-ill-signin-order-logged-out 	

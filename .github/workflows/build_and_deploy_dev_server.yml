@@ -38,7 +38,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     environment:
-      name: 'dev'
+      name: 'production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
@@ -47,6 +47,6 @@ jobs:
       uses: azure/webapps-deploy@v2
       with:
         app-name: 'hsg-primo-dev'
-        slot-name: 'dev'
+        slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_db02d82405a047bc903440982384227e }}
         images: 'ghcr.io/${{ secrets.AzureAppService_ContainerUsername_895b76b8337a43d6981b2bb37fb50c8f }}/primo-dev:latest'

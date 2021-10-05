@@ -38,6 +38,7 @@ jobs:
       uses: actions/delete-package-versions@v1
       with:
         package-name: 'primo-dev'
+        token: ${{ secrets.PAT }}
 
   deploy:
     runs-on: ubuntu-latest

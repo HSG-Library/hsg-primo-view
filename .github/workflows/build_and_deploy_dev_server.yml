@@ -31,14 +31,8 @@ jobs:
       with:
         context: .
         push: true
-        tags: ghcr.io/${{ secrets.AzureAppService_ContainerUsername_895b76b8337a43d6981b2bb37fb50c8f }}/primo-dev:${{ github.sha }}
+        tags: ghcr.io/${{ secrets.AzureAppService_ContainerUsername_895b76b8337a43d6981b2bb37fb50c8f }}/primo-dev:latest
         file: ./.ci/Dockerfile
-    
-    - name: Cleanup container registry
-      uses: actions/delete-package-versions@v1
-      with:
-        package-name: 'primo-dev'
-        token: ${{ secrets.PAT }}
 
   deploy:
     runs-on: ubuntu-latest
@@ -55,4 +49,4 @@ jobs:
         app-name: 'hsg-primo-dev'
         slot-name: 'dev'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_db02d82405a047bc903440982384227e }}
-        images: 'ghcr.io/${{ secrets.AzureAppService_ContainerUsername_895b76b8337a43d6981b2bb37fb50c8f }}/primo-dev:${{ github.sha }}'
+        images: 'ghcr.io/${{ secrets.AzureAppService_ContainerUsername_895b76b8337a43d6981b2bb37fb50c8f }}/primo-dev:latest'

@@ -31,7 +31,7 @@ jobs:
       with:
         context: .
         push: true
-        tags: ghcr.io/${{ secrets.AzureAppService_ContainerUsername_895b76b8337a43d6981b2bb37fb50c8f }}/primo-dev:latest
+        tags: ghcr.io/${{ secrets.AzureAppService_ContainerUsername_895b76b8337a43d6981b2bb37fb50c8f }}/primo-dev:${{ github.sha }}
         file: ./.ci/Dockerfile
 
   deploy:
@@ -49,4 +49,4 @@ jobs:
         app-name: 'hsg-primo-dev'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_db02d82405a047bc903440982384227e }}
-        images: 'ghcr.io/${{ secrets.AzureAppService_ContainerUsername_895b76b8337a43d6981b2bb37fb50c8f }}/primo-dev:latest'
+        images: 'ghcr.io/${{ secrets.AzureAppService_ContainerUsername_895b76b8337a43d6981b2bb37fb50c8f }}/primo-dev:${{ github.sha }}'

@@ -1,13 +1,26 @@
-/******************************************************************************/
-/********************** Primary colour ****************************************/
-/******************************************************************************/
+/****************************/
+/****** Primary colour ******/
+/****************************/
 
-/*****************This two entries are the background of the primary color*******************/
+/****** This two entries are the background of the primary color ******/
 
-.prm-primary-bg, prm-atoz-search-bar, prm-browse-search-bar, prm-collection-gallery-header .collection-header-inner, prm-search-bar, prm-newspapers-search-bar,
-prm-spinner.overlay-cover.light-on-dark:after, prm-tags-search-bar, prm-tree-nav prm-spinner .diamond, .prm-primary-bg, md-checkbox.md-checked .md-icon,
-md-tabs md-ink-bar, md-radio-button.md-checked .md-on, button.switch-to-simple, .md-button.button-confirm,
-prm-request-services .md-button.button-as-link, prm-location-items md-list prm-service-button .md-button.button-as-link {
+.prm-primary-bg,
+prm-atoz-search-bar,
+prm-browse-search-bar,
+prm-collection-gallery-header .collection-header-inner,
+prm-search-bar,
+prm-newspapers-search-bar,
+prm-spinner.overlay-cover.light-on-dark:after,
+prm-tags-search-bar,
+prm-tree-nav prm-spinner .diamond,
+.prm-primary-bg,
+md-checkbox.md-checked .md-icon,
+md-tabs md-ink-bar,
+md-radio-button.md-checked .md-on,
+button.switch-to-simple,
+.md-button.button-confirm,
+prm-request-services .md-button.button-as-link,
+prm-location-items md-list prm-service-button .md-button.button-as-link {
     background-color: #00802F !important;
 }
 
@@ -17,17 +30,40 @@ prm-request-services .md-button.button-as-link, prm-location-items md-list prm-s
     }
 }
 
-/*****************This entry is the mouse over background of the links and buttons*******************/
-md-card.prm-primary-bg.psfooter > md-card-content a:hover, md-icon.ps_icon:hover, a.ps_link:hover, a.ps_link.legal:hover, span.legal a:hover, button.switch-to-advanced:hover,
-button.switch-to-simple:hover, .md-button.button-confirm:hover, .md-button.button-as-link:hover:not([disabled]) {
+/****** This entry is the mouse over background of the links and buttons ******/
+md-card.prm-primary-bg.psfooter>md-card-content a:hover,
+md-icon.ps_icon:hover,
+a.ps_link:hover,
+a.ps_link.legal:hover,
+span.legal a:hover,
+button.switch-to-advanced:hover,
+button.switch-to-simple:hover,
+.md-button.button-confirm:hover,
+.md-button.button-as-link:hover:not([disabled]) {
     background-color: #4dbb5a !important;
 }
 
-/*****************This two entries are the font color of the primary color*******************/
-.prm-primary-bg, prm-atoz-search-bar, prm-browse-search-bar, prm-collection-gallery-header .collection-header-inner, prm-newspapers-search-bar,
-prm-spinner.overlay-cover.light-on-dark:after, prm-tags-search-bar, prm-tree-nav prm-spinner .diamond, .prm-primary-bg, md-checkbox.md-checked .md-icon:after, .md-button.switch-to-advanced, button.switch-to-simple,
-span.legal, span.legal > a, a.ps_link.legal, .ps_icon, md-card.prm-primary-bg.psfooter > md-card-content a, .md-button.button-confirm,
-prm-request-services .md-button.button-as-link, prm-request-services .md-button.button-as-link:hover:not([disabled]),
+/****** This two entries are the font color of the primary color ******/
+.prm-primary-bg,
+prm-atoz-search-bar,
+prm-browse-search-bar,
+prm-collection-gallery-header .collection-header-inner,
+prm-newspapers-search-bar,
+prm-spinner.overlay-cover.light-on-dark:after,
+prm-tags-search-bar,
+prm-tree-nav prm-spinner .diamond,
+.prm-primary-bg,
+md-checkbox.md-checked .md-icon:after,
+.md-button.switch-to-advanced,
+button.switch-to-simple,
+span.legal,
+span.legal>a,
+a.ps_link.legal,
+.ps_icon,
+md-card.prm-primary-bg.psfooter>md-card-content a,
+.md-button.button-confirm,
+prm-request-services .md-button.button-as-link,
+prm-request-services .md-button.button-as-link:hover:not([disabled]),
 prm-service-button .md-button.button-as-link:hover:not([disabled]),
 prm-location-items md-list prm-service-button .md-button.button-as-link {
     color: #ffffff !important;
@@ -37,27 +73,35 @@ button.switch-to-advanced.zero-margin.button-with-icon.md-button.md-primoExplore
     border-color: #ffffff !important;
 }
 
-/******************************************************************************/
-/********************** Secondary colour **************************************/
-/******************************************************************************/
+/******************************/
+/****** Secondary colour ******/
+/******************************/
 
-/*****************This two entries are the background of the secondary color*******************/
-.bar.alert-bar, .classic-input .search-scope, .prm-alert-bg {
+/****** This two entries are the background of the secondary color ******/
+.bar.alert-bar,
+.classic-input .search-scope,
+.prm-alert-bg {
     background-color: #49cb90 !important;
 }
 
-.text-highlight, mark, prm-location-items > md-list > md-list-item > div > div > div > div > prm-service-button > button {
+.text-highlight,
+mark,
+prm-location-items>md-list>md-list-item>div>div>div>div>prm-service-button>button {
     box-shadow: inset 0 -0.15em 0 0 #57d2a3;
 }
 
-/*****************This entry is the mouse over background of the links and buttons (secondary-color)*******************/
+/****** This entry is the mouse over background of the links and buttons (secondary-color) ******/
 /*.bar prm-authentication .md-button:hover:not([disabled]),*/
 div.alert-bar .md-button:hover:not([disabled]) {
     background-color: #49cb90;
 }
 
-/*****************This entry is the font color of the secondary color*******************/
-
-.bar.alert-bar, .classic-input .search-scope, .prm-alert-bg, .bar prm-authentication .md-button, button.dismiss-alert-button, div.courier-info > span a {
+/****** This entry is the font color of the secondary color ******/
+.bar.alert-bar,
+.classic-input .search-scope,
+.prm-alert-bg,
+.bar prm-authentication .md-button,
+button.dismiss-alert-button,
+div.courier-info>span a {
     color: #111111 !important;
 }

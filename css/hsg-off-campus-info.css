@@ -1,12 +1,16 @@
+/*****************************/
+/****** Off campus info ******/
+/*****************************/
+
 .hsg-off-campus-info {
     margin-top: 1em;
     padding: 1em 1em 0.5em;
     background-color: #68EAB8;
     color: black;
-    box-shadow:rgba(0, 0, 0, 0.03) 0px 1px 0px 0px, rgba(0, 0, 0, 0.07) 0px 5px 5px -3px
+    box-shadow: rgba(0, 0, 0, 0.03) 0px 1px 0px 0px, rgba(0, 0, 0, 0.07) 0px 5px 5px -3px
 }
 
-.hsg-off-campus-info > div {
+.hsg-off-campus-info>div {
     margin-left: 1em;
 }
 

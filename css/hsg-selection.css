@@ -1,6 +1,7 @@
 /**********************************/
-/****** text selection color ******/
+/****** Text selection color ******/
 /**********************************/
+
 ::selection {
 	background: #33ab00;
 }

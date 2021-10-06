@@ -1,6 +1,9 @@
+/*******************************/
+/****** Report broken link *****/
+/*******************************/
 
 .hsg-broken-link-info-list {
-   word-break: break-word;
+    word-break: break-word;
 }
 
 .hsg-broken-link-info-list dt {

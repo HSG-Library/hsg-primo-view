@@ -1,0 +1,18 @@
+/*************************/
+/****** Header menu ******/
+/*************************/
+
+@media (max-width: 960px) {
+	prm-user-area-expandable button.user-button.user-menu-button.button-with-menu-arrow.md-button.md-primoExplore-theme.md-ink-ripple,
+	prm-user-area-expandable-after {
+		display: none !important;
+	}
+
+	button#signInBtn {
+		display: block;
+	}
+}
+
+primo-explore.logged-out prm-user-area-expandable md-menu {
+	display: none;
+}

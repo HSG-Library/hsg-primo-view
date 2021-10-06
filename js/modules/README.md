@@ -33,6 +33,9 @@ There is a proof of concept to report exceptions to a remote serivce via http, i
   * **`hsg-stack-map-link`** *module*\
   The stack map (MediaScout) opens in a modal dialog instead of a new tab/window.	
 * **`prm-user-area-expandable-after`** *hook*
+  * **`bcu-lang-switch`** *module*\
+	Adapted from SLSP, see: https://github.com/Swiss-Library-Service-Platform/swisscovery/tree/main/41SLSP_NETWORK-VU1_UNION/js/prm-user-area-expandable-after/bcu-lang-switch \
+	Slight modification in the CSS, as well as the code structure.
   * **`sls-ill-signin-order-logged-out`** *module*\
 	Adapted from SLSP, see: https://github.com/Swiss-Library-Service-Platform/Swisscovery-Network-Zone/tree/main/41SLSP_NETWORK-VU1_UNION/js/slsp-ill-signin-order-logged-out
 * **`slsp-http-intercept-requests`** *global module*\

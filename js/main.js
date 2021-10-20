@@ -10,9 +10,9 @@ import { hsgPersonalInfoAfterModule } from './modules/prm-personal-info-after/hs
 import { hsgRequestAfterModule } from './modules/prm-request-after/hsg-request-after.module';
 import { hsgStackMapAfterModule } from './modules/prm-stack-map-after/hsg-stack-map-after.module';
 import { hsgUserAreaExpandableAfterModule } from './modules/prm-user-area-expandable-after/hsg-user-ara-expandable-after.module';
-import { slspHttpInterceptRequestsModule } from './modules/slsp-http-intercept-requests/slsp-http-intercept-requests.module';
+//import { slspHttpInterceptRequestsModule } from './modules/slsp-http-intercept-requests/slsp-http-intercept-requests.module';
 
-let app = angular.module('viewCustom', ['angularLoad'])
+let app = angular.module('viewCustom', ['angularLoad']);
 
 app.requires.push(hsgAlertMessageModule.name);
 app.requires.push(hsgExceptionHandlerModule.name);
@@ -25,6 +25,6 @@ app.requires.push(hsgPersonalInfoAfterModule.name);
 app.requires.push(hsgRequestAfterModule.name);
 app.requires.push(hsgStackMapAfterModule.name);
 app.requires.push(hsgUserAreaExpandableAfterModule.name);
-app.requires.push(slspHttpInterceptRequestsModule.name);
+//app.requires.push(slspHttpInterceptRequestsModule.name);
 
 app.run(function () { console.log('** app running **') });

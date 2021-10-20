@@ -1,10 +1,11 @@
-/******************************************************************************/
-/********************** CSS of alert message UNISG ****************************/
-/******************************************************************************/
+/****************************************/
+/****** CSS of alert message UNISG ******/
+/****************************************/
 
 .unisg-alert {
-    background-color: #9FF781;
-    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+    background-color: #ff9cdb;
+    /* grün -> #9FF781*/
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
     margin: 8px;
     padding: 10px;
     position: relative;
@@ -24,9 +25,23 @@
 }
 
 .unisg-alert-close:hover {
-    color: #00802F; 
+    color: #00802F;
 }
 
 .unisg-no-margin {
     margin: 0px;
+}
+
+.unisg-alert-hidden {
+    max-height: 0px;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.2s linear, max-height 0.2s linear;
+}
+
+.unisg-alert-voila {
+    max-height: 1000px;
+    transform: scaleY(1);
+    transform-origin: top;
+    transition: transform 0.2s linear, max-height 0.2s linear;
 }

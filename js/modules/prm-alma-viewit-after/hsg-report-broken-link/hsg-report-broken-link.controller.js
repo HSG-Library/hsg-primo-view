@@ -1,7 +1,8 @@
 export class hsgReportBrokenLinkController {
 
-	constructor($mdDialog, $http, hsgTranslatorService, hsgUserService, hsgReportBrokenLinkConfig) {
+	constructor($mdDialog, $mdMedia, $http, hsgTranslatorService, hsgUserService, hsgReportBrokenLinkConfig) {
 		this.$mdDialog = $mdDialog;
+		this.$mdMedia = $mdMedia;
 		this.$http = $http;
 		this.config = hsgReportBrokenLinkConfig;
 		this.translator = hsgTranslatorService;
@@ -9,13 +10,11 @@ export class hsgReportBrokenLinkController {
 
 		this.status = '';
 		this.errorMessage;
-		this.sent = false;
 		this.info = new LinkInfo();
 		this.parentCtrl = this.afterCtrl.parentCtrl;
 	}
 
 	$onInit() {
-		this.sent = false;
 		// not for open access
 		if (this.parentCtrl.item.pnx.addata.openaccess && this.parentCtrl.item.pnx.addata.openaccess[0] === 'true') {
 			return;
@@ -28,14 +27,12 @@ export class hsgReportBrokenLinkController {
 
 	collectInfo() {
 		let display = this.parentCtrl.item.pnx.display;
-		let delivery = this.parentCtrl.item.delivery;
 		this.info.mmsId = this.parentCtrl.item.pnx.control.recordid[0];
 		this.info.title = this.getTitle(display);
 		this.info.creationdate = this.getCreationdate(display);
 		this.info.creator = this.getCreator(display);
 		this.info.type = this.getType(display);
 		this.info.identifier = this.getIdentifier(display);
-		this.info.packageNames = this.getPackages(delivery);
 		this.info.reportDate = new Date(Date.now()).toLocaleDateString() + ' ' + new Date(Date.now()).toLocaleTimeString();
 		this.info.onCampus = this.hsgUserService.isOnCampus();
 		this.info.userAgent = navigator.userAgent;
@@ -93,35 +90,30 @@ export class hsgReportBrokenLinkController {
 		return '';
 	}
 
-	getPackages(delivery) {
-		let es = delivery.electronicServices;
-		if (es) {
-			return es.map(service => service.packageName).join(', ')
-		}
-		return '';
-	}
-
 	getStatus() {
 		return this.status;
 	}
 
 	reportLink(event) {
 		this.collectInfo();
-		if (this.sent) {
-			return;
-		}
 		let that = this;
-		let confirm = this.$mdDialog.confirm()
-			.title(this.translate('popupTitle'))
-			.htmlContent(this.getInfoText())
-			.ariaLabel('report broken link')
-			.targetEvent(event)
-			.ok(this.translate('okLabel'))
-			.cancel(this.translate('cancelLabel'))
-			.multiple('true');
 
-		this.$mdDialog.show(confirm)
-			.then(function () { // send
+		let dialogConfig = {
+			template: this.getTemplate(),
+			controller: 'hsgReportBrokenLinkDialogController',
+			controllerAs: 'dialog',
+			ariaLabel: 'report broken link',
+			targetEvent: event,
+			multiple: 'true',
+			fullscreen: this.$mdMedia('xs')
+		}
+
+		this.$mdDialog.show(dialogConfig)
+			.then(function (dialogModel) { // send
+				that.info.comment = dialogModel.comment + " " || '';
+				if (dialogModel.contact) {
+					that.info.comment += dialogModel.contact;
+				}
 				that.$http.post(
 					that.config.reportEndpoint,
 					that.info,
@@ -134,7 +126,6 @@ export class hsgReportBrokenLinkController {
 					function (success) {
 						console.info(success);
 						that.status = '✓';
-						that.sent = true;
 					},
 					function (error) {
 						console.error(error);
@@ -147,22 +138,53 @@ export class hsgReportBrokenLinkController {
 			});
 	}
 
-	getInfoText() {
+	getTemplate() {
 		return `
-<dl class="hsg-broken-link-info-list">
-	<dt>Report Date</dt><dd>${this.info.reportDate}</dd>
-	<dt>Title</dt><dd>${this.info.title}</dd>
-	<dt>Creator</dt><dd>${this.info.creator}</dd>
-	<dt>Creation Date</dt><dd>${this.info.creationdate}</dd>
-	<dt>Type</dt><dd>${this.info.type}</dd>
-	<dt>MMS-ID</dt><dd>${this.info.mmsId}</dd>
-	<dt>Identifier</dt><dd>${this.info.identifier}</dd>
-	<dt>Package Names</dt><dd>${this.info.packageNames}</dd>
-	<dt>On Campus</dt><dd>${this.info.onCampus}</dd>
-	<dt>User Agent</dt><dd>${this.info.userAgent}</dd>
-	<dt>URL</dt><dd>${this.info.url}</dd>
-</dl>
-`;
+		<md-dialog md-theme="primoExplore" aria-label="report broken link" ng-class="dialog.css" class="_md md-primoExplore-theme md-content-overflow md-transition-in" role="dialog">
+		<md-dialog-content class="md-dialog-content" role="document" tabindex="-1">
+		<h2 class="md-title">${this.translate('popupTitle')}</h2>
+		<div class="md-dialog-content-body">
+		<div>
+			<div flex="">
+			<md-input-container class="md-prompt-input-container md-primoExplore-theme">
+				<label style="font-weight: bold">${this.translate('commentLabel')}</label>
+				<md-icon md-svg-icon="primo-actions:citation" class="md-primoExplore-theme"></md-icon>
+				<input md-autofocus="true" ng-model="dialog.result.comment" placeholder="&#8230;">
+			</md-input-container>
+			</div>
+			<div flex="">
+			<md-input-container class="md-prompt-input-container md-primoExplore-theme">
+				<label style="font-weight: bold">${this.translate('contactLabel')}</label>
+				<md-icon md-svg-icon="primo-actions:email" class="md-primoExplore-theme"></md-icon>
+				<input ng-model="dialog.result.contact" placeholder="name@email.com">
+			</md-input-container>
+			</div>
+		</div>
+		<p>${this.translate('popupInfo')}</p>
+		<dl class="hsg-broken-link-info-list">
+			<dt>Report Date</dt><dd>${this.info.reportDate}</dd>
+			<dt>Title</dt><dd>${this.info.title}</dd>
+			<dt>Creator</dt><dd>${this.info.creator}</dd>
+			<dt>Creation Date</dt><dd>${this.info.creationdate}</dd>
+			<dt>Type</dt><dd>${this.info.type}</dd>
+			<dt>MMS-ID</dt><dd>${this.info.mmsId}</dd>
+			<dt>Identifier</dt><dd>${this.info.identifier}</dd>
+			<dt>On Campus</dt><dd>${this.info.onCampus}</dd>
+			<dt>User Agent</dt><dd>${this.info.userAgent}</dd>
+			<dt>URL</dt><dd>${this.info.url}</dd>
+		</dl>
+		</div>
+		</md-dialog-content>
+		<md-dialog-actions>
+		<button class="md-primary md-cancel-button md-button md-primoExplore-theme md-ink-ripple" type="button" ng-click="dialog.abort()">
+			${this.translate('cancelLabel')}
+		</button>
+		<button class="md-primary md-confirm-button md-button md-ink-ripple md-primoExplore-theme" type="button" ng-click="dialog.hide()">
+			${this.translate('okLabel')}
+		</button>
+		</md-dialog-actions>
+		</md-dialog>
+		`;
 	}
 
 	translate(key) {
@@ -174,7 +196,25 @@ export class hsgReportBrokenLinkController {
 	}
 }
 
-hsgReportBrokenLinkController.$inject = ['$mdDialog', '$http', 'hsgTranslatorService', 'hsgUserService', 'hsgReportBrokenLinkConfig'];
+hsgReportBrokenLinkController.$inject = ['$mdDialog', '$mdMedia', '$http', 'hsgTranslatorService', 'hsgUserService', 'hsgReportBrokenLinkConfig'];
+
+export class hsgReportBrokenLinkDialogController {
+
+	constructor($mdDialog) {
+		this.$mdDialog = $mdDialog;
+		this.result = {};
+	}
+
+	abort() {
+		return this.$mdDialog.cancel();
+	}
+
+	hide() {
+		return this.$mdDialog.hide(this.result);
+	}
+}
+
+hsgReportBrokenLinkDialogController.$inject = ['$mdDialog'];
 
 
 class LinkInfo {
@@ -186,9 +226,9 @@ class LinkInfo {
 		this.type;
 		this.mmsId;
 		this.identifier;
-		this.packages;
 		this.onCampus;
 		this.userAgent;
 		this.url;
+		this.comment;
 	}
 }

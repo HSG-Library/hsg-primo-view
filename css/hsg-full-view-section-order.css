@@ -1,9 +1,9 @@
-/******************************************************************************/
-/********************  Full view change sections order ************************/
-/******************************************************************************/
+/**********************************************/
+/******  Full view change sections order ******/
+/**********************************************/
 
 #full-view-container>*:first-child {
-	display       : flex;
+	display: flex;
 	flex-direction: column;
 }
 
@@ -19,8 +19,8 @@
 	order: 2 !important;
 }
 
-/*View Online*/
-#getit_link1_0 { 
+/****** View Online ******/
+#getit_link1_0 {
 	order: 3 !important;
 }
 
@@ -53,7 +53,7 @@
 	order: 10 !important;
 }
 
-/* Change of links in left navigation bar ENG */
+/****** Change of links in left navigation bar ENG ******/
 
 [aria-label="Top"] {
 	order: 0 !important;
@@ -99,7 +99,7 @@
 	order: 10 !important;
 }
 
-/* Change of links in left navigation bar GER */
+/****** Change of links in left navigation bar GER ******/
 
 [aria-label="Top"] {
 	order: 0 !important;

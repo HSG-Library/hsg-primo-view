@@ -1,0 +1,13 @@
+/***********************************************/
+/******  Full view change section spacing ******/
+/***********************************************/
+
+@media (max-width: 599px) {
+	#brief {
+		margin-bottom: -40px;
+	}
+
+	.full-view-section {
+		margin-bottom: -30px;
+	}
+}

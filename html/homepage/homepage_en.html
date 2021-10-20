@@ -1,29 +1,12 @@
 <md-content>
     <div class="ps_content md-padding" layout-gt-sm="row" layout-align="center start" flex="100">
         <div flex-gt-sm="80" flex="100" layout="column">
-            <md-content class="_md md-primoExplore-theme">
-                <div class="unisg-alert">
-                    <span onclick="this.parentElement.style.display='none'" class="unisg-alert-close">
-                        <prm-icon class="padding-right-small" icon-type="svg" svg-icon-set="primo-ui"
-                            icon-definition="close">
-                            <md-icon md-svg-icon='primo-ui:close'></md-icon>
-                        </prm-icon>
-                    </span>
-                    <p>Due to renovation works, the library circulation desk will be located in the basement of the
-                        library building until fall semester 2021. Please note further information on our
-                        <a href="https://www.unisg.ch/de/universitaet/bibliothek" target="_blank">website</a>
-                    </p>
-                    <p>Due to renovation work in the library building, from July 5th until approx. August 2nd, 2021 some
-                        call numbers are blocked and cannot be ordered. Please go to our <a
-                            href="https://www.unisg.ch/en/universitaet/bibliothek/aktuell/rss-news/2021/teile-des-bibliotheksbestandes-gesperrt"
-                            target="_blank">website</a> for further information.
-                    </p>
-                </div>
-            </md-content>
+            <hsg-alert-message-component></hsg-alert-message-component>
         </div>
     </div>
 
     <div class="ps_content md-padding" layout-gt-sm="row" layout-align="center start" flex="100">
+        <!-- column 1-->
         <div flex-gt-sm="40" flex="100" layout="column">
             <md-card class="cardbox default-card">
                 <md-card-title>
@@ -71,7 +54,23 @@
                     </p>
                 </md-card-content>
             </md-card>
+            <md-card class="cardbox default-card">
+                <md-card-title>
+                    <md-card-title-text>
+                        <h2 class="md-headline">Not on campus?</h2>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content>
+                    <p>
+                        To access electronic content provided by the HSG-Library, you need to establish a <a
+                            href="https://www.unisg.ch/en/universitaet/bibliothek/dienstleistungen/infrastruktur/internetzugang"
+                            target="_blank">VPN connection</a>.
+                    </p>
+                </md-card-content>
+            </md-card>
         </div>
+
+        <!-- column 2 -->
         <div flex-gt-sm="40" flex="100" layout="column">
             <md-card class="cardbox default-card">
                 <md-card-title>
@@ -96,6 +95,9 @@
                         <a href="https://www.unisg.ch/en/universitaet/bibliothek/dienstleistungen/beratung"
                             target="_blank">Search & Find service</a>
                     </p>
+                    <p>
+                        <a href="jsearch">Journal Search</a>
+                    </p>
                     <p> <br>
                     </p>
                     <p>
@@ -106,34 +108,38 @@
                 </md-card-content>
             </md-card>
 
+
             <md-card class="cardbox default-card">
                 <md-card-title>
                     <md-card-title-text>
-                        <h2 class="md-headline">Not on campus?</h2>
+                        <h2>Search like a pro</h2>
                     </md-card-title-text>
                 </md-card-title>
                 <md-card-content>
                     <p>
-                        To access electronic content provided by the HSG-Library, you need to establish a <a
-                            href="https://www.unisg.ch/en/universitaet/bibliothek/dienstleistungen/infrastruktur/internetzugang"
-                            target="_blank">VPN connection</a>.
+                        HSGswisscovery offers two search profiles: <em>«HSG»</em> that is used as our default search as well as <em>«swisscovery»</em>. What are
+                        the differences, what is included in your search?
                     </p>
+                    <h4>HSG</h4>
+                    <ul>
+                        <li>Our physical holdings (books, journals and AV media)</li>
+                        <li>Alexandria, the Institutional Repository of the University of St.Gallen</li>
+                        <li>Our licensed electronic products (databases, E-journals and E-books)</li>
+                        <li>Additional electronic content that is available Open Access</li>
+                    </ul>
+                    <br>
+                    <h4>swisscovery</h4>
+                    <p>
+                        By selecting the search profile swisscovery, you can expand your search to all of Switzerland. Additionally to our
+                        content, you can find:
+                    </p>
+                    <ul>
+                        <li>Physical holdings from all 500 libraries participating in our network</li>
+                        <li>Additional free content that is made available by participating libraries in the network (Institutional Repositories,
+                        free E-collections and archives)</li>
+                    </ul>
                 </md-card-content>
             </md-card>
-            <md-card class="cardbox default-card">
-                <md-card-title>
-                    <md-card-title-text>
-                        <h2 class="md-headline">What is new?</h2>
-                    </md-card-title-text>
-                </md-card-title>
-                <md-card-content>
-                    <div class="resp-container">
-                        <iframe class="resp-iframe" src="https://tube.switch.ch/embed/bff2c4a6" frameborder="0"
-                            webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-                    </div>
-                </md-card-content>
-            </md-card>
-
         </div>
     </div>
 </md-content>

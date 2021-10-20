@@ -1,0 +1,7 @@
+/***************************************************/
+/****** Request/Digitization Button for items ******/
+/***************************************************/
+
+prm-service-button button.md-button {
+	box-shadow: none;
+}

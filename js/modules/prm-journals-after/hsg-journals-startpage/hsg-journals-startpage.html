@@ -1,0 +1,25 @@
+<div ng-if="$ctrl.showStartPage()" class="hsg-journals" layout-gt-sm="row" flex="100" layout-padding layout-align="center start">
+	<div flex-gt-sm="50" flex="100" layout="column">
+		<md-card class="default-card hsg-card hsg-card-journals">
+			<md-card-title flex="none" class="hsg-card-title">
+				<md-card-title-text>
+					<span class="md-headline" role="heading" aria-level="2">{{::$ctrl.translate('title')}}</span>
+				</md-card-title-text>
+			</md-card-title>
+			<md-card-content>
+				<p>
+					{{::$ctrl.translate('mainText')}}
+				</p>
+				<p>
+					{{::$ctrl.translate('infoTitle')}}
+				</p>
+				<ul>
+					<li ng-bind-html="::$ctrl.translate('info01')">
+					</li>
+					<li ng-bind-html="::$ctrl.translate('info02')">
+					</li>
+				</ul>
+			</md-card-content>
+		</md-card>
+	</div>
+</div>

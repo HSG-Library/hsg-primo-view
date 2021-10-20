@@ -1,0 +1,25 @@
+/******************************/
+/****** Locations filter ******/
+/******************************/
+
+/* locations filter by default; hide filter button */
+prm-locations button[ng-if='$ctrl.displayFiltersButton && !$ctrl.locationsPrefilterActive'],
+prm-location-items button[ng-if='($ctrl.isFilter || $ctrl.isFiltered) && $ctrl.isAnyFilterFilled()'] {
+	display: none !important;
+}
+
+/* Location filter "Clear" button */
+prm-locations-filter .md-button.button-as-link:hover:not([disabled]) {
+	background-color: rgba(17, 17, 17, 0.10) !important;
+}
+
+/*filter bar*/
+prm-locations-filter md-select {
+	margin-top: 1px;
+}
+
+prm-location-items prm-service-button .md-button.button-as-link {
+	padding: 0 6px !important;
+	box-shadow: none;
+	line-height: 28px;
+}

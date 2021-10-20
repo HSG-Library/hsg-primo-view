@@ -1,0 +1,35 @@
+/******************************************/
+/****** Header menu: switch language ******/
+/******************************************/
+
+bcu-lang-switch-component {
+	padding-right: 16px;
+	color: transparent;
+}
+
+bcu-lang-switch-component .md-button.md-lang-button {
+	height: 29px;
+	min-height: 29px;
+	margin: 15px 1px !important;
+	min-width: 29px;
+	width: 29px;
+	line-height: 23px;
+	text-transform: capitalize;
+	border: 1px solid transparent;
+	border-radius: 2px;
+}
+
+bcu-lang-switch-component .md-button.md-lang-button.active {
+	border-color: rgba(0, 0, 0, 0.59);
+}
+
+bcu-lang-switch-component .md-button.md-lang-button:hover {
+		/*color: rgba(255, 255, 255, 0.85);*/
+	background-color: #ddd !important;
+	color: #000 !important;
+}
+
+bcu-lang-switch-component .md-button.md-lang-button.active:hover {
+	background-color: #fff !important;
+	color: #222 !important;
+}

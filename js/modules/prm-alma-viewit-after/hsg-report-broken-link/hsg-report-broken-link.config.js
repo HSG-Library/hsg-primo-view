@@ -6,8 +6,12 @@ export const hsgReportBrokenLinkConfig = {
 			en: 'Report broken link'
 		},
 		popupTitle: {
-			de: 'Folgende Daten werden übermittelt.',
-			en: 'The following information will be sent.'
+			de: 'Fehlerhaften Link melden',
+			en: 'Report broken link'
+		},
+		popupInfo: {
+			de: 'Folgende Daten werden übermittelt:',
+			en: 'The following data will be transmitted:'
 		},
 		okLabel: {
 			de: 'Senden',
@@ -16,6 +20,14 @@ export const hsgReportBrokenLinkConfig = {
 		cancelLabel: {
 			de: 'Abbrechen',
 			en: 'Cancel'
+		},
+		commentLabel: {
+			de: 'Kommentar, Beschreibung des Problems',
+			en: 'Comment, problem description'
+		},
+		contactLabel: {
+			de: 'Kontakt-Email (für Unterstützung/Feedback zu ihrer Meldung)',
+			en: 'Contact-Email (for support/feedback regarding your report)'
 		},
 		errorMessage: {
 			de: 'Fehler beim Senden des Reports.',

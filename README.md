@@ -42,7 +42,7 @@ Images documentation from ExLibris: [https://github.com/ExLibrisGroup/primo-expl
 The Javascript code in organised in angular modules, one module per feature. The modules which need a Primo after directive as hook, are grouped accordingly. \
 Services which are not exclusive to one module, are placed in the `'services'` directory. \
 All modules must be imported into `'main.js'`, which is the entry point for the customization code. Code placed in `'main.js'` is will be used 'as-is' in the resulting `'custom.js'` file.
-Since `'custom.'` and `'custom.js.map'` are generated files, they should not be commited and thus are gitignored.
+Since `'custom.js'` and `'custom.js.map'` are generated files, they should not be commited and thus are gitignored.
 
 JS Documentation from ExLibris: [https://github.com/ExLibrisGroup/primo-explore-package/blob/master/VIEW_CODE/js/README.md](https://github.com/ExLibrisGroup/primo-explore-package/blob/master/VIEW_CODE/js/README.md)
 

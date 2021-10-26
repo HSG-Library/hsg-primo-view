@@ -38,6 +38,6 @@ There is a proof of concept to report exceptions to a remote serivce via http, i
 	Slight modification in the CSS, as well as the code structure.
   * **`sls-ill-signin-order-logged-out`** *module*\
 	Adapted from SLSP, see: https://github.com/Swiss-Library-Service-Platform/Swisscovery-Network-Zone/tree/main/41SLSP_NETWORK-VU1_UNION/js/slsp-ill-signin-order-logged-out
-* **`slsp-http-intercept-requests` (not-active)** *global module*\
+* **`slsp-http-intercept-requests`** *global module*\
 Adapted from SLSP see: https://github.com/Swiss-Library-Service-Platform/swisscovery/tree/main/41SLSP_NETWORK-VU1_UNION/js/slsp-http-intercept-requests \ 
 Users are now allowed to cancel a request or a digitization request only if the process is "not started" or "process started". If the process is "in process", "in transit" and “on hold shelf”, the user cannot cancel a request or a digitization.

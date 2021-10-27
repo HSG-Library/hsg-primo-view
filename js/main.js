@@ -37,7 +37,7 @@ window.browzine = {
 	apiKey: "17316fec-6c1d-4f1f-b68a-20053d35dfb8",
 
 	// **labels maintained and translated in hsg-browzine-integration module**
-	journalCoverImagesEnabled: false,
+	journalCoverImagesEnabled: true,
 	journalBrowZineWebLinkTextEnabled: false,
 
 	articleBrowZineWebLinkTextEnabled: true,

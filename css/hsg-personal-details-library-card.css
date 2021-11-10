@@ -17,7 +17,6 @@ prm-personal-info-after {
 
 slsp-edit-personal-details-component#SLSPeditPersonalDetails {
 	background-color: #f0f0f0;
-	padding-top: 30px;
 }
 
 /*Library card: IZ selector for mobiles*/
@@ -32,7 +31,6 @@ slsp-edit-personal-details-component#SLSPeditPersonalDetails {
 /*Library card: Show not renewable messages in list of loans*/
 prm-loan .md-list-item-text.md-list-item-with-checkbox.layout-wrap.layout-row.flex {
 	order: 1;
-	/*flex-flow: column;*/
 	max-width: 75%;
 }
 

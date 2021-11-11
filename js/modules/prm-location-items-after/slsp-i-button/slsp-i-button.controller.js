@@ -1,16 +1,36 @@
 export class slspIButtonController {
 
-	constructor() {
-		this.vm = this.afterCtrl;
+	constructor(hsgTranslatorService) {
+		this.hsgTranslatorService = hsgTranslatorService;
+	}
+
+	$onInit() {
+		debugger;
+		this.parentCtrl = this.afterCtrl.parentCtrl;
 		this.biblinkText = "Library";
-		this.biblinkBase = "https:\/\/slsp.ch\/libraries";
+		this.biblinkBase = "https:\/\/registration.slsp.ch\/libraries\/\?search\=";
+		this.currLoc = this.parentCtrl.currLoc;
 	}
 
 	getLibrary() {
-		const currLoc = this.vm.parentCtrl.currLoc;
-		if (currLoc) {
-			return currLoc.location.librarycodeTranslation;
+		if (this.currLoc) {
+			return this.currLoc.location.librarycodeTranslation;
 		}
 		return "";
 	}
+
+	getLibraryCode() {
+		if (this.currLoc) {
+			return this.currLoc.location.libraryCode;
+
+		}
+		return "";
+	}
+
+	getLanguage() {
+		return this.hsgTranslatorService.getLang();
+
+	}
 }
+
+slspIButtonController.$inject = ['hsgTranslatorService'];

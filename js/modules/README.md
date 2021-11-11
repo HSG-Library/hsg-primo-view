@@ -15,6 +15,9 @@ There is a proof of concept to report exceptions to a remote serivce via http, i
 * **`prm-journals-after`** *hook*
   * **`hsg-journals-startpage`** *module*\
   Start page for the journals search, similar to the [ETHZ Solution](https://gitlab.com/ethlibrary/slsp/customization-eth-view/-/tree/master/js/modules/prm-journals-after/eth-journals-startpage)
+* **`prm-loans-after`** *hook*
+  * **`slsp-renew-item-text`** *module*\
+  New way to display reasons why an item is not renewable [SLSP Solution](https://github.com/Swiss-Library-Service-Platform/swisscovery/tree/main/41SLSP_NETWORK-VU1_UNION/js/prm-loan-after/slsp-renew-item-text)  
 * **`prm-location-items-after`** *hook*	
   * **`slsp-i-button`** *module*\
   Adapted from SLSP, see: https://github.com/Swiss-Library-Service-Platform/Swisscovery-Network-Zone/tree/main/41SLSP_NETWORK-VU1_UNION/js/slsp-i-button

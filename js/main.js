@@ -42,7 +42,7 @@ window.browzine = {
 	journalCoverImagesEnabled: true,
 	journalBrowZineWebLinkTextEnabled: false,
 
-	articleBrowZineWebLinkTextEnabled: true,
+	articleBrowZineWebLinkTextEnabled: false,
 	articlePDFDownloadLinkEnabled: true,
 	articleLinkEnabled: true,
 

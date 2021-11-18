@@ -1,9 +1,10 @@
 export class hsgBrowzineIntegrationController {
 
-	constructor($window, $scope, hsgTranslatorService) {
+	constructor($window, $scope, hsgBrowzineIntegrationConfig, hsgTranslatorService) {
 		this.$window = $window;
 		this.$scope = $scope;
-		this.hsgTranslatorService = hsgTranslatorService;
+		this.config = hsgBrowzineIntegrationConfig;
+		this.translator = hsgTranslatorService;
 	}
 
 	$onInit() {
@@ -14,23 +15,17 @@ export class hsgBrowzineIntegrationController {
 	}
 
 	translateToCurrentLanguage() {
-		// default labels (en)
 		let labels = {
-			articleBrowZineWebLinkText: "View Issue Contents in BrowZine HSG",
-			articlePDFDownloadLinkText: "Download PDF",
-			articleLinkText: "Read Article",
+			articlePDFDownloadLinkText: this.translate('articlePDFDownloadLinkText'),
+			articleLinkText: this.translate('articleLinkText'),
 		};
-		if (this.hsgTranslatorService.getLang() == "de") {
-			// translate labels to de
-			labels = {
-				articleBrowZineWebLinkText: "Inhalt der Ausgabe in BrowZine HSG anzeigen",
-				articlePDFDownloadLinkText: "PDF herunterladen",
-				articleLinkText: "Artikel lesen",
-			};
-		}
 		// merge existing config with current language labels
 		this.$window.browzine = Object.assign(this.$window.browzine, labels);
 	}
+
+	translate(key) {
+		return this.translator.getLabel(key, this.config);
+	}
 }
 
-hsgBrowzineIntegrationController.$inject = ['$window', '$scope', 'hsgTranslatorService'];
+hsgBrowzineIntegrationController.$inject = ['$window', '$scope', 'hsgBrowzineIntegrationConfig', 'hsgTranslatorService'];

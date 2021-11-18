@@ -1,0 +1,24 @@
+{
+  "name": "primo-custom-package-ci",
+  "version": "1.0.0",
+  "description": "primo custom package ci",
+  "author": "jfu",
+  "devDependencies": {
+    "@babel/preset-env": "^7.0.0",
+    "babel-plugin-angularjs-annotate": "^0.10.0",
+    "babel-plugin-transform-define": "^2.0.0",
+    "babel-plugin-transform-html-import-to-string": "^1.0.0",
+    "babelify": "^10.0.0",
+    "browserify": "^17.0.0",
+    "del": "^6.0.0",
+    "gulp": "^4.0.0",
+    "gulp-angular-templatecache": "^3.0.0",
+    "gulp-concat": "^2.0.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-zip": "^5.0.0",
+    "minimist": "^1.0.0",
+    "require-dir": "^1.0.0",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^2.0.0"
+  }
+}

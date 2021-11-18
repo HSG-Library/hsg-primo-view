@@ -6,7 +6,7 @@ on:
       - develop
 
 env:
-  PACKAGE_NAME: '41SLSP_HSG-HSGsandbox_jfu'
+  PACKAGE_NAME: '41SLSP_HSG-sandbox_jfu'
 
 jobs:
   build:
@@ -33,7 +33,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: 'latest'         
+        tag_name: 'latest-develop'         
         release_name: 'Latest development package'
         draft: false
         prerelease: true        

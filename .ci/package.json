@@ -4,6 +4,7 @@
   "description": "primo custom package ci",
   "author": "jfu",
   "devDependencies": {
+    "@babel/core": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "babel-plugin-angularjs-annotate": "^0.10.0",
     "babel-plugin-transform-define": "^2.0.0",

@@ -1,4 +1,4 @@
-name: Create release package on tag
+name: Create release package on push to main
 
 on:
   push:
@@ -27,8 +27,13 @@ jobs:
         npm ci
         gulp -f gulpfile-ci.js create-package --view ${{ env.PACKAGE_NAME }}
 
+    - name: Set timezone
+      uses: szenius/set-timezone@v1.0
+      with:
+        timezoneLinux: 'Europe/Zurich'
+
     - name: Generate verison name
-      run: echo "VERSION::v$(date +'%Y.%m.%d-%H%M%S')" >> $GITHUB_ENV
+      run: echo "VERSION=v$(date +'%Y.%m.%d-%H%M%S')" >> $GITHUB_ENV
 
     - name: Create Release and upload artifact
       uses: marvinpinto/action-automatic-releases@latest

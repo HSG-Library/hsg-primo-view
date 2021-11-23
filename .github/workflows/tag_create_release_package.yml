@@ -31,7 +31,6 @@ jobs:
       uses: marvinpinto/action-automatic-releases@latest
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
-        automatic_release_tag: ${{ github.ref }}
-        prerelease: true
-        title: Release ${{ github.ref }}
+        prerelease: false
+        title: Release ${{ github.ref_name }}
         files: ./.ci/${{ env.PACKAGE_NAME }}.zip

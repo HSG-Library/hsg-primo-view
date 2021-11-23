@@ -8,7 +8,7 @@ export class slspIButtonController {
 		debugger;
 		this.parentCtrl = this.afterCtrl.parentCtrl;
 		this.biblinkText = "Library";
-		this.biblinkBase = "https:\/\/registration.slsp.ch\/libraries\/\?search\=";
+		this.biblinkBase = "https:\/\/registration.slsp.ch\/libraries\/\?library\=";
 		this.currLoc = this.parentCtrl.currLoc;
 	}
 

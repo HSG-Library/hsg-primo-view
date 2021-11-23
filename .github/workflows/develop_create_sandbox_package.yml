@@ -1,4 +1,4 @@
-name: Create Package for Tag
+name: Create latest develop release package
 
 on:
   push:

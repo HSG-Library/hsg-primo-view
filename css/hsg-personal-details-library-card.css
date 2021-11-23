@@ -1,0 +1,86 @@
+/*******************************************/
+/****** Library Card Personal Details ******/
+/*******************************************/
+
+/*Library card Personal details display*/
+#personalDetails>md-card-content>div {
+	flex-flow: column;
+}
+
+#personalDetails .md-input-has-value.layout-column {
+	min-width: 400px;
+}
+
+prm-personal-info-after {
+	display: flex;
+}
+
+slsp-edit-personal-details-component#SLSPeditPersonalDetails {
+	background-color: #f0f0f0;
+}
+
+/*Library card: IZ selector for mobiles*/
+@media (max-width: 599px) {
+
+	div.md-select-menu-container.md-primoExplore-theme.md-active.md-clickable,
+	prm-account prm-linked-user-selector {
+		font-size: 16px !important;
+	}
+}
+
+/*Library card: Show not renewable messages in list of loans*/
+prm-loan .md-list-item-text.md-list-item-with-checkbox.layout-wrap.layout-row.flex {
+	order: 1;
+	max-width: 75%;
+}
+
+prm-loan-after {
+	order: 2;
+	align-self: baseline;
+	flex: 15%;
+}
+
+prm-loan-after span.md-subhead {
+	font-size: small;
+	line-height: 18px;
+	color: #d84f26;
+	padding: 22px 0;
+	margin: 0 0 0 -35px;
+}
+
+prm-loan>div.align-self-stretch.flex-xs-50 {
+	order: 4;
+}
+
+prm-loan>div.md-list-item-text.md-list-item-with-checkbox.layout-wrap.layout-row.flex>div:nth-child(3) {
+	min-width: 100%;
+}
+
+prm-loan>div.md-list-item-text.md-list-item-with-checkbox.layout-wrap.layout-row.flex>div:nth-child(4) {
+	min-width: 50%;
+	margin: 10px 0;
+}
+
+prm-loan>div.md-list-item-text.md-list-item-with-checkbox.layout-wrap.layout-row.flex>div:nth-child(5) {
+	min-width: 43%;
+	justify-content: flex-end;
+	align-items: baseline;
+}
+
+#accountoverview>md-tabs>md-tabs-content-wrapper>md-tab-content:nth-child(2)>div>div {
+	flex-direction: column;
+}
+
+prm-loan .not-renewable {
+	padding: 6px 0px 6px 6px;
+	display: block;
+	border: 1px #d23333 solid;
+	max-width: min-content;
+}
+
+/*Library card: hide not renewable messages in list of loans for mobiles*/
+@media (max-width: 599px) {
+	slsp-renew-item-text-component {
+		display: none;
+	}
+}

@@ -48,6 +48,11 @@ export class slspEditPersonalDetailsController {
 		}
 		return false;
 	}
-}
 
+	buttonMove() {
+		let parentElement = angular.element(document.querySelector('prm-personal-info > div.layout-wrap.layout-align-center-start.layout-row > md-card:nth-child(2)'));
+		let element = angular.element(document.querySelector('#SLSPeditPersonalDetails'));
+		parentElement.append(element);
+	}
+}
 slspEditPersonalDetailsController.$inject = ['hsgTranslatorService'];

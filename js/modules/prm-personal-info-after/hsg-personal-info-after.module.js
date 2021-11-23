@@ -4,7 +4,7 @@ export const hsgPersonalInfoAfterModule = angular
 	.module('hsgPersonalInfoAfterModule', [])
 	.component('prmPersonalInfoAfter', {
 		bindings: { parentCtrl: '<' },
-		template: `<slsp-edit-personal-details-component after-ctrl="$ctrl"></slsp-edit-personal-details-component>`
+		template: `<slsp-edit-personal-details-component after-ctrl="$ctrl" id="SLSPeditPersonalDetails"></slsp-edit-personal-details-component>`
 	})
 
 hsgPersonalInfoAfterModule.requires.push(slspEditPersonalDetailsModule.name);

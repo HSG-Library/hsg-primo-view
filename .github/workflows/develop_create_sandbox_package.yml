@@ -1,0 +1,37 @@
+name: Create latest develop release package
+
+on:
+  push:
+    branches:
+      - develop
+
+env:
+  PACKAGE_NAME: '41SLSP_HSG-sandbox_jfu'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Use Node.js 16.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: 16.x
+
+    - name: Build
+      run: |
+        cd .ci/
+        npm ci
+        gulp -f gulpfile-ci.js create-package --view ${{ env.PACKAGE_NAME }}
+
+    - name: Create Release and upload artifact
+      uses: marvinpinto/action-automatic-releases@latest
+      with:
+        repo_token: "${{ secrets.GITHUB_TOKEN }}"
+        automatic_release_tag: "latest-develop"
+        prerelease: true
+        title: 'Latest development package'
+        files: ./.ci/${{ env.PACKAGE_NAME }}.zip

@@ -5,3 +5,23 @@
 prm-stack-map .button-with-icon {
 	border: none;
 }
+
+/** Media Scout button visible in item view on mobile  **/
+@media (max-width: 960px) {
+	prm-location-items .tab-content-header {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	prm-location-items .tab-content-header button {
+		display: none;
+	}
+
+	prm-location-items .tab-content-header prm-stack-map {
+		margin-left: -2px;
+		margin-top: 10px;
+		background-color: #e6e6e6;
+		border-radius: 3px;
+		border-color: transparent;
+	}
+}

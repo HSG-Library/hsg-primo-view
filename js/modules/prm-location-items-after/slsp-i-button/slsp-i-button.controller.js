@@ -5,7 +5,6 @@ export class slspIButtonController {
 	}
 
 	$onInit() {
-		debugger;
 		this.parentCtrl = this.afterCtrl.parentCtrl;
 		this.biblinkText = "Library";
 		this.biblinkBase = "https:\/\/registration.slsp.ch\/libraries\/\?library\=";
@@ -22,14 +21,12 @@ export class slspIButtonController {
 	getLibraryCode() {
 		if (this.currLoc) {
 			return this.currLoc.location.libraryCode;
-
 		}
 		return "";
 	}
 
 	getLanguage() {
 		return this.hsgTranslatorService.getLang();
-
 	}
 }
 

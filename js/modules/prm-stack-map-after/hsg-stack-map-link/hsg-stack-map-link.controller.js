@@ -29,6 +29,8 @@ export class hsgStackMapLinkController {
 
 	getTemplate(ctx) {
 		let href = ctx.$element.parent().parent().children().attr('href');
+		href = this.secureLink(href);
+		debugger;
 		return `
 		<md-dialog style="display: flex; flex-direction: column; height: 100%; width: 100%;overflow:scroll;" md-theme="primoExplore" aria-label="MediaScout" ng-class="dialog.css" class="_md md-primoExplore-theme md-content-overflow md-transition-in" role="dialog">
 			<md-dialog-content style="display: flex; flex-grow: 1;" class="md-dialog-content" role="document">
@@ -43,6 +45,9 @@ export class hsgStackMapLinkController {
 		`;
 	}
 
+	secureLink(href) {
+		return href.replace('http:', 'https:');
+	}
 }
 
 hsgStackMapLinkController.$inject = ['$element', '$mdDialog', '$mdMedia'];

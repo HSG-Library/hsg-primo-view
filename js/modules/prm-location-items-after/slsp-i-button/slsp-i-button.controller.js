@@ -8,21 +8,24 @@ export class slspIButtonController {
 		this.parentCtrl = this.afterCtrl.parentCtrl;
 		this.biblinkText = "Library";
 		this.biblinkBase = "https:\/\/registration.slsp.ch\/libraries\/\?library\=";
-		this.currLoc = this.parentCtrl.currLoc;
 	}
 
 	getLibrary() {
-		if (this.currLoc) {
-			return this.currLoc.location.librarycodeTranslation;
+		let currLoc = this.parentCtrl.currLoc;
+		if (currLoc) {
+			return currLoc.location.librarycodeTranslation;
+		} else {
+			return this.parentCtrl.loc.location.librarycodeTranslation;
 		}
-		return "";
 	}
 
 	getLibraryCode() {
-		if (this.currLoc) {
-			return this.currLoc.location.libraryCode;
+		let currLoc = this.parentCtrl.currLoc;
+		if (currLoc) {
+			return currLoc.location.libraryCode;
+		} else {
+			return this.parentCtrl.loc.location.libraryCode;
 		}
-		return "";
 	}
 
 	getLanguage() {

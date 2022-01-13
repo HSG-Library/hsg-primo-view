@@ -23,3 +23,12 @@ prm-location-items prm-service-button .md-button.button-as-link {
 	box-shadow: none;
 	line-height: 28px;
 }
+
+.full-view-container {
+	overflow-y: hidden;
+	margin-bottom: 50px;
+}
+
+html#primoExploreRoot {
+	overflow-y: auto !important;
+}

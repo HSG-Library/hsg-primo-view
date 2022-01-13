@@ -55,9 +55,15 @@ button.switch-to-advanced.zero-margin.button-with-icon.md-button.md-primoExplore
     border-radius: 5px;
 }
 
-.md-button.button-as-link {
-    line-height: 36px;
-    padding: 0 12px;
+
+.md-button.md-primary:hover:not([disabled]),
+.md-button.md-primary:focus:not([disabled]),
+prm-favorites-labels .md-chips .md-chip.toggleable-chip:not(.chip-toggled-on) .md-chip-content:hover:not([disabled]),
+prm-favorites-labels .md-chips .md-chip:not(.chip-toggled-on) .md-chip-content:hover:not([disabled]),
+.bar prm-authentication .md-button:hover:not([disabled]),
+button.dismiss-alert-button:hover {
+    color: #fff;
+    background-color: #111;
 }
 
 .md-button.md-primary:hover:not([disabled]), .md-button.md-primary:focus:not([disabled]), prm-favorites-labels .md-chips .md-chip.toggleable-chip:not(.chip-toggled-on) .md-chip-content:hover:not([disabled]), prm-favorites-labels .md-chips .md-chip:not(.chip-toggled-on) .md-chip-content:hover:not([disabled]), .bar prm-authentication .md-button:hover:not([disabled]), button.dismiss-alert-button:hover {
@@ -144,11 +150,13 @@ md-card-content a, prm-service-details a, div.courier-info > span a {
 /*footer layout*/
 md-card.prm-primary-bg.psfooter {
     margin: 16px 0 0 0;
+    padding: 0 8%;
 }
 
 /*footer layout*/
 md-card.prm-primary-bg.psfooter-legal {
     margin: 1px 0 0 0;
+    padding: 0 8%;
 }
 
 /*Responsive footer layout*/

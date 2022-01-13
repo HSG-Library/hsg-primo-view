@@ -31,6 +31,7 @@ slsp-edit-personal-details-component#SLSPeditPersonalDetails {
 /*Library card: Show not renewable messages in list of loans*/
 prm-loan .md-list-item-text.md-list-item-with-checkbox.layout-wrap.layout-row.flex {
 	order: 1;
+	/*flex-flow: column;*/
 	max-width: 75%;
 }
 
@@ -45,7 +46,6 @@ prm-loan-after span.md-subhead {
 	line-height: 18px;
 	color: #d84f26;
 	padding: 22px 0;
-	margin: 0 0 0 -35px;
 }
 
 prm-loan>div.align-self-stretch.flex-xs-50 {

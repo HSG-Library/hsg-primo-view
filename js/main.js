@@ -10,6 +10,7 @@ import { hsgLocationsAfterModule } from './modules/prm-locations-after/hsg-locat
 import { hsgPersonalInfoAfterModule } from './modules/prm-personal-info-after/hsg-personal-info-after.module';
 import { hsgRequestAfterModule } from './modules/prm-request-after/hsg-request-after.module';
 import { hsgSearchResultAvailabilityLineAfterModule } from './modules/prm-search-result-availability-line-after/hsg-search-result-availabilty-line-after.module';
+import { hsgServiceDetailsAfterModule } from './modules/prm-service-details-after/hsg-service-details-after.module';
 import { hsgStackMapAfterModule } from './modules/prm-stack-map-after/hsg-stack-map-after.module';
 import { hsgUserAreaExpandableAfterModule } from './modules/prm-user-area-expandable-after/hsg-user-ara-expandable-after.module';
 import { slspHttpInterceptRequestsModule } from './modules/slsp-http-intercept-requests/slsp-http-intercept-requests.module';
@@ -27,6 +28,7 @@ app.requires.push(hsgLocationsAfterModule.name);
 app.requires.push(hsgPersonalInfoAfterModule.name);
 app.requires.push(hsgRequestAfterModule.name);
 app.requires.push(hsgSearchResultAvailabilityLineAfterModule.name);
+app.requires.push(hsgServiceDetailsAfterModule.name);
 app.requires.push(hsgStackMapAfterModule.name);
 app.requires.push(hsgUserAreaExpandableAfterModule.name);
 app.requires.push(slspHttpInterceptRequestsModule.name);

@@ -3,6 +3,10 @@
 	* **`slsp-ill-signin-order-alert`** *module*\
 	Adapted from SLSP, see: https://github.com/Swiss-Library-Service-Platform/Swisscovery-Network-Zone/tree/main/41SLSP_NETWORK-VU1_UNION/js/slsp-ill-signin-order-alert
 
+* **`alma-htgi-svc-after`** *hook*
+	* **`slsp-archives-htgi`** *module*\
+	Adapted from SLSP, see: https://github.com/Swiss-Library-Service-Platform/central-customization-package/tree/main/41SLSP_NETWORK-CENTRAL_PACKAGE/js/slsp-archives-htgi
+
 * **`hsg-alert-message`** *global module*\
 Module used on the homepage to display (alert) messages to the users. The messages can be edited in SharePoint, and will be retrieved via ajax. 
 

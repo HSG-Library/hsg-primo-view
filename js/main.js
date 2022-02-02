@@ -1,5 +1,6 @@
 
 import { hsgHowovpAfterModule } from './modules/alma-howovp-after/hsg-howovp-after.module';
+import { hsgHtgiSvcAfterModule } from './modules/alma-htgi-svc-after/hsg-htgi-svc-after.module';
 import { hsgAlertMessageModule } from './modules/hsg-alert-message/hsg-alert-message.module';
 import { hsgExceptionHandlerModule } from './modules/hsg-exception-handler/hsg-exception-handler.module';
 import { hsgAlmaViewitAfterModule } from './modules/prm-alma-viewit-after/hsg-alma-viewit-after.module';
@@ -20,6 +21,7 @@ let app = angular.module('viewCustom', ['angularLoad']);
 app.requires.push(hsgAlertMessageModule.name);
 app.requires.push(hsgExceptionHandlerModule.name);
 app.requires.push(hsgHowovpAfterModule.name);
+app.requires.push(hsgHtgiSvcAfterModule.name);
 app.requires.push(hsgAlmaViewitAfterModule.name);
 app.requires.push(hsgJournalsAfterModule.name);
 app.requires.push(hsgLoanAfterModule.name);

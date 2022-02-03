@@ -34,78 +34,81 @@ export class hsgServiceDetailsFoldableItemsController {
 
 	makeFoldable() {
 		let details = this.parentCtrl._details;
+		
 		for (let key in details) {
 			let detail = details[key];
 			if (typeof detail != 'object') {
 				continue;
 			}
+			if (this.config.ignore.includes(detail.label)) {
+				continue;
+			}
 			let values = detail.values[0].values;
 
 			let textLength = values[0].length;
-			if (textLength > 300) {
+			if (textLength > this.config.charCount) {
 				this.addMarkup(this.getItemContainer(key), 1, true);
-			} else  if (values.length > 4) {
-				this.addMarkup(this.getItemContainer(key), 4, false);
+			} else if (values.length > this.config.itemCount) {
+				this.addMarkup(this.getItemContainer(key), this.config.itemCount, false);
 			}
 		}
 	}
 
-
-getItemContainer(key) {
-	let children = this.rootEl.children();
-	let child = children[key];
-	return child.querySelector('.item-details-element-container');
-}
-
-addMarkup(itemContainer, count, longtext) {
-	itemContainer.classList.add('hsg-collapsed');
-	let item = itemContainer.querySelector('.item-details-element');
-	let listitems = item.querySelectorAll('[role=listitem]');
-	for (let key in listitems) {
-		let listitem = listitems[key];
-		if (typeof listitem != 'object') {
-			continue;
-		}
-		if (longtext && key < count) {
-			listitem.classList.add('hsg-foldable-item-longtext');
-		}
-		if (key >= count) {
-			listitem.classList.add('hsg-foldable-item');
-		}
+	getItemContainer(key) {
+		let children = this.rootEl.children();
+		let child = children[key];
+		return child.querySelector('.item-details-element-container');
 	}
-	let expand = document.createElement('div');
-	expand.classList.add('hsg-expand-button');
-	expand.innerHTML = this.iconExpand + this.translate('expandButtonLabel');
-	item.insertBefore(expand, item.children[count]);
-	let collapse = document.createElement('div');
-	collapse.classList.add('hsg-collapse-button');
-	collapse.innerHTML = this.iconCollapse + this.translate('collapseButtonLabel');
-	collapse.style.display = 'none';
-	item.appendChild(collapse);
 
-	expand.addEventListener('click', function () {
-		expand.style.display = 'none';
-		collapse.style.display = 'inline-block';
-		itemContainer.classList.remove('hsg-collapsed');
-		itemContainer.classList.add('hsg-expanded');
-	});
-
-	collapse.addEventListener('click', function () {
+	addMarkup(itemContainer, count, longtext) {
 		itemContainer.classList.add('hsg-collapsed');
-		itemContainer.classList.remove('hsg-expanded');
-		expand.style.display = 'inline-block';
+		let item = itemContainer.querySelector('.item-details-element');
+		let listitems = item.querySelectorAll('[role=listitem]');
+		for (let key in listitems) {
+			let listitem = listitems[key];
+			if (typeof listitem != 'object') {
+				continue;
+			}
+			if (longtext && key < count) {
+				listitem.classList.add('hsg-foldable-item-longtext');
+			}
+			if (key >= count) {
+				listitem.classList.add('hsg-foldable-item');
+			}
+		}
+		let expand = document.createElement('div');
+		expand.classList.add('hsg-expand-button');
+		expand.innerHTML = this.iconExpand + this.translate('expandButtonLabel');
+		item.insertBefore(expand, item.children[count]);
+		let collapse = document.createElement('div');
+		collapse.classList.add('hsg-collapse-button');
+		collapse.innerHTML = this.iconCollapse + this.translate('collapseButtonLabel');
 		collapse.style.display = 'none';
-	});
-}
+		item.appendChild(collapse);
 
-translate(key) {
-	if (!this.config) {
-		console.log("config missing");
-		return key;
+		expand.addEventListener('click', function () {
+			expand.style.display = 'none';
+			collapse.style.display = 'inline-block';
+			itemContainer.classList.remove('hsg-collapsed');
+			itemContainer.classList.add('hsg-expanded');
+		});
+
+		collapse.addEventListener('click', function () {
+			itemContainer.classList.add('hsg-collapsed');
+			itemContainer.classList.remove('hsg-expanded');
+			expand.style.display = 'inline-block';
+			collapse.style.display = 'none';
+		});
 	}
-	let msg = this.translator.getLabel(key, this.config);
-	return this.$sce.trustAsHtml(msg);
-}
+
+	translate(key) {
+		if (!this.config) {
+			console.log("config missing");
+			return key;
+		}
+		let msg = this.translator.getLabel(key, this.config);
+		return this.$sce.trustAsHtml(msg);
+	}
 }
 
 hsgServiceDetailsFoldableItemsController.$inject = ['$scope', '$element', '$sce', 'hsgServiceDetailsFoldableItemsConfig', 'hsgTranslatorService'];

@@ -1,0 +1,45 @@
+.hsg-collapsed {
+	overflow: hidden;
+}
+
+.hsg-expanded {
+	overflow: hidden;
+}
+
+.hsg-collapsed .hsg-foldable-item {
+	display: none;
+}
+
+.hsg-collapsed .hsg-foldable-item-longtext {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	display: -webkit-box !important;
+	-webkit-line-clamp: 4;
+	-webkit-box-orient: vertical;
+	white-space: normal;
+}
+
+.hsg-expand-button,
+.hsg-collapse-button {
+	display: inline-block;
+	cursor: pointer;
+	line-height: 23px;
+	border-radius: 2px;
+	border: 1px solid rgba(0, 0, 0, 0.59);
+	padding: 1px 10px 1px 0px;
+	margin-top: 10px;
+}
+
+.hsg-expand-button {
+	margin-bottom: 10px;
+}
+
+.hsg-expand-button:hover,
+.hsg-collapse-button:hover {
+	background-color: #ddd;
+}
+
+.hsg-fold-icon-collapse {
+	transform: rotate(180deg);
+	margin-top: -5px;
+}

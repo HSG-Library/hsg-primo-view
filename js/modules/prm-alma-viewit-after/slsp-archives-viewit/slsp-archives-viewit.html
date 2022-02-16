@@ -1,0 +1,24 @@
+<div class="slsp-archives" ng-if="$ctrl.url">
+	<md-list layout="column" class="separate-list-items md-primoExplore-theme layout-column" role="list">
+		<md-list-item role="listitem" ng-href="{{$ctrl.url}}" target="_blank">
+			<span>{{('customized.archives.' + $ctrl.source + '.linktext' | translate)}}</span>
+			<span>{{$ctrl.label}}</span>
+			<div class="md-secondary">
+				<prm-icon icon-type="svg" svg-icon-set="primo-ui" icon-definition="open-in-new" class="layout-margin" />
+			</div>
+		</md-list-item>
+	</md-list>
+	<div ng-if="$ctrl.source === 'ETH_Hochschularchiv'" class="slsp-archives-additional-hint">
+		<div>
+			<span translate="customized.archives.ETH_Hochschularchiv.text1">Informationen zu Bestellung und Benutzung
+				siehe</span>
+			<a target="_blank" rel="noopener" ng-href="http://archivdatenbank-online.ethz.ch/hsa/#/manual">
+				<span translate="customized.archives.ETH_Hochschularchiv.linktext2">Bedienungshinweise</span>
+				<prm-icon external-link icon-type="svg" svg-icon-set="primo-ui" icon-definition="open-in-new">
+				</prm-icon>
+			</a>
+			<span translate="customized.archives.ETH_Hochschularchiv.text2">.</span>
+		</div>
+	</div>
+</div>
+<slsp-alma-viewit-after parent-ctrl="$parent.$ctrl"></slsp-alma-viewit-after>

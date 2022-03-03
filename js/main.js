@@ -3,6 +3,7 @@ import { hsgHowovpAfterModule } from './modules/alma-howovp-after/hsg-howovp-aft
 import { hsgHtgiSvcAfterModule } from './modules/alma-htgi-svc-after/hsg-htgi-svc-after.module';
 import { hsgAlertMessageModule } from './modules/hsg-alert-message/hsg-alert-message.module';
 import { hsgExceptionHandlerModule } from './modules/hsg-exception-handler/hsg-exception-handler.module';
+import { hsgAlmaOtherMembersAfterModule } from './modules/prm-alma-other-members-after/hsg-alma-other-members-after.module'
 import { hsgAlmaViewitAfterModule } from './modules/prm-alma-viewit-after/hsg-alma-viewit-after.module';
 import { hsgJournalsAfterModule } from './modules/prm-journals-after/hsg-journals-after.module';
 import { hsgLoanAfterModule } from './modules/prm-loan-after/hsg-loan-after.module';
@@ -22,6 +23,7 @@ app.requires.push(hsgAlertMessageModule.name);
 app.requires.push(hsgExceptionHandlerModule.name);
 app.requires.push(hsgHowovpAfterModule.name);
 app.requires.push(hsgHtgiSvcAfterModule.name);
+app.requires.push(hsgAlmaOtherMembersAfterModule.name);
 app.requires.push(hsgAlmaViewitAfterModule.name);
 app.requires.push(hsgJournalsAfterModule.name);
 app.requires.push(hsgLoanAfterModule.name);

@@ -7,6 +7,7 @@ import { hsgAlmaOtherMembersAfterModule } from './modules/prm-alma-other-members
 import { hsgAlmaViewitAfterModule } from './modules/prm-alma-viewit-after/hsg-alma-viewit-after.module'
 import { hsgJournalsAfterModule } from './modules/prm-journals-after/hsg-journals-after.module'
 import { hsgLoanAfterModule } from './modules/prm-loan-after/hsg-loan-after.module'
+import { hsgLocationItemAfterModule } from './modules/prm-location-item-after/hsg-location-item-after.module'
 import { hsgLocationItemsAfterModule } from './modules/prm-location-items-after/hsg-location-items-after.module'
 import { hsgLocationsAfterModule } from './modules/prm-locations-after/hsg-locations-after.module'
 import { hsgPersonalInfoAfterModule } from './modules/prm-personal-info-after/hsg-personal-info-after.module'
@@ -28,6 +29,7 @@ app.requires.push(hsgAlmaOtherMembersAfterModule.name)
 app.requires.push(hsgAlmaViewitAfterModule.name)
 app.requires.push(hsgJournalsAfterModule.name)
 app.requires.push(hsgLoanAfterModule.name)
+app.requires.push(hsgLocationItemAfterModule.name)
 app.requires.push(hsgLocationItemsAfterModule.name)
 app.requires.push(hsgLocationsAfterModule.name)
 app.requires.push(hsgPersonalInfoAfterModule.name)

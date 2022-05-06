@@ -21,7 +21,6 @@ export class hsgDisplayItemPolicyController {
 	}
 
 	setItemPolicyText() {
-		debugger
 		// only if organisation is "41SLSP_HSG"
 		if (!this.isOrgHsg()) {
 			return

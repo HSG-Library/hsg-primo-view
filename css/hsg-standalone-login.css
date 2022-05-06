@@ -1,0 +1,28 @@
+/***********************************/
+/****** Standalone Login Page ******/
+/***********************************/
+/*
+ https://hsg.swisscovery.slsp.ch/discovery/login?vid=41SLSP_HSG:HSGswisscovery
+
+
+prm-stand-alone-login .login-card md-list-item.login-brighter-dialog button.md-button:focus,
+prm-stand-alone-login .login-card md-list-item.login-brighter-dialog button.md-button:hover {
+	background-color: #49cb90 !important;
+}
+*/
+
+body.hsg-stand-alone-login-body {
+	background-color: #00802F;
+}
+
+prm-stand-alone-login .layout-column {
+	align-items: stretch;
+}
+
+prm-stand-alone-login .hsg-login-info-card {
+	min-width: 400px;
+}
+
+prm-stand-alone-login .md-button:hover:not([disabled]) {
+	color: #3a3a3a;
+}

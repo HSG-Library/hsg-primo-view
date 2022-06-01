@@ -1,17 +1,17 @@
 export class hsgStackMapLinkController {
 	constructor($element, $mdDialog, $mdMedia) {
-		this.$element = $element;
-		this.$mdDialog = $mdDialog;
-		this.$mdMedia = $mdMedia;
+		this.$element = $element
+		this.$mdDialog = $mdDialog
+		this.$mdMedia = $mdMedia
 	}
 
 	$onInit() {
-		let link = this.$element.parent().parent().children();
-		let that = this;
+		let link = this.$element.parent().parent().children()
+		let that = this
 		link.bind('click', function (e) {
-			e.preventDefault();
-			that.showDialog(that);
-		});
+			e.preventDefault()
+			that.showDialog(that)
+		})
 	}
 
 	showDialog(ctx) {
@@ -24,13 +24,13 @@ export class hsgStackMapLinkController {
 			multiple: 'true',
 			fullscreen: ctx.$mdMedia('xs')
 		}
-		ctx.$mdDialog.show(dialogConfig);
+		ctx.$mdDialog.show(dialogConfig)
 	}
 
 	getTemplate(ctx) {
-		let href = ctx.$element.parent().parent().children().attr('href');
-		href = this.secureLink(href);
-		debugger;
+		let href = ctx.$element.parent().parent().children().attr('href')
+		href = this.secureLink(href)
+		debugger
 		return `
 		<md-dialog style="display: flex; flex-direction: column; height: 100%; width: 100%;overflow:scroll;" md-theme="primoExplore" aria-label="MediaScout" ng-class="dialog.css" class="_md md-primoExplore-theme md-content-overflow md-transition-in" role="dialog">
 			<md-dialog-content style="display: flex; flex-grow: 1;" class="md-dialog-content" role="document">
@@ -42,30 +42,30 @@ export class hsgStackMapLinkController {
 			</button>
 			</md-dialog-actions>
 		</md-dialog>	
-		`;
+		`
 	}
 
 	secureLink(href) {
-		return href.replace('http:', 'https:');
+		return href.replace('http:', 'https:')
 	}
 }
 
-hsgStackMapLinkController.$inject = ['$element', '$mdDialog', '$mdMedia'];
+hsgStackMapLinkController.$inject = ['$element', '$mdDialog', '$mdMedia']
 
 
 export class hsgStackMapLinkDialogController {
 
 	constructor($mdDialog) {
-		this.$mdDialog = $mdDialog;
+		this.$mdDialog = $mdDialog
 	}
 
 	abort() {
-		return this.$mdDialog.cancel();
+		return this.$mdDialog.cancel()
 	}
 
 	hide() {
-		return this.$mdDialog.hide();
+		return this.$mdDialog.hide()
 	}
 }
 
-hsgStackMapLinkDialogController.$inject = ['$mdDialog'];
+hsgStackMapLinkDialogController.$inject = ['$mdDialog']

@@ -59,11 +59,10 @@ export const slspHttpInterceptRequestsConfig = ['$httpProvider',
 						}
 					}
 					catch (error) {
-						console.error(error);
+						console.error(error)
 					}
-					return response;
+					return response
 				}
 			}
 		}])
 	}]
-	

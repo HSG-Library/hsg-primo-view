@@ -1,7 +1,7 @@
-import { hsgTranslatorService } from '../../services/hsg-translator.service';
-import { hsgAlertMessageConfig } from './hsg-alert-message.config';
-import { hsgAlertMessageController } from './hsg-alert-message.controller';
-import { hsgAlertMessageHtml } from './hsg-alert-message.html';
+import { hsgTranslatorService } from '../../services/hsg-translator.service'
+import { hsgAlertMessageConfig } from './hsg-alert-message.config'
+import { hsgAlertMessageController } from './hsg-alert-message.controller'
+import { hsgAlertMessageHtml } from './hsg-alert-message.html'
 
 export const hsgAlertMessageModule = angular
 	.module('hsgAlertMessageModule', [])
@@ -12,4 +12,4 @@ export const hsgAlertMessageModule = angular
 		bindings: { afterCtrl: '<' },
 		controller: 'hsgAlertMessageController',
 		template: hsgAlertMessageHtml
-	});
+	})

@@ -21,4 +21,4 @@ export const hsgJournalsStartpageConfig = {
 			en: 'If the HSG Library is only offering access to the electronic version of a journal, unfortunately, the system doesn’t display the print availability in other libraries. We recommend a search for the journal title in the swiss-wide search profile <a href="https://slsp-hsg.primo.exlibrisgroup.com/discovery/search?tab=41SLSP_DN_and_CI&search_scope=DN_and_CI&vid=41SLSP_HSG:HSGswisscovery&lang=en">swisscovery</a>'
 		}
 	}
-};
+}

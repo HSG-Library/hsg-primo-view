@@ -1,4 +1,4 @@
-import { hsgJournalsStartpageModule } from "./hsg-journals-startpage/hsg-journals-startpage.module";
+import { hsgJournalsStartpageModule } from "./hsg-journals-startpage/hsg-journals-startpage.module"
 
 export const hsgJournalsAfterModule = angular
 	.module('hsgJournalsAfterModule', [])
@@ -7,6 +7,6 @@ export const hsgJournalsAfterModule = angular
 		template: `
 		<hsg-journals-startpage-component after-ctrl="$ctrl"></hsg-journals-startpage-component>
 		`
-	});
+	})
 
-hsgJournalsAfterModule.requires.push(hsgJournalsStartpageModule.name);
+hsgJournalsAfterModule.requires.push(hsgJournalsStartpageModule.name)

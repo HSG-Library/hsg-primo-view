@@ -1,5 +1,5 @@
-import { slspIllSigninOrderLoggedOutController } from './slsp-ill-signin-order-logged-out.controller';
-import { hsgUserService } from '../../../services/hsg-user.service';
+import { slspIllSigninOrderLoggedOutController } from './slsp-ill-signin-order-logged-out.controller'
+import { hsgUserService } from '../../../services/hsg-user.service'
 
 export const slspIllSigninOrderLoggedOutModule = angular
 	.module('slspIllSigninOrderLoggedOutModule', [])
@@ -8,4 +8,4 @@ export const slspIllSigninOrderLoggedOutModule = angular
 	.component('slspIllSigninOrderLoggedOutComponent', {
 		bindings: { afterCtrl: '<' },
 		controller: 'slspIllSigninOrderLoggedOutController'
-	});
+	})

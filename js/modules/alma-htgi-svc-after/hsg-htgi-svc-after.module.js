@@ -1,4 +1,4 @@
-import { slspArchivesHtgiModule } from './slsp-archives-htgi/slsp-archives-htgi.module';
+import { slspArchivesHtgiModule } from './slsp-archives-htgi/slsp-archives-htgi.module'
 
 export const hsgHtgiSvcAfterModule = angular
 	.module('hsgHtgiSvcAfterModule', [])
@@ -7,6 +7,6 @@ export const hsgHtgiSvcAfterModule = angular
 		template: `
 		<slsp-archives-htgi-component after-ctrl="$ctrl"></slsp-archives-htgi-component>
 		`
-	});
+	})
 
-hsgHtgiSvcAfterModule.requires.push(slspArchivesHtgiModule.name);
+hsgHtgiSvcAfterModule.requires.push(slspArchivesHtgiModule.name)

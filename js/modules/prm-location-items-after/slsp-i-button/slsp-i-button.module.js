@@ -1,5 +1,5 @@
-import { slspIButtonController } from './slsp-i-button.controller';
-import { slspIButtonHtml } from './slsp-i-button.html';
+import { slspIButtonController } from './slsp-i-button.controller'
+import { slspIButtonHtml } from './slsp-i-button.html'
 
 export const slspIButtonModule = angular
 	.module('slspIButtonModule', [])
@@ -8,4 +8,4 @@ export const slspIButtonModule = angular
 		bindings: { afterCtrl: '<' },
 		controller: 'slspIButtonController',
 		template: slspIButtonHtml
-	});
+	})

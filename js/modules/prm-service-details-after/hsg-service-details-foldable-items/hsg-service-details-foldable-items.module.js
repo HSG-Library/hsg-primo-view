@@ -1,6 +1,6 @@
-import { hsgTranslatorService } from '../../../services/hsg-translator.service';
-import { hsgServiceDetailsFoldableItemsConfig } from './hsg-service-details-foldable-items.config';
-import { hsgServiceDetailsFoldableItemsController } from './hsg-service-details-foldable-items.controller';
+import { hsgTranslatorService } from '../../../services/hsg-translator.service'
+import { hsgServiceDetailsFoldableItemsConfig } from './hsg-service-details-foldable-items.config'
+import { hsgServiceDetailsFoldableItemsController } from './hsg-service-details-foldable-items.controller'
 
 export const hsgServiceDetailsFoldableItemsModule = angular
 	.module('hsgServiceDetailsFoldableItemsModule', [])
@@ -10,4 +10,4 @@ export const hsgServiceDetailsFoldableItemsModule = angular
 	.component('hsgServiceDetailsFoldableItemsComponent', {
 		bindings: { afterCtrl: '<' },
 		controller: 'hsgServiceDetailsFoldableItemsController'
-	});
+	})

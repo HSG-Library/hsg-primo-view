@@ -13,4 +13,4 @@ export const hsgOffCampusInfoConfig = {
 			en: 'https://www.unisg.ch/en/universitaet/bibliothek/dienstleistungen/infrastruktur/internetzugang'
 		}
 	}
-};
+}

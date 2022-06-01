@@ -1,41 +1,41 @@
 export class hsgReadingRoomInfoController {
 
 	constructor($element, $scope, hsgReadingRoomInfoService) {
-		this.$element = $element;
-		this.$scope = $scope;
-		this.readingRoomInfoService = hsgReadingRoomInfoService;
-		this.form = $element[0].parentElement.parentElement;
-		this.parentCtrl = this.afterCtrl.parentCtrl;
-		this.displayReadingRoomInfo;
+		this.$element = $element
+		this.$scope = $scope
+		this.readingRoomInfoService = hsgReadingRoomInfoService
+		this.form = $element[0].parentElement.parentElement
+		this.parentCtrl = this.afterCtrl.parentCtrl
+		this.displayReadingRoomInfo
 	}
 
 	$onInit() {
-		this.displayReadingRoomInfo = false;
+		this.displayReadingRoomInfo = false
 		if (this.readingRoomInfoService.shouldCheckForReadingRoom()) {
 			this.readingRoomInfoService.hasReadingRoomItem(this.$scope)
 				.then((hasItem) => {
-					console.log("readingroom:", hasItem);
+					console.log("readingroom:", hasItem)
 					if (hasItem) {
-						this.displayReadingRoomInfo = true;
+						this.displayReadingRoomInfo = true
 					}
-				});
+				})
 		}
 	}
 
 	$doCheck() {
-		let form = false;
+		let form = false
 		if (this.form.children[1].children[1] !== undefined &&
 			this.form.children[1].children[1].children[0] !== undefined) {
-			form = this.form.children[1].children[1].children[0];
+			form = this.form.children[1].children[1].children[0]
 		}
 		else if (this.form.children[1].children[0] !== undefined &&
 			this.form.children[1].children[0].children[0] !== undefined) {
-			form = this.form.children[1].children[0].children[0];
+			form = this.form.children[1].children[0].children[0]
 		}
 
 		if (form && this.displayReadingRoomInfo && !form.querySelector(".unisg-alert")) {
-			let readingInfo = document.createElement('DIV');
-			readingInfo.className = "unisg-alert unisg-no-margin";
+			let readingInfo = document.createElement('DIV')
+			readingInfo.className = "unisg-alert unisg-no-margin"
 			readingInfo.innerHTML = `
                     <span onclick="this.parentElement.style.display='none'" class="unisg-alert-close">
                         <prm-icon icon-type="svg" svg-icon-set="primo-ui" icon-definition="close">
@@ -49,10 +49,10 @@ export class hsgReadingRoomInfoController {
                     <p>
                         ${this.parentCtrl.$translate.instant('customize.fullview.readingRoomAvailableText')}
                     </p>
-                    `;
-			form.insertBefore(readingInfo, form.firstChild);
+                    `
+			form.insertBefore(readingInfo, form.firstChild)
 		}
 	}
 }
 
-hsgReadingRoomInfoController.$inject = ['$element', '$scope', 'hsgReadingRoomInfoService'];
+hsgReadingRoomInfoController.$inject = ['$element', '$scope', 'hsgReadingRoomInfoService']

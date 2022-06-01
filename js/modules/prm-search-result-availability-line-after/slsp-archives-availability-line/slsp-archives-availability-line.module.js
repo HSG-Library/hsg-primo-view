@@ -1,4 +1,4 @@
-import { slspArchivesAvailabilityLineController } from './slsp-archives-availability-line.controller';
+import { slspArchivesAvailabilityLineController } from './slsp-archives-availability-line.controller'
 
 
 export const slspArchivesAvailabilityLineModule = angular
@@ -7,4 +7,4 @@ export const slspArchivesAvailabilityLineModule = angular
 	.component('slspArchivesAvailabilityLineComponent', {
 		bindings: { afterCtrl: '<' },
 		controller: 'slspArchivesAvailabilityLineController',
-	});
+	})

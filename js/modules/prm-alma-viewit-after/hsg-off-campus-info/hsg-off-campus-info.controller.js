@@ -1,59 +1,59 @@
 export class hsgOffCampusInfoController {
 
 	constructor(hsgOffCampusInfoConfig, hsgUserService, hsgTranslatorService) {
-		this.config = hsgOffCampusInfoConfig;
-		this.userService = hsgUserService;
-		this.translator = hsgTranslatorService;
-		this.processDoCheck;
-		this.deliveryCategory = [];
+		this.config = hsgOffCampusInfoConfig
+		this.userService = hsgUserService
+		this.translator = hsgTranslatorService
+		this.processDoCheck
+		this.deliveryCategory = []
 	}
 
 	$onInit() {
-		this.processDoCheck = false;
-		this.deliveryCategory = [];
+		this.processDoCheck = false
+		this.deliveryCategory = []
 		if (this.afterCtrl.parentCtrl.item.pnx.addata.openaccess && this.afterCtrl.parentCtrl.itm.pnx.addata.openaccess[0] === 'true') {
-			return;
+			return
 		}
-		let delivery = this.afterCtrl.parentCtrl.item.delivery;
+		let delivery = this.afterCtrl.parentCtrl.item.delivery
 		if (delivery && delivery.deliveryCategory && (delivery.deliveryCategory.indexOf('Alma-E') > -1 || delivery.deliveryCategory.indexOf('Remote Search Resource') > -1)) {
-			this.deliveryCategory = delivery.deliveryCategory;
-			this.processDoCheck = true;
+			this.deliveryCategory = delivery.deliveryCategory
+			this.processDoCheck = true
 		}
 	}
 
 	$doCheck() {
 		if (!this.processDoCheck) {
-			return;
+			return
 		}
-		let delivery = this.afterCtrl.parentCtrl.item.delivery;
+		let delivery = this.afterCtrl.parentCtrl.item.delivery
 		if (!delivery || !delivery.electronicServices || delivery.electronicServices.length === 0) {
-			return;
+			return
 		}
 		if (delivery.deliveryCategory.indexOf('Remote Search Resource') > -1 && delivery.electronicServices[0].ilsApiId.indexOf("cdi_") === -1) {
-			this.processDoCheck = false;
-			return;
+			this.processDoCheck = false
+			return
 		}
 		let filteredElectronicServices = delivery.electronicServices.filter(e => {
 			if (e.publicNote && e.publicNote === "Onlinezugriff via World Wide Web") {
-				return true;
+				return true
 			}
 		})
 		if (filteredElectronicServices.length > 0) {
-			this.processDoCheck = false;
-			return;
+			this.processDoCheck = false
+			return
 		}
 
-		this.isOffCampusWarning = this.isOffCampus();
-		this.processDoCheck = false;
+		this.isOffCampusWarning = this.isOffCampus()
+		this.processDoCheck = false
 	}
 
 	isOffCampus() {
-		return !this.userService.isOnCampus();
+		return !this.userService.isOnCampus()
 	}
 
 	translate(key) {
-		return this.translator.getLabel(key, this.config);
+		return this.translator.getLabel(key, this.config)
 	}
 }
 
-hsgOffCampusInfoController.$inject = ['hsgOffCampusInfoConfig', 'hsgUserService', 'hsgTranslatorService'];
+hsgOffCampusInfoController.$inject = ['hsgOffCampusInfoConfig', 'hsgUserService', 'hsgTranslatorService']

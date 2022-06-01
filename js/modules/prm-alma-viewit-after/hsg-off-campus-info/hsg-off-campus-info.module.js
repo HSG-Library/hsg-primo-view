@@ -1,7 +1,7 @@
-import { hsgTranslatorService } from '../../../services/hsg-translator.service';
-import { hsgOffCampusInfoConfig } from './hsg-off-campus-info.config';
-import { hsgOffCampusInfoController } from './hsg-off-campus-info.controller';
-import { hsgOffCampusInfoHtml } from './hsg-off-campus-info.html';
+import { hsgTranslatorService } from '../../../services/hsg-translator.service'
+import { hsgOffCampusInfoConfig } from './hsg-off-campus-info.config'
+import { hsgOffCampusInfoController } from './hsg-off-campus-info.controller'
+import { hsgOffCampusInfoHtml } from './hsg-off-campus-info.html'
 
 export const hsgOffCampusInfoModule = angular
 	.module('hsgOffCampusInfoModule', [])
@@ -12,4 +12,4 @@ export const hsgOffCampusInfoModule = angular
 		bindings: { afterCtrl: '<' },
 		controller: 'hsgOffCampusInfoController',
 		template: hsgOffCampusInfoHtml
-	});
+	})

@@ -2,51 +2,51 @@ export const hsgUserService = ['jwtHelper', function (jwtHelper) {
 
 	this.getJwt = function () {
 		if (!sessionStorage) {
-			return null;
+			return null
 		}
-		return sessionStorage.getItem('primoExploreJwt');
+		return sessionStorage.getItem('primoExploreJwt')
 	}
 
 	this.getDecodedToken = function () {
-		let jwt = this.getJwt();
+		let jwt = this.getJwt()
 		if (!jwt) {
-			return null;
+			return null
 		}
-		return jwtHelper.decodeToken(jwt);
+		return jwtHelper.decodeToken(jwt)
 	}
 
 	this.isGuest = function () {
-		let decodedToken = this.getDecodedToken();
+		let decodedToken = this.getDecodedToken()
 		if (!decodedToken) {
-			return true;
+			return true
 		}
-		let userName = decodedToken.userGroup !== 'GUEST' ? decodedToken.userName : '';
+		let userName = decodedToken.userGroup !== 'GUEST' ? decodedToken.userName : ''
 		if (userName) {
 			return false
 		}
 		else {
-			return true;
+			return true
 		}
 	}
 
 	this.getUserIp = function () {
-		let decodedToken = this.getDecodedToken();
+		let decodedToken = this.getDecodedToken()
 		if (!decodedToken) {
-			return '';
+			return ''
 		}
-		return decodedToken.userIp;
+		return decodedToken.userIp
 	}
 
 	this.isOnCampus = function () {
-		let decodedToken = this.getDecodedToken();
+		let decodedToken = this.getDecodedToken()
 		if (!decodedToken) {
-			return false;
+			return false
 		}
 		if (decodedToken.onCampus === 'true') {
-			return true;
+			return true
 		}
 		else {
-			return false;
+			return false
 		}
 	}
 
@@ -56,6 +56,6 @@ export const hsgUserService = ['jwtHelper', function (jwtHelper) {
 		isGuest: this.isGuest,
 		getUserIp: this.getUserIp,
 		isOnCampus: this.isOnCampus
-	};
+	}
 
-}];
+}]

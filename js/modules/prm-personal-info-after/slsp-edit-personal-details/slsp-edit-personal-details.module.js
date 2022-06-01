@@ -1,5 +1,5 @@
-import { hsgTranslatorService } from '../../../services/hsg-translator.service';
-import { slspEditPersonalDetailsController } from './slsp-edit-personal-details.controller';
+import { hsgTranslatorService } from '../../../services/hsg-translator.service'
+import { slspEditPersonalDetailsController } from './slsp-edit-personal-details.controller'
 import { slspEditPersonalDetailsHtml } from './slsp-edit-personal-details.html'
 
 export const slspEditPersonalDetailsModule = angular
@@ -10,4 +10,4 @@ export const slspEditPersonalDetailsModule = angular
 		bindings: { afterCtrl: '<' },
 		controller: 'slspEditPersonalDetailsController',
 		template: slspEditPersonalDetailsHtml
-	});
+	})

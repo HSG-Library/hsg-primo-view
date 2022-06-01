@@ -2,10 +2,10 @@ export const hsgExceptionHandler = ['$log', 'hsgExceptionHandlerHelper', functio
 	return function hsgExceptionHandler(exception, cause) {
 		if (!hsgExceptionHandlerHelper.isFromHandler(exception)
 			&& hsgExceptionHandlerHelper.isFromCustomCode(exception)) {
-			hsgExceptionHandlerHelper.reportError(exception, cause);
-			$log.error('**HSG-SWISSCOVERY**', exception, cause);
+			hsgExceptionHandlerHelper.reportError(exception, cause)
+			$log.error('**HSG-SWISSCOVERY**', exception, cause)
 		} else {
-			$log.error(exception, cause);
+			$log.error(exception, cause)
 		}
 	}
-}];
+}]

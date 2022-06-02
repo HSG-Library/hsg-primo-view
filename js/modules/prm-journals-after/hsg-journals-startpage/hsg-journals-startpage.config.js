@@ -19,6 +19,18 @@ export const hsgJournalsStartpageConfig = {
 		info02: {
 			de: 'Wenn die HSG- Bibliothek nur die elektronische Version einer Zeitschrift anbietet, wird die mögliche Verfügbarkeit der gedruckten Version in anderen Bibliotheken nicht angezeigt. Wir empfehlen: suchen Sie in diesem Fall erneut nach dem Titel der Zeitschrift im schweizweiten Suchprofil <a href="https://slsp-hsg.primo.exlibrisgroup.com/discovery/search?tab=41SLSP_DN_and_CI&search_scope=DN_and_CI&vid=41SLSP_HSG:HSGswisscovery&lang=de">swisscovery</a>',
 			en: 'If the HSG Library is only offering access to the electronic version of a journal, unfortunately, the system doesn’t display the print availability in other libraries. We recommend a search for the journal title in the swiss-wide search profile <a href="https://slsp-hsg.primo.exlibrisgroup.com/discovery/search?tab=41SLSP_DN_and_CI&search_scope=DN_and_CI&vid=41SLSP_HSG:HSGswisscovery&lang=en">swisscovery</a>'
+		},
+		infoVideoTutorial: {
+			de: 'Video-Tutorials',
+			en: ''
+		},
+		videoTutorial01: {
+			de: '<a href="https://www.youtube.com/watch?v=NEz5nClTPjM" target="_blank">Wie kann ich die Zeitschriftensuche in HSGswisscovery nutzen?</a>',
+			en: ''
+		},
+		videoTutorial02: {
+			de: '<a href="https://www.youtube.com/watch?v=Jd-GkkBWFCQ" target="_blank">Wie bestelle ich in HSGswisscovery einen Artikel oder ein Buchkapitel?</a>',
+			en: ''
 		}
 	}
 }

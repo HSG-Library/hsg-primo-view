@@ -14,10 +14,14 @@ import { hsgPersonalInfoAfterModule } from './modules/prm-personal-info-after/hs
 import { hsgRequestAfterModule } from './modules/prm-request-after/hsg-request-after.module'
 import { hsgSearchResultAvailabilityLineAfterModule } from './modules/prm-search-result-availability-line-after/hsg-search-result-availabilty-line-after.module'
 import { hsgServiceDetailsAfterModule } from './modules/prm-service-details-after/hsg-service-details-after.module'
+import { hsgServiceNgrsAfterModule } from './modules/prm-service-ngrs-after/hsg-service-ngrs-after.module'
+import { hsgServicePhysicalBestOfferAfterModule } from './modules/prm-service-physical-best-offer-after/hsg-service-physical-best-offer-after.module'
 import { hsgStackMapAfterModule } from './modules/prm-stack-map-after/hsg-stack-map-after.module'
 import { hsgStandAloneLoginAfterModule } from './modules/prm-stand-alone-login-after/hsg-stand-alone-login-after.module'
 import { hsgUserAreaExpandableAfterModule } from './modules/prm-user-area-expandable-after/hsg-user-ara-expandable-after.module'
+import { slspHttpInterceptPickupInformation } from './modules/slsp-http-intercept-pickup-information/slsp-http-intercept-pickup-information.module'
 import { slspHttpInterceptRequestsModule } from './modules/slsp-http-intercept-requests/slsp-http-intercept-requests.module'
+import { slspRequestCancelButton } from './modules/slsp-request-cancel-button/slsp-request-cancel-button.module'
 
 let app = angular.module('viewCustom', ['angularLoad'])
 
@@ -36,10 +40,14 @@ app.requires.push(hsgPersonalInfoAfterModule.name)
 app.requires.push(hsgRequestAfterModule.name)
 app.requires.push(hsgSearchResultAvailabilityLineAfterModule.name)
 app.requires.push(hsgServiceDetailsAfterModule.name)
+app.requires.push(hsgServiceNgrsAfterModule.name)
+app.requires.push(hsgServicePhysicalBestOfferAfterModule.name)
 app.requires.push(hsgStackMapAfterModule.name)
 app.requires.push(hsgStandAloneLoginAfterModule.name)
 app.requires.push(hsgUserAreaExpandableAfterModule.name)
+app.requires.push(slspHttpInterceptPickupInformation.name)
 app.requires.push(slspHttpInterceptRequestsModule.name)
+app.requires.push(slspRequestCancelButton.name)
 
 app.run(function () { console.log('** app running **') })
 

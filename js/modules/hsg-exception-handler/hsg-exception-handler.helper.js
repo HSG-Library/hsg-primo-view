@@ -1,7 +1,7 @@
 export const hsgExceptionHandlerHelper = ['$injector', function ($injector) {
 
 	this.reportError = function (exception, cause) {
-		return;
+		return
 		// proof of concept, don't sent error reports yet.
 		// the reports must be aggregated first
 
@@ -25,23 +25,23 @@ export const hsgExceptionHandlerHelper = ['$injector', function ($injector) {
 		// 		console.error('could not report error', error);
 		// 	}
 		// );
-	};
+	}
 
 	this.isFromHandler = function (exception) {
 		if (typeof exception !== "object") {
-			return false;
+			return false
 		}
-		let stack = exception.stack;
-		return stack && stack.indexOf('hsgExceptionHandler') > -1;
+		let stack = exception.stack
+		return stack && stack.indexOf('hsgExceptionHandler') > -1
 	}
 
 	this.isFromCustomCode = function (exception) {
 		if (typeof exception !== "object") {
-			return false;
+			return false
 		}
-		let stack = exception.stack;
-		return stack && stack.indexOf('custom.js') > -1;
-	};
+		let stack = exception.stack
+		return stack && stack.indexOf('custom.js') > -1
+	}
 
 	return {
 		reportError: this.reportError,
@@ -49,4 +49,4 @@ export const hsgExceptionHandlerHelper = ['$injector', function ($injector) {
 		isFromCustomCode: this.isFromCustomCode
 	}
 
-}];
+}]

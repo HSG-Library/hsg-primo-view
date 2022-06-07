@@ -1,5 +1,5 @@
 import { hsgBrowzineIntegrationModule } from './hsg-browzine-integration/hsg-browzine-integration.module'
-import { slspArchivesAvailabilityLineModule } from './slsp-archives-availability-line/slsp-archives-availability-line.module';
+import { slspArchivesAvailabilityLineModule } from './slsp-archives-availability-line/slsp-archives-availability-line.module'
 
 export const hsgSearchResultAvailabilityLineAfterModule = angular
 	.module('hsgSearchResultAvailabilityLineAfterModule', [])
@@ -11,5 +11,5 @@ export const hsgSearchResultAvailabilityLineAfterModule = angular
 		`
 	})
 
-hsgSearchResultAvailabilityLineAfterModule.requires.push(slspArchivesAvailabilityLineModule.name);
-hsgSearchResultAvailabilityLineAfterModule.requires.push(hsgBrowzineIntegrationModule.name);
+hsgSearchResultAvailabilityLineAfterModule.requires.push(slspArchivesAvailabilityLineModule.name)
+hsgSearchResultAvailabilityLineAfterModule.requires.push(hsgBrowzineIntegrationModule.name)

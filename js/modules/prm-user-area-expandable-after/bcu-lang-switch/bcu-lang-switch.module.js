@@ -1,5 +1,5 @@
-import { bcuLangSwitchController } from './bcu-lang-switch.controller';
-import { bcuLangSwitchHtml } from './bcu-lang-switch.html';
+import { bcuLangSwitchController } from './bcu-lang-switch.controller'
+import { bcuLangSwitchHtml } from './bcu-lang-switch.html'
 
 export const bcuLangSwitchModule = angular
 	.module('bcuLangSwitchModule', [])
@@ -8,4 +8,4 @@ export const bcuLangSwitchModule = angular
 		bindings: { afterCtrl: '<' },
 		controller: 'bcuLangSwitchController',
 		template: bcuLangSwitchHtml
-	});
+	})

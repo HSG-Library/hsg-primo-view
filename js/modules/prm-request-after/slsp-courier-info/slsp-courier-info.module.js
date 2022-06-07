@@ -1,4 +1,4 @@
-import { slspCourierInfoController } from './slsp-courier-info.controller';
+import { slspCourierInfoController } from './slsp-courier-info.controller'
 
 export const slspCourierInfoModule = angular
 	.module('slspCourierInfoModule', [])
@@ -6,4 +6,4 @@ export const slspCourierInfoModule = angular
 	.component('slspCourierInfoComponent', {
 		bindings: { afterCtrl: '<' },
 		controller: 'slspCourierInfoController'
-	});
+	})

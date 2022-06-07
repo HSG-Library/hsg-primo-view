@@ -1,5 +1,5 @@
-import { hsgReadingRoomInfoController } from './hsg-reading-room-info.controller';
-import { hsgReadingRoomInfoService } from './hsg-reading-room-info.service';
+import { hsgReadingRoomInfoController } from './hsg-reading-room-info.controller'
+import { hsgReadingRoomInfoService } from './hsg-reading-room-info.service'
 
 export const hsgReadingRoomInfoModule = angular
 	.module('hsgReadingRoomInfoModule', [])
@@ -8,4 +8,4 @@ export const hsgReadingRoomInfoModule = angular
 	.component('hsgReadingRoomInfoComponent', {
 		bindings: { afterCtrl: '<' },
 		controller: 'hsgReadingRoomInfoController'
-	});
+	})

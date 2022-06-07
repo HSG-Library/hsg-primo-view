@@ -1,5 +1,5 @@
-import { slspRenewItemTextController } from './slsp-renew-item-text.controller';
-import { slspRenewItemTextHtml } from './slsp-renew-item-text.html';
+import { slspRenewItemTextController } from './slsp-renew-item-text.controller'
+import { slspRenewItemTextHtml } from './slsp-renew-item-text.html'
 
 export const slspRenewItemTextModule = angular
 	.module('slspRenewItemTextModule', [])

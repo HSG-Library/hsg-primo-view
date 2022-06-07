@@ -1,5 +1,5 @@
-import { slspArchivesViewitController } from './slsp-archives-viewit.controller';
-import { slspArchivesViewitHtml } from './slsp-archives-viewit.html';
+import { slspArchivesViewitController } from './slsp-archives-viewit.controller'
+import { slspArchivesViewitHtml } from './slsp-archives-viewit.html'
 
 export const slspArchivesViewitModule = angular
 	.module('slspArchivesViewitModule', [])

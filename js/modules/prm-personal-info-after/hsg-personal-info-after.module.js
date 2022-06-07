@@ -7,4 +7,4 @@ export const hsgPersonalInfoAfterModule = angular
 		template: `<slsp-edit-personal-details-component after-ctrl="$ctrl" id="SLSPeditPersonalDetails"></slsp-edit-personal-details-component>`
 	})
 
-hsgPersonalInfoAfterModule.requires.push(slspEditPersonalDetailsModule.name);
+hsgPersonalInfoAfterModule.requires.push(slspEditPersonalDetailsModule.name)

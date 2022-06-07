@@ -1,102 +1,102 @@
 export class hsgReportBrokenLinkController {
 
 	constructor($mdDialog, $mdMedia, $http, hsgTranslatorService, hsgUserService, hsgReportBrokenLinkConfig) {
-		this.$mdDialog = $mdDialog;
-		this.$mdMedia = $mdMedia;
-		this.$http = $http;
-		this.config = hsgReportBrokenLinkConfig;
-		this.translator = hsgTranslatorService;
-		this.hsgUserService = hsgUserService;
+		this.$mdDialog = $mdDialog
+		this.$mdMedia = $mdMedia
+		this.$http = $http
+		this.config = hsgReportBrokenLinkConfig
+		this.translator = hsgTranslatorService
+		this.hsgUserService = hsgUserService
 
-		this.status = '';
-		this.errorMessage;
-		this.info = new LinkInfo();
-		this.parentCtrl = this.afterCtrl.parentCtrl;
+		this.status = ''
+		this.errorMessage
+		this.info = new LinkInfo()
+		this.parentCtrl = this.afterCtrl.parentCtrl
 	}
 
 	$onInit() {
 		// not for open access
 		if (this.parentCtrl.item.pnx.addata.openaccess && this.parentCtrl.item.pnx.addata.openaccess[0] === 'true') {
-			return;
+			return
 		}
 		// not for cdi open access
 		if (this.parentCtrl.item.pnx.addata.oa && this.parentCtrl.item.pnx.addata.oa[0] === 'free_for_read') {
-			return;
+			return
 		}
 	}
 
 	collectInfo() {
-		let display = this.parentCtrl.item.pnx.display;
-		this.info.mmsId = this.parentCtrl.item.pnx.control.recordid[0];
-		this.info.title = this.getTitle(display);
-		this.info.creationdate = this.getCreationdate(display);
-		this.info.creator = this.getCreator(display);
-		this.info.type = this.getType(display);
-		this.info.identifier = this.getIdentifier(display);
-		this.info.reportDate = new Date(Date.now()).toLocaleDateString() + ' ' + new Date(Date.now()).toLocaleTimeString();
-		this.info.onCampus = this.hsgUserService.isOnCampus();
-		this.info.userAgent = navigator.userAgent;
-		this.info.url = window.location.href;
+		let display = this.parentCtrl.item.pnx.display
+		this.info.mmsId = this.parentCtrl.item.pnx.control.recordid[0]
+		this.info.title = this.getTitle(display)
+		this.info.creationdate = this.getCreationdate(display)
+		this.info.creator = this.getCreator(display)
+		this.info.type = this.getType(display)
+		this.info.identifier = this.getIdentifier(display)
+		this.info.reportDate = new Date(Date.now()).toLocaleDateString() + ' ' + new Date(Date.now()).toLocaleTimeString()
+		this.info.onCampus = this.hsgUserService.isOnCampus()
+		this.info.userAgent = navigator.userAgent
+		this.info.url = window.location.href
 	}
 
 	getStatus() {
-		return this.status;
+		return this.status
 	}
 
 	getTitle(display) {
 		if (display.title && display.title.length > 0) {
-			return display.title[0];
+			return display.title[0]
 		}
-		return '';
+		return ''
 	}
 
 	getCreationdate(display) {
 		if (display.creationdate && display.creationdate.length > 0) {
-			return display.creationdate[0];
+			return display.creationdate[0]
 		}
-		return '';
+		return ''
 	}
 
 	getCreator(display) {
 		if (display.creator && display.creator.length > 0) {
-			return display.creator.join(', ');
+			return display.creator.join(', ')
 		}
-		return '';
+		return ''
 	}
 
 	getType(display) {
 		if (display.type && display.type.length > 0) {
-			return display.type[0];
+			return display.type[0]
 		}
-		return '';
+		return ''
 	}
 
 	getIdentifier(display) {
 		if (display.identifier && display.identifier.length > 0) {
-			let ident = display.identifier[0];
+			let ident = display.identifier[0]
 			if (ident.indexOf('<b>ISBN') > -1) {
-				return display.identifier.join(', ').replace(/<\/b>/g, '').replace(/<b>/g, '');
+				return display.identifier.join(', ').replace(/<\/b>/g, '').replace(/<b>/g, '')
 			}
 			else if (ident.indexOf('<b>ISSN') > -1) {
-				return display.identifier.join(', ').replace(/<\/b>/g, '').replace(/<b>/g, '');
+				return display.identifier.join(', ').replace(/<\/b>/g, '').replace(/<b>/g, '')
 			}
 			else if (ident.indexOf('ISBN') > -1) {
-				return 'ISBN: ' + ident.substring(ident.indexOf('$$V') + 3);
+				return 'ISBN: ' + ident.substring(ident.indexOf('$$V') + 3)
 			}
 			else if (ident.indexOf('ISSN') > -1) {
-				return 'ISSN: ' + ident.substring(ident.indexOf('$$V') + 3);
+				return 'ISSN: ' + ident.substring(ident.indexOf('$$V') + 3)
 			}
 		}
-		return '';
+		return ''
 	}
 
 	getStatus() {
-		return this.status;
+		return this.status
 	}
 
 	reportLink(event) {
-		this.collectInfo();
-		let that = this;
+		this.collectInfo()
+		let that = this
 
 		let dialogConfig = {
 			template: this.getTemplate(),
@@ -110,9 +110,9 @@ export class hsgReportBrokenLinkController {
 
 		this.$mdDialog.show(dialogConfig)
 			.then(function (dialogModel) { // send
-				that.info.comment = dialogModel.comment + " " || '';
+				that.info.comment = dialogModel.comment + " " || ''
 				if (dialogModel.contact) {
-					that.info.comment += dialogModel.contact;
+					that.info.comment += dialogModel.contact
 				}
 				that.$http.post(
 					that.config.reportEndpoint,
@@ -124,18 +124,18 @@ export class hsgReportBrokenLinkController {
 					}
 				).then(
 					function (success) {
-						console.info(success);
-						that.status = '✓';
+						console.info(success)
+						that.status = '✓'
 					},
 					function (error) {
-						console.error(error);
-						that.status = '✗';
+						console.error(error)
+						that.status = '✗'
 						that.errorMessage = `${this.translate('errorMessage')} (${error.data.error.message})`
 					}
-				);
+				)
 			}, function () { // cancel
-				that.status = '';
-			});
+				that.status = ''
+			})
 	}
 
 	getTemplate() {
@@ -184,51 +184,51 @@ export class hsgReportBrokenLinkController {
 		</button>
 		</md-dialog-actions>
 		</md-dialog>
-		`;
+		`
 	}
 
 	translate(key) {
 		if (!this.config) {
-			console.log("config missing");
-			return;
+			console.log("config missing")
+			return
 		}
-		return this.translator.getLabel(key, this.config);
+		return this.translator.getLabel(key, this.config)
 	}
 }
 
-hsgReportBrokenLinkController.$inject = ['$mdDialog', '$mdMedia', '$http', 'hsgTranslatorService', 'hsgUserService', 'hsgReportBrokenLinkConfig'];
+hsgReportBrokenLinkController.$inject = ['$mdDialog', '$mdMedia', '$http', 'hsgTranslatorService', 'hsgUserService', 'hsgReportBrokenLinkConfig']
 
 export class hsgReportBrokenLinkDialogController {
 
 	constructor($mdDialog) {
-		this.$mdDialog = $mdDialog;
-		this.result = {};
+		this.$mdDialog = $mdDialog
+		this.result = {}
 	}
 
 	abort() {
-		return this.$mdDialog.cancel();
+		return this.$mdDialog.cancel()
 	}
 
 	hide() {
-		return this.$mdDialog.hide(this.result);
+		return this.$mdDialog.hide(this.result)
 	}
 }
 
-hsgReportBrokenLinkDialogController.$inject = ['$mdDialog'];
+hsgReportBrokenLinkDialogController.$inject = ['$mdDialog']
 
 
 class LinkInfo {
 	constructor() {
-		this.reportDate;
-		this.title;
+		this.reportDate
+		this.title
 		this.creator
-		this.creationdate;
-		this.type;
-		this.mmsId;
-		this.identifier;
-		this.onCampus;
-		this.userAgent;
-		this.url;
-		this.comment;
+		this.creationdate
+		this.type
+		this.mmsId
+		this.identifier
+		this.onCampus
+		this.userAgent
+		this.url
+		this.comment
 	}
 }

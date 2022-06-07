@@ -9,4 +9,4 @@ export const hsgBrowzineIntegrationConfig = {
 			en: 'Read Article'
 		}
 	}
-};
+}

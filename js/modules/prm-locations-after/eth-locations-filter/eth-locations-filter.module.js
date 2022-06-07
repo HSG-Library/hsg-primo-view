@@ -1,4 +1,4 @@
-import { ethLocationsFilterController } from './eth-locations-filter.controller';
+import { ethLocationsFilterController } from './eth-locations-filter.controller'
 
 export const ethLocationsFilterModule = angular
 	.module('ethLocationsFilterModule', [])

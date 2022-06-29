@@ -26,6 +26,10 @@ There is a proof of concept to report exceptions to a remote serivce via http, i
   * **`slsp-archives-viewit`** *module*\
 	Adapted from SLSP, see: https://github.com/Swiss-Library-Service-Platform/central-customization-package/tree/main/41SLSP_NETWORK-CENTRAL_PACKAGE/js/slsp-archives-viewit
 <br><br>
+* **`prm-gallery-item-after`** *hook*
+  * **`hsg-collections-show-author`** *module*\
+  Show author name in collections. 
+<br><br>
 * **`prm-journals-after`** *hook*
   * **`hsg-journals-startpage`** *module*\
   Start page for the journals search, similar to the [ETHZ Solution](https://gitlab.com/ethlibrary/slsp/customization-eth-view/-/tree/master/js/modules/prm-journals-after/eth-journals-startpage)

@@ -8,10 +8,10 @@ export class hsgCollectionsShowAuthorController {
 	}
 
 	$onInit() {
-		if (!this.hasAuthorInfo()) {
+		const name = this.getAuthorOrContributor()
+		if (!name) {
 			return
 		}
-		const author = this.parentCtrl.item.pnx.addata.au[0] || ''
 		const that = this
 		const deregister = this.$scope.$watch(
 			function () {
@@ -20,7 +20,7 @@ export class hsgCollectionsShowAuthorController {
 			function (newValue, oldValue) {
 				if (that.waiting && typeof newValue === "object") {
 					that.waiting = false
-					that.placeAuthor(newValue, author)
+					that.placeAuthor(newValue, name)
 					deregister()
 				}
 			}
@@ -28,16 +28,18 @@ export class hsgCollectionsShowAuthorController {
 	}
 
 	placeAuthor(itemTitleElement, author) {
-		itemTitleElement.insertAdjacentHTML('beforeEnd', " <br><br>" + author)
+		itemTitleElement.insertAdjacentHTML('beforeEnd', ' <br><br><span style="font-weight: normal">' + author + '</span>')
 	}
 
-	hasAuthorInfo() {
-		try {
-			this.parentCtrl.item.pnx.addata.au[0]
-			return true
-		} catch (e) {
-			return false
+	getAuthorOrContributor() {
+		let data = this.parentCtrl.item.pnx.addata
+		if (data.au) {
+			return data.au.slice(0, 3).join('; ')
 		}
+		if (data.addau) {
+			return data.addau.slice(0, 3).join('; ')
+		}
+		return
 	}
 }
 

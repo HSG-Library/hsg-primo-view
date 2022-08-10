@@ -1,0 +1,6 @@
+/******************************************/
+/****** White collections top bar    ******/
+/******************************************/
+prm-explore-main .header .transparent-top-bar::before {
+	background-color: transparent;
+}

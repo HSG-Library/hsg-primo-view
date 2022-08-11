@@ -1,9 +1,12 @@
 export class slspCourierInfoController {
 
 	constructor($element) {
-		this.parentCtrl = this.afterCtrl.parentCtrl
 		this.$element = $element
 		this.prmRequestElement = $element[0].parentElement.parentElement
+	}
+
+	$onInit() {
+		this.parentCtrl = this.afterCtrl.parentCtrl
 	}
 
 	//function for inserting block
@@ -25,7 +28,7 @@ export class slspCourierInfoController {
 			info.innerHTML = `
                     <h4>${this.parentCtrl.$translate.instant('customize.fullview.feesTitle')}</h4>
                     <p>${this.parentCtrl.$translate.instant('customize.fullview.feesInfo')}</p>
-                    <p><a href="${this.parentCtrl.$translate.instant('customize.fullview.feesUrl')}" 
+                    <p><a href="${this.parentCtrl.$translate.instant('customize.fullview.feesUrl')}"
                         target="_blank">${this.parentCtrl.$translate.instant('customize.fullview.feesLinkText')}</a>
                     </p>
                     `

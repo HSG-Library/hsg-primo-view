@@ -2,10 +2,11 @@ export class slspArchivesAvailabilityLineController {
 
 	constructor($translate) {
 		this.$translate = $translate
-		this.parentCtrl = this.afterCtrl.parentCtrl
 	}
 
 	$onInit() {
+		this.parentCtrl = this.afterCtrl.parentCtrl
+
 		this.changeButton = false
 		if (!this.parentCtrl.result.pnx.display.source || this.parentCtrl.result.pnx.display.source.length === 0) {
 			return
@@ -45,3 +46,5 @@ export class slspArchivesAvailabilityLineController {
 		}
 	}
 }
+
+slspArchivesAvailabilityLineController.$inject = ['$translate']

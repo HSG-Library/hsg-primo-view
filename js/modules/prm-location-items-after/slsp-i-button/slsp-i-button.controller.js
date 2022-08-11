@@ -25,8 +25,10 @@ export class slspIButtonController {
 		let currLoc = this.parentCtrl.currLoc
 		if (currLoc) {
 			return currLoc.location.libraryCode
-		} else {
+		} else if (this.parentCtrl.loc) {
 			return this.parentCtrl.loc.location.libraryCode
+		} else {
+			return ''
 		}
 	}
 

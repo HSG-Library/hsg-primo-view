@@ -1,5 +1,7 @@
 export class slspCollapseOtherInstController {
-	constructor() {
+	constructor() { }
+
+	$onInit() {
 		this.parentCtrl = this.afterCtrl.parentCtrl
 		this.parentCtrl.isCollapsed = true
 	}

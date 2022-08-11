@@ -11,10 +11,10 @@ export class hsgReportBrokenLinkController {
 		this.status = ''
 		this.errorMessage
 		this.info = new LinkInfo()
-		this.parentCtrl = this.afterCtrl.parentCtrl
 	}
 
 	$onInit() {
+		this.parentCtrl = this.afterCtrl.parentCtrl
 		// not for open access
 		if (this.parentCtrl.item.pnx.addata.openaccess && this.parentCtrl.item.pnx.addata.openaccess[0] === 'true') {
 			return

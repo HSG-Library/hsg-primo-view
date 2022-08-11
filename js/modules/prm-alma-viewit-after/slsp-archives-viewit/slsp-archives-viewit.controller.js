@@ -2,10 +2,10 @@ export class slspArchivesViewitController {
 
 	constructor($translate) {
 		this.$translate = $translate
-		this.parentCtrl = this.afterCtrl.parentCtrl
 	}
 
 	$onInit() {
+		this.parentCtrl = this.afterCtrl.parentCtrl
 		if (!this.parentCtrl.item.pnx.display.source || this.parentCtrl.item.pnx.display.source.length === 0) {
 			return
 		}

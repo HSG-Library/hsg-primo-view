@@ -258,7 +258,7 @@ window.lh3PresenceCheck = function () {
 	s = document.createElement('script')
 	s.async = true
 	s.id = 'lh3-presence-check'
-	s.src = 'https://eu.libraryh3lp.com/presence/jid/swisscoverybs/chat.eu.libraryh3lp.com/js?cb=window.updateChatTab'
+	s.src = 'https://eu.libraryh3lp.com/presence/jid/hsg-library-queue/chat.eu.libraryh3lp.com/js?cb=window.updateChatTab'
 	s.type = 'application/javascript'
 	document.body.appendChild(s)
 }

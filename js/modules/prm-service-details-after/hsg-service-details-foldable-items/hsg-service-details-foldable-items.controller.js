@@ -6,13 +6,14 @@ export class hsgServiceDetailsFoldableItemsController {
 		this.$sce = $sce
 		this.config = hsgServiceDetailsFoldableItemsConfig
 		this.translator = hsgTranslatorService
-		this.parentCtrl = this.afterCtrl.parentCtrl
 		this.waiting = true
 		this.iconExpand = this.config.icons.expand
 		this.iconCollapse = this.config.icons.collapse
 	}
 
 	$onInit() {
+		this.parentCtrl = this.afterCtrl.parentCtrl
+
 		this.rootEl = this.$element.parent().parent().query('div').children()
 		let that = this
 		// add a watcher to the root element

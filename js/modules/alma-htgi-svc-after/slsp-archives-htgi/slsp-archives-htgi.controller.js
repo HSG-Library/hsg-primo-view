@@ -1,10 +1,10 @@
 export class slspArchivesHtgiController {
 
-	constructor() {
-		this.parentCtrl = this.afterCtrl.parentCtrl
-	}
+	constructor() { }
 
 	$onInit() {
+		this.parentCtrl = this.afterCtrl.parentCtrl
+
 		if (!this.parentCtrl.item.pnx.display.source || this.parentCtrl.item.pnx.display.source.length === 0) {
 			return
 		}

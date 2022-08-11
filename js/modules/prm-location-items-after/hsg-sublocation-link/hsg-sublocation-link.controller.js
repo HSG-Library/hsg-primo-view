@@ -12,6 +12,9 @@ export class hsgSublocationLinkController {
 	$onInit() {
 		this.parentCtrl = this.afterCtrl.parentCtrl
 		this.mapLinkText = this.translate('mapLinkText')
+		if (!this.parentCtrl.currLoc) {
+			return
+		}
 		const loc = this.parentCtrl.currLoc.location
 		if (loc) {
 			const subLocationCode = loc.subLocationCode

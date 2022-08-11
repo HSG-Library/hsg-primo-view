@@ -1,13 +1,13 @@
 export class hsgCollectionsShowAuthorController {
 
 	constructor($element, $scope) {
-		this.parentCtrl = this.afterCtrl.parentCtrl
 		this.$element = $element
 		this.$scope = $scope
 		this.waiting = true
 	}
 
 	$onInit() {
+		this.parentCtrl = this.afterCtrl.parentCtrl
 		const name = this.getAuthorOrContributor()
 		if (!name) {
 			return

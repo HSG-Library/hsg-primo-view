@@ -3,9 +3,9 @@ export const hsgSublocationLinkConfig = {
 		mapLink: 'https://goo.gl/maps/1DpLN6WGWbJMTvCC6'
 	},
 	labels: {
-		mapLinkText: {
-			de: 'Karte',
-			en: 'Map'
+		mapLinkTextSZ: {
+			de: 'Standort \'Zentrum für Sprachen und transkulturelle Kommunikation\'',
+			en: 'Location \'Center for Languages and Transcultural Communication\''
 		}
 	}
 }

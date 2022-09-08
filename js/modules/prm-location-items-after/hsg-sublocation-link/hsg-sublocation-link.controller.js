@@ -1,6 +1,7 @@
 export class hsgSublocationLinkController {
 
-	constructor($element, hsgSublocationLinkConfig, hsgTranslatorService) {
+	constructor($scope, $element, hsgSublocationLinkConfig, hsgTranslatorService) {
+		this.$scope = $scope
 		this.$element = $element
 		this.config = hsgSublocationLinkConfig
 		this.translator = hsgTranslatorService
@@ -11,9 +12,20 @@ export class hsgSublocationLinkController {
 
 	$onInit() {
 		this.parentCtrl = this.afterCtrl.parentCtrl
-		if (!this.parentCtrl.currLoc) {
-			return
-		}
+		let that = this
+		this.$scope.$watch(
+			function () {
+				return that.parentCtrl.currLoc
+			},
+			function (newValue, oldValue) {
+				if (newValue !== oldValue) {
+					that.createLink()
+				}
+			}
+		)
+	}
+
+	createLink() {
 		const loc = this.parentCtrl.currLoc.location
 		if (loc) {
 			const subLocationCode = loc.subLocationCode
@@ -21,6 +33,8 @@ export class hsgSublocationLinkController {
 			if (subLocationCode === 'SZ') {
 				this.showLink = true
 				this.mapLink = this.config[subLocationCode].mapLink
+			} else {
+				this.showLink = false
 			}
 		}
 	}
@@ -47,4 +61,4 @@ export class hsgSublocationLinkController {
 	}
 }
 
-hsgSublocationLinkController.$inject = ['$element', 'hsgSublocationLinkConfig', 'hsgTranslatorService']
+hsgSublocationLinkController.$inject = ['$scope', '$element', 'hsgSublocationLinkConfig', 'hsgTranslatorService']

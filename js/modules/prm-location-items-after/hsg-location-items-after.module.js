@@ -9,7 +9,7 @@ export const hsgLocationItemsAfterModule = angular
 		template: `
 			<slsp-i-button-component after-ctrl="$ctrl"></slsp-i-button-component>
 			<eth-location-items-filter-component after-ctrl="$ctrl"></eth-location-items-filter-component>
-			<hsg-sz-link-component after-ctrl="$ctrl"></hsg-sz-link-component>
+			<hsg-sublocation-link-component after-ctrl="$ctrl"></hsg-sz-link-component>
 		`
 	})
 

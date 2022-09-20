@@ -5,6 +5,7 @@ import { hsgAlertMessageModule } from './modules/hsg-alert-message/hsg-alert-mes
 import { hsgExceptionHandlerModule } from './modules/hsg-exception-handler/hsg-exception-handler.module'
 import { hsgAlmaOtherMembersAfterModule } from './modules/prm-alma-other-members-after/hsg-alma-other-members-after.module'
 import { hsgAlmaViewitAfterModule } from './modules/prm-alma-viewit-after/hsg-alma-viewit-after.module'
+import { hsgAlmaViewitItemsAfterModule } from './modules/prm-alma-viewit-items-after/hsg-alma-viewit-items-after.module'
 import { hsgGalleryItemAfterModule } from './modules/prm-gallery-item-after/hsg-gallery-item-after.module'
 import { hsgJournalsAfterModule } from './modules/prm-journals-after/hsg-journals-after.module'
 import { hsgLoanAfterModule } from './modules/prm-loan-after/hsg-loan-after.module'
@@ -28,6 +29,7 @@ app.requires.push(hsgHowovpAfterModule.name)
 app.requires.push(hsgHtgiSvcAfterModule.name)
 app.requires.push(hsgAlmaOtherMembersAfterModule.name)
 app.requires.push(hsgAlmaViewitAfterModule.name)
+app.requires.push(hsgAlmaViewitItemsAfterModule.name)
 app.requires.push(hsgGalleryItemAfterModule.name)
 app.requires.push(hsgJournalsAfterModule.name)
 app.requires.push(hsgLoanAfterModule.name)

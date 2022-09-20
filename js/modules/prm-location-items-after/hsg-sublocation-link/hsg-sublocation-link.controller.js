@@ -29,6 +29,9 @@ export class hsgSublocationLinkController {
 		const loc = this.parentCtrl.currLoc.location
 		if (loc) {
 			const subLocationCode = loc.subLocationCode
+			if (!this.isConfigured(subLocationCode)) {
+				return
+			}
 			this.mapLinkText = this.translate('mapLinkText' + subLocationCode)
 			if (subLocationCode === 'SZ') {
 				this.showLink = true
@@ -49,6 +52,13 @@ export class hsgSublocationLinkController {
 
 	getMapLinkText() {
 		return this.mapLinkText
+	}
+
+	isConfigured(subLocationCode) {
+		if (this.config[subLocationCode]) {
+			return true
+		}
+		return false
 	}
 
 	translate(key) {

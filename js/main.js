@@ -15,8 +15,9 @@ import { hsgLocationsAfterModule } from './modules/prm-locations-after/hsg-locat
 import { hsgPersonalInfoAfterModule } from './modules/prm-personal-info-after/hsg-personal-info-after.module'
 import { hsgRequestAfterModule } from './modules/prm-request-after/hsg-request-after.module'
 import { hsgSearchResultAvailabilityLineAfterModule } from './modules/prm-search-result-availability-line-after/hsg-search-result-availabilty-line-after.module'
-import { hsgServiceDetailsAfterModule } from './modules/prm-service-details-after/hsg-service-details-after.module'
 import { hsgServiceButtonAfterModule } from './modules/prm-service-button-after/hsg-service-button-after.module'
+import { hsgServiceDetailsAfterModule } from './modules/prm-service-details-after/hsg-service-details-after.module'
+import { hsgServicePhysicalBestOfferAfterModule } from './modules/prm-service-physical-best-offer-after/hsg-service-physical-best-offer-after.module'
 import { hsgStackMapAfterModule } from './modules/prm-stack-map-after/hsg-stack-map-after.module'
 import { hsgStandAloneLoginAfterModule } from './modules/prm-stand-alone-login-after/hsg-stand-alone-login-after.module'
 import { hsgUserAreaExpandableAfterModule } from './modules/prm-user-area-expandable-after/hsg-user-ara-expandable-after.module'
@@ -42,6 +43,7 @@ app.requires.push(hsgRequestAfterModule.name)
 app.requires.push(hsgSearchResultAvailabilityLineAfterModule.name)
 app.requires.push(hsgServiceButtonAfterModule.name)
 app.requires.push(hsgServiceDetailsAfterModule.name)
+app.requires.push(hsgServicePhysicalBestOfferAfterModule.name)
 app.requires.push(hsgStackMapAfterModule.name)
 app.requires.push(hsgStandAloneLoginAfterModule.name)
 app.requires.push(hsgUserAreaExpandableAfterModule.name)

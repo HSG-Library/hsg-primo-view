@@ -2,8 +2,10 @@
 /****** Media Scout Button ******/
 /********************************/
 
-prm-stack-map .button-with-icon {
+prm-location-items prm-stack-map .button-link {
 	border: none;
+	background-color: transparent !important;
+	line-height: 38px;
 }
 
 /** Media Scout button visible in item view on mobile  **/

@@ -15,6 +15,7 @@ import { hsgLocationItemsAfterModule } from './modules/prm-location-items-after/
 import { hsgLocationsAfterModule } from './modules/prm-locations-after/hsg-locations-after.module'
 import { hsgPersonalInfoAfterModule } from './modules/prm-personal-info-after/hsg-personal-info-after.module'
 import { hsgRequestAfterModule } from './modules/prm-request-after/hsg-request-after.module'
+import { hsgRequestsAfterModule } from './modules/prm-requests-after/hsg-requests-after.module'
 import { hsgSearchResultAvailabilityLineAfterModule } from './modules/prm-search-result-availability-line-after/hsg-search-result-availabilty-line-after.module'
 import { hsgServiceButtonAfterModule } from './modules/prm-service-button-after/hsg-service-button-after.module'
 import { hsgServiceDetailsAfterModule } from './modules/prm-service-details-after/hsg-service-details-after.module'
@@ -43,6 +44,7 @@ app.requires.push(hsgLocationItemsAfterModule.name)
 app.requires.push(hsgLocationsAfterModule.name)
 app.requires.push(hsgPersonalInfoAfterModule.name)
 app.requires.push(hsgRequestAfterModule.name)
+app.requires.push(hsgRequestsAfterModule.name)
 app.requires.push(hsgSearchResultAvailabilityLineAfterModule.name)
 app.requires.push(hsgServiceButtonAfterModule.name)
 app.requires.push(hsgServiceDetailsAfterModule.name)

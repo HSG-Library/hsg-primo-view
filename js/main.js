@@ -20,6 +20,7 @@ import { hsgSearchBarAfterModule } from './modules/prm-search-bar-after/hsg-sear
 import { hsgSearchResultAvailabilityLineAfterModule } from './modules/prm-search-result-availability-line-after/hsg-search-result-availabilty-line-after.module'
 import { hsgServiceButtonAfterModule } from './modules/prm-service-button-after/hsg-service-button-after.module'
 import { hsgServiceDetailsAfterModule } from './modules/prm-service-details-after/hsg-service-details-after.module'
+import { hsgServiceNgrsAfterModule } from './modules/prm-service-ngrs-after/hsg-service-ngrs-after.module'
 import { hsgServicePhysicalBestOfferAfterModule } from './modules/prm-service-physical-best-offer-after/hsg-service-physical-best-offer-after.module'
 import { hsgStackMapAfterModule } from './modules/prm-stack-map-after/hsg-stack-map-after.module'
 import { hsgStandAloneLoginAfterModule } from './modules/prm-stand-alone-login-after/hsg-stand-alone-login-after.module'
@@ -51,6 +52,7 @@ app.requires.push(hsgSearchBarAfterModule.name)
 app.requires.push(hsgSearchResultAvailabilityLineAfterModule.name)
 app.requires.push(hsgServiceButtonAfterModule.name)
 app.requires.push(hsgServiceDetailsAfterModule.name)
+app.requires.push(hsgServiceNgrsAfterModule.name)
 app.requires.push(hsgServicePhysicalBestOfferAfterModule.name)
 app.requires.push(hsgStackMapAfterModule.name)
 app.requires.push(hsgStandAloneLoginAfterModule.name)

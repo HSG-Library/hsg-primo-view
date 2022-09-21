@@ -20,6 +20,7 @@ import { hsgServiceDetailsAfterModule } from './modules/prm-service-details-afte
 import { hsgServicePhysicalBestOfferAfterModule } from './modules/prm-service-physical-best-offer-after/hsg-service-physical-best-offer-after.module'
 import { hsgStackMapAfterModule } from './modules/prm-stack-map-after/hsg-stack-map-after.module'
 import { hsgStandAloneLoginAfterModule } from './modules/prm-stand-alone-login-after/hsg-stand-alone-login-after.module'
+import { hsgTabsAndScopesSelectorAfterModule } from './modules/prm-tabs-and-scopes-selector-after/hsg-tabs-and-scopes-selector-after.module'
 import { hsgUserAreaExpandableAfterModule } from './modules/prm-user-area-expandable-after/hsg-user-ara-expandable-after.module'
 import { slspHttpInterceptRequestsModule } from './modules/slsp-http-intercept-requests/slsp-http-intercept-requests.module'
 
@@ -46,6 +47,7 @@ app.requires.push(hsgServiceDetailsAfterModule.name)
 app.requires.push(hsgServicePhysicalBestOfferAfterModule.name)
 app.requires.push(hsgStackMapAfterModule.name)
 app.requires.push(hsgStandAloneLoginAfterModule.name)
+app.requires.push(hsgTabsAndScopesSelectorAfterModule.name)
 app.requires.push(hsgUserAreaExpandableAfterModule.name)
 app.requires.push(slspHttpInterceptRequestsModule.name)
 

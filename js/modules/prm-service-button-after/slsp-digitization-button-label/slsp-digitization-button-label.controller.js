@@ -13,17 +13,26 @@ export class slspDigitizationButtonLabelController {
 				this.digiButtonLabel = digiButtonLabel
 				let digiButtonLabel = document.querySelectorAll('prm-full-view-service-container prm-service-button button span[translate="AlmaDigitization"]')
 				let html = `<div class="DigiButtonLabel1">CHF</div>`
-
 				angular.element(digiButtonLabel).after(html).addClass('digiButton')
 			}
+
+			if (this.parentCtrl.service.type !== undefined && this.parentCtrl.service.type === 'AlmaGeneralDigitization') {
+				this.digiButtonLabel = digiButtonLabel
+				let digiButtonLabel = document.querySelectorAll('prm-full-view-service-container prm-service-button button span[translate="AlmaGeneralDigitization"]')
+				let html = `<div class="DigiButtonLabel1">CHF</div>`
+				angular.element(digiButtonLabel).after(html).addClass('digiButton')
+			}
+
 			if (this.parentCtrl.service.type !== undefined && this.parentCtrl.service.type === 'AlmaItemDigitization') {
 				this.digiItemButtonLabel = digiItemButtonLabel
 				let digiItemButtonLabel = document.querySelectorAll('prm-full-view-service-container prm-service-button button span[translate="AlmaItemDigitization"]')
-				let html = `<div class="DigiButtonLabel">CHF</div>`
-
-				angular.element(digiItemButtonLabel).append(html).addClass('digiButton')
+				//let htmlItem = `<div class="DigiButtonLabel" translate="customized.fee.digi"></div>`;
+				angular.element(digiItemButtonLabel).append(`<div class="DigiButtonLabel">CHF</div>`).addClass('digiButton')
 			}
-		}, 1)
+			else {
+				return
+			}
+		}, 1000)
 	}
 }
 

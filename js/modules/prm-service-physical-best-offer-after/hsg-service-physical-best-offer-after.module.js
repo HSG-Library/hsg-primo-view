@@ -7,7 +7,7 @@ export const hsgServicePhysicalBestOfferAfterModule = angular
 		bindings: { parentCtrl: '<' },
 		template: `
 		<slsp-icon-label-rapido-component after-ctrl="$ctrl"></slsp-icon-label-rapido-component>
-		<slsp-rapido-rigital-offer-component after-ctrl="$ctrl"></slsp-rapido-rigital-offer-component>
+		<slsp-rapido-digital-offer-component after-ctrl="$ctrl"></slsp-rapido-digital-offer-component>
 		`,
 	})
 

@@ -5,3 +5,8 @@ prm-alma-other-members button#alma_other_members {
 prm-alma-other-members button#alma_other_members h3 {
 	margin-top: -5px;
 }
+
+md-list.md-primoExplore-theme.icnLblOtherMembersP2,
+md-list.md-primoExplore-theme.icnLblOtherMembersE {
+	padding-top: 20px;
+}

@@ -1,6 +1,6 @@
 export const hsgSublocationLinkConfig = {
 	SZ: {
-		mapLink: 'https://goo.gl/maps/1DpLN6WGWbJMTvCC6'
+		mapLink: 'https://goo.gl/maps/KnidsskwtfAvpftX6'
 	},
 	labels: {
 		mapLinkTextSZ: {

@@ -27,10 +27,6 @@ export const hsgJournalsStartpageConfig = {
 		videoTutorial01: {
 			de: '<a href="https://www.youtube.com/watch?v=NEz5nClTPjM" target="_blank">Wie kann ich die Zeitschriftensuche in HSGswisscovery nutzen?</a>',
 			en: ''
-		},
-		videoTutorial02: {
-			de: '<a href="https://www.youtube.com/watch?v=Jd-GkkBWFCQ" target="_blank">Wie bestelle ich in HSGswisscovery einen Artikel oder ein Buchkapitel?</a>',
-			en: ''
 		}
 	}
 }

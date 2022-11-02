@@ -11,12 +11,12 @@ export class slspRapidoDigitalOfferController {
 			this.parentCtrl = this.afterCtrl.parentCtrl
 
 			/* costs per page */
-			//if (this.parentCtrl.isdigitaloffer === true){
-			//this.rapidoCosts = rapidoCosts;
-			//let rapidoCosts = document.querySelectorAll('div[ng-if="$ctrl.digitalTileVisible"] .patron_cost.last_line');
-			//let html = `<div class="rapidoCosts" translate="customized.rapido.digi"></div>`;
-			//    angular.element(rapidoCosts).after(this.$compile(html)(this.$scope));
-			//}
+			if (this.parentCtrl.isdigitaloffer === true) {
+				this.rapidoCosts = rapidoCosts
+				let rapidoCosts = document.querySelectorAll('div[ng-if="$ctrl.digitalTileVisible"] .patron_cost.last_line')
+				let htmlRc = `<div class="rapidoCosts" translate="customized.rapido.digi"></div>`
+				angular.element(rapidoCosts).after(this.$compile(htmlRc)(this.$scope))
+			}
 
 			/* reservation button */
 			if (this.parentCtrl.isdigitaloffer !== true && this.parentCtrl.bestoffer !== undefined && this.parentCtrl.bestoffer.unavailableInAllMembersPod === true && this.parentCtrl.bestoffer.unavailableResource === true) {
@@ -33,7 +33,7 @@ export class slspRapidoDigitalOfferController {
 				let htmlPD = `<span class="reading-Room-Pod" translate="customized.rapido.readingroom"></span>`
 				angular.element(readingRoomPod).after(this.$compile(htmlPD)(this.$scope)).addClass('pod')
 			}
-		}, 300)
+		}, 2500)
 	}
 }
 

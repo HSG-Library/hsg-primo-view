@@ -1,0 +1,10 @@
+/**********************************/
+/****** Location entry width ******/
+/**********************************/
+
+/* Override the width of the location entry from the central-package.css */
+/* Original rule is in the section: */
+/* Alignment of full display elements */
+div>md-content>prm-locations>div.padding-left-medium>md-list>md-list-item>prm-location>div>div.layout-align-space-between-center.layout-row.flex-100>div>div {
+	min-width: fit-content;
+}

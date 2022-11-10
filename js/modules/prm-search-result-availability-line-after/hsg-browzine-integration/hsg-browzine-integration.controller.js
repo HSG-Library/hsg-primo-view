@@ -5,13 +5,20 @@ export class hsgBrowzineIntegrationController {
 		this.$scope = $scope
 		this.config = hsgBrowzineIntegrationConfig
 		this.translator = hsgTranslatorService
+		this.done = false
 	}
 
 	$onInit() {
 		this.translateToCurrentLanguage()
-		let scopeClone = this.$scope
-		scopeClone.$ctrl.parentCtrl = this.afterCtrl.parentCtrl
-		this.$window.browzine.primo.searchResult(scopeClone)
+	}
+
+	$doCheck() {
+		if (this.$window.browzine.primo && !this.done) {
+			this.done = true
+			let scopeClone = this.$scope
+			scopeClone.$ctrl.parentCtrl = this.afterCtrl.parentCtrl
+			this.$window.browzine.primo.searchResult(scopeClone)
+		}
 	}
 
 	translateToCurrentLanguage() {

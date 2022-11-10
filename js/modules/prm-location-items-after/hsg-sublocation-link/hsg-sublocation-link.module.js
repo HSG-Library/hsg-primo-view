@@ -8,7 +8,7 @@ export const hsgSublocationLinkModule = angular
 	.constant('hsgSublocationLinkConfig', hsgSublocationLinkConfig)
 	.factory('hsgTranslatorService', hsgTranslatorService)
 	.controller('hsgSublocationLinkController', hsgSublocationLinkController)
-	.component('hsgSzLinkComponent', {
+	.component('hsgSublocationLinkComponent', {
 		bindings: { afterCtrl: '<' },
 		controller: 'hsgSublocationLinkController',
 		template: hsgSublocationLinkHtml

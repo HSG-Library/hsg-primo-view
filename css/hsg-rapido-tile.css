@@ -1,0 +1,33 @@
+/****************************************/
+/****** Rapido Tile customizations ******/
+/****************************************/
+
+div.hsg-rapido-loader {
+	padding-top: 30px;
+	padding-left: 10%;
+}
+
+.or-separator .or .word {
+	display: none;
+}
+
+prm-service-physical-best-offer div.main_tiles {
+	padding-left: 10px;
+}
+
+#rapidoOffer button#get_it_btn_physical,
+#rapidoOffer button#get_it_btn_digital {
+	color: #fff !important;
+	background-color: #00802F !important;
+}
+
+#rapidoOffer button#get_it_btn_physical:hover,
+#rapidoOffer button#get_it_btn_digital:hover {
+	color: #fff !important;
+	background-color: #49cb90 !important;
+}
+
+#rapidoOffer button#get_it_btn_physical:disabled,
+#rapidoOffer button#get_it_btn_digital:disabled {
+	background-color: #49cb90 !important;
+}

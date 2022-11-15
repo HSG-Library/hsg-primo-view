@@ -4,6 +4,7 @@ export class slspRapidoDigitalOfferController {
 		this.$scope = $scope
 		this.$compile = $compile
 		this.$timeout = $timeout
+		this.loaderTemplate = `<div class="hsg-rapido-loader"><prm-spinner class="inline-loader dark-on-light" layout="row" layout-align="start center"></prm-spinner></div>`
 	}
 
 	$onInit() {
@@ -12,6 +13,16 @@ export class slspRapidoDigitalOfferController {
 	}
 
 	$doCheck() {
+		// loader
+		const loadingText = document.querySelectorAll('span[translate="rapido.tiles.placeholder.text"]')
+		if (loadingText) {
+			Array.from(loadingText).forEach(text => {
+				if (!text.classList.contains('rapido-loading')) {
+					angular.element(text).after(this.$compile(this.loaderTemplate)(this.$scope)).addClass('rapido-loading')
+				}
+			})
+		}
+
 		if (this.isDone) return
 		// tilesplaceholderactive is true until the tile is loaded, also by reselecting pickupinfo
 		if (this.parentCtrl.tilesplaceholderactive == true) return

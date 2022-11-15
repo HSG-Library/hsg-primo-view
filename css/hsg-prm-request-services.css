@@ -1,0 +1,19 @@
+/************************************************************************/
+/****** prm-request-services (Ausleihen / Digitalisieren Buttons) *******/
+/************************************************************************/
+
+prm-request-services {
+	margin-bottom: 10px;
+}
+
+prm-request-services h3 {
+	line-height: 18px !important;
+}
+
+span.digiButton {
+	color: #fff !important;
+}
+
+span[translate="AlmaRequest"] {
+	color: #fff !important;
+}

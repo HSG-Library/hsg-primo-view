@@ -26,6 +26,7 @@ import { hsgStackMapAfterModule } from './modules/prm-stack-map-after/hsg-stack-
 import { hsgStandAloneLoginAfterModule } from './modules/prm-stand-alone-login-after/hsg-stand-alone-login-after.module'
 import { hsgTabsAndScopesSelectorAfterModule } from './modules/prm-tabs-and-scopes-selector-after/hsg-tabs-and-scopes-selector-after.module'
 import { hsgUserAreaExpandableAfterModule } from './modules/prm-user-area-expandable-after/hsg-user-ara-expandable-after.module'
+import { pickupAnywhereFormAfterModule } from './modules/pickup-anywhere-form-after/pickup-anywhere-form-after.module'
 import { slspHttpInterceptPickupInformation } from './modules/slsp-http-intercept-pickup-information/slsp-http-intercept-pickup-information.module'
 import { slspHttpInterceptRequestsModule } from './modules/slsp-http-intercept-requests/slsp-http-intercept-requests.module'
 
@@ -58,6 +59,7 @@ app.requires.push(hsgStackMapAfterModule.name)
 app.requires.push(hsgStandAloneLoginAfterModule.name)
 app.requires.push(hsgTabsAndScopesSelectorAfterModule.name)
 app.requires.push(hsgUserAreaExpandableAfterModule.name)
+app.requires.push(pickupAnywhereFormAfterModule.name)
 app.requires.push(slspHttpInterceptPickupInformation.name)
 app.requires.push(slspHttpInterceptRequestsModule.name)
 

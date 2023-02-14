@@ -28,11 +28,10 @@ export class slspDigitizationButtonLabelController {
 				let digiItemButtonLabel = document.querySelectorAll('prm-full-view-service-container prm-service-button button span[translate="AlmaItemDigitization"]')
 				//let htmlItem = `<div class="DigiButtonLabel" translate="customized.fee.digi"></div>`;
 				angular.element(digiItemButtonLabel).append(`<div class="DigiButtonLabel">CHF</div>`).addClass('digiButton')
-			}
-			else {
+			} else {
 				return
 			}
-		}, 1000)
+		}, 20)
 	}
 }
 

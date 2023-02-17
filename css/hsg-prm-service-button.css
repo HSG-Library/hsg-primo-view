@@ -5,3 +5,11 @@
 prm-service-button button.md-button {
 	box-shadow: none;
 }
+
+prm-service-button > button > span {
+	color: inherit !important;
+}
+
+prm-service-button .DigiButtonLabel {
+	margin-top: 3px;
+}

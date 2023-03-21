@@ -17,10 +17,10 @@ export const hsgUtilsService = ['$rootScope', '$http',
 			return this.getUserSessionManagerService().getInterfaceLanguage()
 		}
 
-		this.searchBarcode = async function (barcode) {
+		this.searchBarcodePromise = function (barcode) {
 			const baseUrl = this.getUserSessionManagerService().restBaseURLs.barcodeSearchURL
 			const url = baseUrl + "/" + barcode + "?lang=" + this.getLang() +"&vid=" + this.getViewId()
-			return await $http.get(url)
+			return $http.get(url)
 		}
 
 		return {

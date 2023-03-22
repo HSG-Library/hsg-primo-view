@@ -68,7 +68,11 @@ export class hsgPickupInfoController {
 
 	libCode() {
 		try {
-			return this.parentCtrl.$scope.$parent.$parent.$ctrl.loc.location.libraryCode
+			if (this.parentCtrl.$scope.$parent.$parent.$ctrl.isSingleLoc()) {
+				return this.parentCtrl.$scope.$parent.$parent.$ctrl.loc.location.libraryCode
+			} else {
+				return this.parentCtrl.$scope.$parent.$parent.$ctrl.item.delivery.holding.some(h => h.libraryCode == 'SGSBI') ? 'SGSBI' : undefined
+			}
 		} catch (error) {
 			return undefined
 		}

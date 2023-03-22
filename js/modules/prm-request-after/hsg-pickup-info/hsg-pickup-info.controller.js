@@ -1,10 +1,12 @@
 export class hsgPickupInfoController {
 
-	constructor($element, $rootScope, $scope, $http, hsgUtilsService) {
+	constructor($element, $rootScope, $scope, $http, hsgPickupInfoConfig, hsgTranslatorService, hsgUtilsService) {
 		this.$element = $element
 		this.$rootScope = $rootScope
 		this.$scope = $scope
 		this.$http = $http
+		this.config = hsgPickupInfoConfig
+		this.translator = hsgTranslatorService
 		this.utils = hsgUtilsService
 	}
 
@@ -27,10 +29,10 @@ export class hsgPickupInfoController {
 		}
 		if (this.form() && !this.info()) {
 			this.lock = true
-			let infoHtml = '<div class="hsg-pickup-info"><h2>Der Abholort für ihr Exemplar ist SGKBV Bibliothek Hauptpost.</h2><p>Wenn sie das Exemplar an der HSG beziehen wollen, müssen sie das Exemplar selber aus dem Freihandbereich der Bibliothek holen.</p></div>'
+			let infoHtml = '<div class="hsg-pickup-info">' + this.translate('infoHtml') + '</div>'
 			this.form().insertAdjacentHTML('beforebegin', infoHtml)
 			if (this.submitButton()) {
-				this.submitButton().addEventListener('click', this.captureClick, true)
+				this.submitButton().addEventListener('click', (event) => this.captureClick(event, this.translate('confirmMsg')), true)
 			}
 		}
 	}
@@ -45,8 +47,7 @@ export class hsgPickupInfoController {
 	// 	})
 	// }
 
-	captureClick(event) {
-		const msg = 'Wenn sie diese Bestellung abschicken, müssen sie ihr Exemplar in der SGKBV Bibliothek Hauptpost abholen, wenn sie das Exemplar an der HSG beziehen wollen, müssen sie das Exemplar selber aus dem Freihandbereich der Bibliothek holen. Fortfahren?'
+	captureClick(event, msg) {
 		const doSubmit = confirm(msg)
 		if (!doSubmit) {
 			event.stopImmediatePropagation()
@@ -98,6 +99,15 @@ export class hsgPickupInfoController {
 			return undefined
 		}
 	}
+
+	translate(key) {
+		if (!this.config) {
+			console.log("config missing")
+			return
+		}
+		let msg = this.translator.getLabel(key, this.config)
+		return msg
+	}
 }
 
-hsgPickupInfoController.$inject = ['$element', '$rootScope', '$scope', '$http', 'hsgUtilsService']
+hsgPickupInfoController.$inject = ['$element', '$rootScope', '$scope', '$http', 'hsgPickupInfoConfig', 'hsgTranslatorService', 'hsgUtilsService']

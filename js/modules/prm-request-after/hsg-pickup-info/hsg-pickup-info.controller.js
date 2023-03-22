@@ -1,13 +1,12 @@
 export class hsgPickupInfoController {
 
-	constructor($element, $rootScope, $scope, $http, hsgPickupInfoConfig, hsgTranslatorService, hsgUtilsService) {
+	constructor($element, $rootScope, $scope, $http, hsgPickupInfoConfig, hsgTranslatorService) {
 		this.$element = $element
 		this.$rootScope = $rootScope
 		this.$scope = $scope
 		this.$http = $http
 		this.config = hsgPickupInfoConfig
 		this.translator = hsgTranslatorService
-		this.utils = hsgUtilsService
 	}
 
 	$onInit() {
@@ -29,6 +28,10 @@ export class hsgPickupInfoController {
 		}
 		if (this.form() && !this.info()) {
 			this.lock = true
+			const libCode = this.libCode()
+			if (libCode && libCode == "SGSBI") {
+				return
+			}
 			let infoHtml = '<div class="hsg-pickup-info">' + this.translate('infoHtml') + '</div>'
 			this.form().insertAdjacentHTML('beforebegin', infoHtml)
 			if (this.submitButton()) {
@@ -36,16 +39,6 @@ export class hsgPickupInfoController {
 			}
 		}
 	}
-
-	// checkIfSpeibi() {
-	// 	const barcode = this.parentCtrl.locationsService.lineData
-	// 	this.utils.searchBarcode(barcode).then(response => {
-	// 		console.log('response', response)
-	// 		const libCode = response.data.delivery.bestlocation.libraryCode
-	// 		this.isSpeibi = libCode == 'SGSBI';
-	// 		this.checkDone = true
-	// 	})
-	// }
 
 	captureClick(event, msg) {
 		const doSubmit = confirm(msg)
@@ -57,6 +50,11 @@ export class hsgPickupInfoController {
 	}
 
 	cleanUp() {
+		if (!this.lock) {
+			// only clean up if there was a
+			return
+		}
+		console.log('clean up pickup info')
 		if (this.form()) {
 			if (this.info()) {
 				this.info().remove()
@@ -66,6 +64,14 @@ export class hsgPickupInfoController {
 			this.submitButton().removeEventListener('click', this.captureClick, true)
 		}
 		this.lock = false
+	}
+
+	libCode() {
+		try {
+			return this.parentCtrl.$scope.$parent.$parent.$ctrl.loc.location.libraryCode
+		} catch (error) {
+			return undefined
+		}
 	}
 
 	pickupLocation() {
@@ -110,4 +116,4 @@ export class hsgPickupInfoController {
 	}
 }
 
-hsgPickupInfoController.$inject = ['$element', '$rootScope', '$scope', '$http', 'hsgPickupInfoConfig', 'hsgTranslatorService', 'hsgUtilsService']
+hsgPickupInfoController.$inject = ['$element', '$rootScope', '$scope', '$http', 'hsgPickupInfoConfig', 'hsgTranslatorService']

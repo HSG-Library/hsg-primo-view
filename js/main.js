@@ -10,6 +10,7 @@ import { hsgFullViewAfterModule } from './modules/prm-full-view-after/hsg-full-v
 import { hsgGalleryItemAfterModule } from './modules/prm-gallery-item-after/hsg-gallery-item-after.module'
 import { hsgJournalsAfterModule } from './modules/prm-journals-after/hsg-journals-after.module'
 import { hsgLoanAfterModule } from './modules/prm-loan-after/hsg-loan-after.module'
+import { hsgLocationHoldingsAfterModule } from './modules/prm-location-holdings-after/hsg-location-holdings-after.module'
 import { hsgLocationItemAfterModule } from './modules/prm-location-item-after/hsg-location-item-after.module'
 import { hsgLocationItemsAfterModule } from './modules/prm-location-items-after/hsg-location-items-after.module'
 import { hsgLocationsAfterModule } from './modules/prm-locations-after/hsg-locations-after.module'
@@ -43,6 +44,7 @@ app.requires.push(hsgFullViewAfterModule.name)
 app.requires.push(hsgGalleryItemAfterModule.name)
 app.requires.push(hsgJournalsAfterModule.name)
 app.requires.push(hsgLoanAfterModule.name)
+app.requires.push(hsgLocationHoldingsAfterModule.name)
 app.requires.push(hsgLocationItemAfterModule.name)
 app.requires.push(hsgLocationItemsAfterModule.name)
 app.requires.push(hsgLocationsAfterModule.name)

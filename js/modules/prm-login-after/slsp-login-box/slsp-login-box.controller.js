@@ -8,7 +8,6 @@ export class slspLoginBoxController {
 
 	$onInit() {
 		this.$timeout(() => {
-			console.log("loginbox")
 			this.parentCtrl = this.afterCtrl.parentCtrl
 
 			let buttonHelp = '<p class="parallelLoginDescription" translate="parallel.login.description1"><a href="https://help.switch.ch/eduid/" onclick="window.open(https://help.switch.ch/eduid/);return false;" class="md-primoExplore-theme" style="text-decoration:underline"></a></p>'

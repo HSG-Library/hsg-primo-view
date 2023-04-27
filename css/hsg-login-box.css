@@ -6,3 +6,7 @@ prm-login button.md-no-style.md-button.md-primoExplore-theme.md-ink-ripple {
 	border: none;
 }
 
+prm-login .parallelLoginDescription {
+	margin-top: 5px;
+	color: #fff;
+}

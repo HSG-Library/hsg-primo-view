@@ -1,14 +1,15 @@
 export class hsgOffCampusInfoController {
 
-	constructor(hsgOffCampusInfoConfig, hsgUserService, hsgTranslatorService) {
+	constructor(hsgOffCampusInfoConfig, hsgOnCampusService, hsgTranslatorService) {
 		this.config = hsgOffCampusInfoConfig
-		this.userService = hsgUserService
+		this.onCampusService = hsgOnCampusService
 		this.translator = hsgTranslatorService
 		this.processDoCheck
 		this.deliveryCategory = []
 	}
 
 	$onInit() {
+		this.isOffCampusWarning = false
 		this.processDoCheck = false
 		this.deliveryCategory = []
 		if (this.afterCtrl.parentCtrl.item.pnx.addata.openaccess && this.afterCtrl.parentCtrl.itm.pnx.addata.openaccess[0] === 'true') {
@@ -17,6 +18,7 @@ export class hsgOffCampusInfoController {
 		let delivery = this.afterCtrl.parentCtrl.item.delivery
 		if (delivery && delivery.deliveryCategory && (delivery.deliveryCategory.indexOf('Alma-E') > -1 || delivery.deliveryCategory.indexOf('Remote Search Resource') > -1)) {
 			this.deliveryCategory = delivery.deliveryCategory
+			this.onCampusService.getIpAndCheck()
 			this.processDoCheck = true
 		}
 	}
@@ -42,13 +44,12 @@ export class hsgOffCampusInfoController {
 			this.processDoCheck = false
 			return
 		}
-
 		this.isOffCampusWarning = this.isOffCampus()
 		this.processDoCheck = false
 	}
 
 	isOffCampus() {
-		return !this.userService.isOnCampus()
+		return !this.onCampusService.isOnCampus()
 	}
 
 	translate(key) {
@@ -56,4 +57,4 @@ export class hsgOffCampusInfoController {
 	}
 }
 
-hsgOffCampusInfoController.$inject = ['hsgOffCampusInfoConfig', 'hsgUserService', 'hsgTranslatorService']
+hsgOffCampusInfoController.$inject = ['hsgOffCampusInfoConfig', 'hsgOnCampusService', 'hsgTranslatorService']

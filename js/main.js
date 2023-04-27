@@ -31,9 +31,11 @@ import { hsgUserAreaExpandableAfterModule } from './modules/prm-user-area-expand
 import { hsgAlmaOtherUnitsAfterModule } from './modules/prm-alma-other-units-after/hsg-alma-other-units-after.module'
 import { slspHttpInterceptPickupInformation } from './modules/slsp-http-intercept-pickup-information/slsp-http-intercept-pickup-information.module'
 import { slspHttpInterceptRequestsModule } from './modules/slsp-http-intercept-requests/slsp-http-intercept-requests.module'
+import { hsgHomeModule } from './modules/hsg-home/hsg-home.module'
 
 let app = angular.module('viewCustom', ['angularLoad'])
 
+app.requires.push(hsgHomeModule.name)
 app.requires.push(hsgAlertMessageModule.name)
 app.requires.push(hsgExceptionHandlerModule.name)
 app.requires.push(hsgHowovpAfterModule.name)

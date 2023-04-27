@@ -1,4 +1,4 @@
-<md-content>
+<md-content ng-controller="hsgHomeController as $ctrl">
     <div class="ps_content md-padding" layout-gt-sm="row" layout-align="center start" flex="100">
         <div flex-gt-sm="80" flex="100" layout="column">
             <hsg-alert-message-component></hsg-alert-message-component>
@@ -114,6 +114,39 @@
 
         <!-- column 2 -->
         <div flex-gt-sm="40" flex="100" layout="column">
+
+            <md-card class="cardbox default-card" ng-class="$ctrl.isCheckDone() ? $ctrl.isOnCampus() ? 'hsg-on-campus': 'hsg-not-on-campus' : 'hsg-on-campus-unkown'">
+                <md-card-title>
+                    <md-card-title-text>
+                        <h2 ng-if="!$ctrl.isOnCampus()" class="md-headline">Not on campus?</h2>
+                        <h2 ng-if="$ctrl.isOnCampus()" class="md-headline">You are on campus</h2>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content ng-class="$ctrl.isCheckDone() ? $ctrl.isOnCampus() ? 'hsg-on-campus': 'hsg-not-on-campus' : 'hsg-on-campus-unkown'">
+                    <div class="hsg-on-campus-container">
+                        <div class="hsg-on-campus-icon" ng-class="!$ctrl.isCheckDone() ? 'hsg-on-campus-icon-hidden' : ''">
+                            <svg ng-if="$ctrl.isCheckDone() && $ctrl.isOnCampus()" class="md-avatar" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512">
+                                <path fill="currentColor" d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 48c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m140.204 130.267l-22.536-22.718c-4.667-4.705-12.265-4.736-16.97-.068L215.346 303.697l-59.792-60.277c-4.667-4.705-12.265-4.736-16.97-.069l-22.719 22.536c-4.705 4.667-4.736 12.265-.068 16.971l90.781 91.516c4.667 4.705 12.265 4.736 16.97.068l172.589-171.204c4.704-4.668 4.734-12.266.067-16.971z"></path>
+                            </svg>
+                            <svg ng-if="$ctrl.isCheckDone() && !$ctrl.isOnCampus()" class="md-avatar" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512">
+                                <path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm101.8-262.2L295.6 256l62.2 62.2c4.7 4.7 4.7 12.3 0 17l-22.6 22.6c-4.7 4.7-12.3 4.7-17 0L256 295.6l-62.2 62.2c-4.7 4.7-12.3 4.7-17 0l-22.6-22.6c-4.7-4.7-4.7-12.3 0-17l62.2-62.2-62.2-62.2c-4.7-4.7-4.7-12.3 0-17l22.6-22.6c4.7-4.7 12.3-4.7 17 0l62.2 62.2 62.2-62.2c4.7-4.7 12.3-4.7 17 0l22.6 22.6c4.7 4.7 4.7 12.3 0 17z"></path>
+                            </svg>
+                        </div>
+                        <p>
+                            To access electronic content provided by the HSG-Library, you need to establish a <a
+                               href="https://www.unisg.ch/en/universitaet/bibliothek/dienstleistungen/infrastruktur/internetzugang"
+                               target="_blank">VPN connection</a>.
+                        </p>
+                        <a class="hsg-on-campus-check" ng-class="!$ctrl.isCheckDone() ? 'hsg-on-campus-check-running' : ''" ng-click="$ctrl.check()">
+                            <md-icon>
+                                <svg styles="display: inline" viewBox="0 0 24 24" y="960" xmlns="http://www.w3.org/2000/svg" fit="" preserveAspectRatio="xMidYMid meet" focusable="false">
+                                    <path d="M12,5V1L7,6L12,11V7A6,6 0 0,1 18,13A6,6 0 0,1 12,19A6,6 0 0,1 6,13H4A8,8 0 0,0 12,21A8,8 0 0,0 20,13A8,8 0 0,0 12,5Z"></path>
+                                </svg>
+                            </md-icon>
+                        </a>
+                    </div>
+                </md-card-content>
+            </md-card>
 
             <md-card class="cardbox default-card">
                 <md-card-title>

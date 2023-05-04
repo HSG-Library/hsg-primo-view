@@ -9,7 +9,6 @@ export class hsgOffCampusInfoController {
 	}
 
 	$onInit() {
-		this.isOffCampusWarning = false
 		this.processDoCheck = false
 		this.deliveryCategory = []
 		if (this.afterCtrl.parentCtrl.item.pnx.addata.openaccess && this.afterCtrl.parentCtrl.itm.pnx.addata.openaccess[0] === 'true') {
@@ -44,7 +43,6 @@ export class hsgOffCampusInfoController {
 			this.processDoCheck = false
 			return
 		}
-		this.isOffCampusWarning = this.isOffCampus()
 		this.processDoCheck = false
 	}
 

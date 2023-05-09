@@ -1,10 +1,15 @@
 import { slspIconLabelViewitItemsModule } from './slsp-icon-label-viewit-items/slsp-icon-label-viewit-items.module'
+import { slspCollapseRelatedEResourcesModule } from './slsp-collapse-related-e-resources/slsp-collapse-related-e-resources.module';
 
 export const hsgAlmaViewitItemsAfterModule = angular
 	.module('hsgAlmaViewitItemsAfterModule', [])
 	.component('prmAlmaViewitItemsAfter', {
 		bindings: { parentCtrl: '<' },
-		template: `<slsp-icon-label-viewit-items-component after-ctrl="$ctrl"></slsp-icon-label-viewit-items-component>`
+		template: `
+		<slsp-icon-label-viewit-items-component after-ctrl="$ctrl"></slsp-icon-label-viewit-items-component>
+		<slsp-collapse-related-e-resources-component after-ctrl="$ctrl"></slsp-collapse-related-e-resources-component>
+		`
 	})
 
 hsgAlmaViewitItemsAfterModule.requires.push(slspIconLabelViewitItemsModule.name)
+hsgAlmaViewitItemsAfterModule.requires.push(slspCollapseRelatedEResourcesModule.name)

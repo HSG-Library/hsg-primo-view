@@ -1,0 +1,53 @@
+md-card.default-card._md.md-primoExplore-theme.hsg-on-campus {
+	background-color: #49cb90 !important;
+}
+
+md-card.default-card._md.md-primoExplore-theme.hsg-not-on-campus {
+	background-color: #ff9900 !important;
+}
+
+md-card.default-card._md.md-primoExplore-theme.hsg-on-campus-unkown {
+	background-color: #fff;
+}
+
+.hsg-on-campus-container {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.hsg-on-campus-icon {
+	min-width: 55px;
+	max-width: 55px;
+	margin-right: 15px;
+}
+
+.hsg-on-campus-icon-hidden {
+	display: none;
+}
+
+.hsg-on-campus-check {
+	align-self: end;
+	opacity: 0.3;
+}
+
+.hsg-on-campus-check:hover {
+	opacity: 1;
+	background-color: transparent !important;
+}
+
+.hsg-on-campus-check-running {
+	animation: rotation 2s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+
+@keyframes rotation {
+	from {
+		transform: rotate(359deg);
+	}
+
+	to {
+		transform: rotate(0deg);
+	}
+}

@@ -10,9 +10,11 @@ import { hsgFullViewAfterModule } from './modules/prm-full-view-after/hsg-full-v
 import { hsgGalleryItemAfterModule } from './modules/prm-gallery-item-after/hsg-gallery-item-after.module'
 import { hsgJournalsAfterModule } from './modules/prm-journals-after/hsg-journals-after.module'
 import { hsgLoanAfterModule } from './modules/prm-loan-after/hsg-loan-after.module'
+import { hsgLocationHoldingsAfterModule } from './modules/prm-location-holdings-after/hsg-location-holdings-after.module'
 import { hsgLocationItemAfterModule } from './modules/prm-location-item-after/hsg-location-item-after.module'
 import { hsgLocationItemsAfterModule } from './modules/prm-location-items-after/hsg-location-items-after.module'
 import { hsgLocationsAfterModule } from './modules/prm-locations-after/hsg-locations-after.module'
+import { hsgLoginAfterModule } from './modules/prm-login-after/hsg-login-after.module'
 import { hsgPersonalInfoAfterModule } from './modules/prm-personal-info-after/hsg-personal-info-after.module'
 import { hsgRequestAfterModule } from './modules/prm-request-after/hsg-request-after.module'
 import { hsgRequestsAfterModule } from './modules/prm-requests-after/hsg-requests-after.module'
@@ -29,9 +31,11 @@ import { hsgUserAreaExpandableAfterModule } from './modules/prm-user-area-expand
 import { hsgAlmaOtherUnitsAfterModule } from './modules/prm-alma-other-units-after/hsg-alma-other-units-after.module'
 import { slspHttpInterceptPickupInformation } from './modules/slsp-http-intercept-pickup-information/slsp-http-intercept-pickup-information.module'
 import { slspHttpInterceptRequestsModule } from './modules/slsp-http-intercept-requests/slsp-http-intercept-requests.module'
+import { hsgHomeModule } from './modules/hsg-home/hsg-home.module'
 
 let app = angular.module('viewCustom', ['angularLoad'])
 
+app.requires.push(hsgHomeModule.name)
 app.requires.push(hsgAlertMessageModule.name)
 app.requires.push(hsgExceptionHandlerModule.name)
 app.requires.push(hsgHowovpAfterModule.name)
@@ -43,9 +47,11 @@ app.requires.push(hsgFullViewAfterModule.name)
 app.requires.push(hsgGalleryItemAfterModule.name)
 app.requires.push(hsgJournalsAfterModule.name)
 app.requires.push(hsgLoanAfterModule.name)
+app.requires.push(hsgLocationHoldingsAfterModule.name)
 app.requires.push(hsgLocationItemAfterModule.name)
 app.requires.push(hsgLocationItemsAfterModule.name)
 app.requires.push(hsgLocationsAfterModule.name)
+app.requires.push(hsgLoginAfterModule.name)
 app.requires.push(hsgPersonalInfoAfterModule.name)
 app.requires.push(hsgRequestAfterModule.name)
 app.requires.push(hsgRequestsAfterModule.name)

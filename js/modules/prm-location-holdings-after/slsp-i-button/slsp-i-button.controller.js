@@ -1,7 +1,10 @@
 export class slspIButtonController {
 
-	constructor($rootScope) {
+	constructor($rootScope, $sce, hsgTranslatorService, slspIButtonConfig) {
 		this.$rootScope = $rootScope
+		this.$sce = $sce
+		this.translator = hsgTranslatorService
+		this.config = slspIButtonConfig
 		this.biblinkBase = "https:\/\/registration.slsp.ch\/libraries\/\?library\="
 	}
 
@@ -14,7 +17,11 @@ export class slspIButtonController {
 
 	getLibrary() {
 		if (this.parentCtrl.currLoc !== undefined && this.parentCtrl.currLoc.location !== undefined) {
-			return this.parentCtrl.currLoc.location.librarycodeTranslation
+			const library = this.parentCtrl.currLoc.location.librarycodeTranslation
+			if (this.getLibraryCode() == 'HSG') {
+				return library + '-' + this.translate('library')
+			}
+			return library
 		} else {
 			return
 		}
@@ -36,6 +43,15 @@ export class slspIButtonController {
 			return sms.getUserLanguage() || $window.appConfig['primo-view']['attributes-map'].interfaceLanguage
 		}
 	}
+
+	translate(key) {
+		if (!this.config) {
+			console.log("config missing")
+			return
+		}
+		let msg = this.translator.getLabel(key, this.config)
+		return this.$sce.trustAsHtml(msg)
+	}
 }
 
-slspIButtonController.$inject = ['$rootScope']
+slspIButtonController.$inject = ['$rootScope', '$sce', 'hsgTranslatorService', 'slspIButtonConfig']

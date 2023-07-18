@@ -28,7 +28,7 @@ export class slspIconLabelViewitItemsController {
 			}
 			else if (this.parentCtrl.serviceType == "DIGITAL") {
 				this.iconLabelViewitItemsDigital = iconLabelViewitItemsDigital
-				let iconLabelViewitItemsDigital = document.querySelectorAll("#getit_link1_0>div>prm-full-view-service-container>div.section-body>div>prm-alma-viewit>prm-alma-viewit-items:nth-child(2)>md-list")
+				let iconLabelViewitItemsDigital = document.querySelectorAll("prm-alma-viewit-items md-list")
 				let htmlViewitItemsDigital = `
 				<div class="icnWrp">
 					<div class="iconDiv">

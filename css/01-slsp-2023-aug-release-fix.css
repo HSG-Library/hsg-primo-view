@@ -1,0 +1,11 @@
+/* See: https: //slsp.atlassian.net/l/cp/Q1i72L1K */
+h6[ng-if="$ctrl.currLoc.location && $ctrl.getLibraryName($ctrl.currLoc.location)"] {
+	visibility: hidden;
+	margin: 5px 0 !important;
+	min-height: 23px !important;
+	font-size: 18px !important;
+}
+
+prm-location-items>h5 {
+	display: none;
+}

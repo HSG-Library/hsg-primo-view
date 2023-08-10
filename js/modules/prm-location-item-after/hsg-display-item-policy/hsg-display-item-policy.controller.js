@@ -7,13 +7,15 @@ export class hsgDisplayItemPolicyController {
 	}
 
 	$onInit() {
+		console.log('init hsgDisplayItemPolicyController')
 		this.ctrl = this.afterCtrl.parentCtrl
 		this.setItemPolicyText()
 	}
 
 	setItemPolicyText() {
+		console.log('start setItemPolicyText')
 		const policy = this.selectItem().itemFields[3]
-		this.selectItem().itemFields[3] = policy.substring(3)
+		this.selectItem().itemFields[3] = policy.replace(/^\d{2} /, '')
 		/*
 		after setting the item policy the first time, register
 		a watcher to change it again, in case it gets reset

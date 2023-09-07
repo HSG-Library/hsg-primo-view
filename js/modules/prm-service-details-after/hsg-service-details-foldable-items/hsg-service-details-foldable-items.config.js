@@ -1,7 +1,7 @@
 export const hsgServiceDetailsFoldableItemsConfig = {
 	ignore: ['lds03'], // use the label property of an entry of 'this.parentCtrl._details'
-	charCount: 300, // make foldable after that many chars
-	itemCount: 4, // make foldable after that many items
+	charCount: 500, // make foldable after that many chars
+	itemCount: 5, // make foldable after that many items
 	labels: {
 		expandButtonLabel: {
 			de: 'Alles anzeigen',

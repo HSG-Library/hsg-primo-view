@@ -4,8 +4,10 @@ import { hsgHtgiSvcAfterModule } from './modules/alma-htgi-svc-after/hsg-htgi-sv
 import { hsgAlertMessageModule } from './modules/hsg-alert-message/hsg-alert-message.module'
 import { hsgExceptionHandlerModule } from './modules/hsg-exception-handler/hsg-exception-handler.module'
 import { hsgAlmaOtherMembersAfterModule } from './modules/prm-alma-other-members-after/hsg-alma-other-members-after.module'
+import { hsgHomeModule } from './modules/hsg-home/hsg-home.module'
 import { hsgAlmaViewitAfterModule } from './modules/prm-alma-viewit-after/hsg-alma-viewit-after.module'
 import { hsgAlmaViewitItemsAfterModule } from './modules/prm-alma-viewit-items-after/hsg-alma-viewit-items-after.module'
+import { hsgFinesAfterModule } from './modules/prm-fines-after/hsg-fines-after.module'
 import { hsgFullViewAfterModule } from './modules/prm-full-view-after/hsg-full-view-after.module'
 import { hsgGalleryItemAfterModule } from './modules/prm-gallery-item-after/hsg-gallery-item-after.module'
 import { hsgJournalsAfterModule } from './modules/prm-journals-after/hsg-journals-after.module'
@@ -32,7 +34,6 @@ import { hsgUserAreaExpandableAfterModule } from './modules/prm-user-area-expand
 import { hsgAlmaOtherUnitsAfterModule } from './modules/prm-alma-other-units-after/hsg-alma-other-units-after.module'
 import { slspHttpInterceptPickupInformation } from './modules/slsp-http-intercept-pickup-information/slsp-http-intercept-pickup-information.module'
 import { slspHttpInterceptRequestsModule } from './modules/slsp-http-intercept-requests/slsp-http-intercept-requests.module'
-import { hsgHomeModule } from './modules/hsg-home/hsg-home.module'
 
 let app = angular.module('viewCustom', ['angularLoad'])
 
@@ -44,6 +45,7 @@ app.requires.push(hsgHtgiSvcAfterModule.name)
 app.requires.push(hsgAlmaOtherMembersAfterModule.name)
 app.requires.push(hsgAlmaViewitAfterModule.name)
 app.requires.push(hsgAlmaViewitItemsAfterModule.name)
+app.requires.push(hsgFinesAfterModule.name)
 app.requires.push(hsgFullViewAfterModule.name)
 app.requires.push(hsgGalleryItemAfterModule.name)
 app.requires.push(hsgJournalsAfterModule.name)

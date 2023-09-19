@@ -4,7 +4,6 @@ export const hsgLocationItemAfterModule = angular
 	.module('hsgLocationItemAfterModule', [])
 .component('prmLocationItemAfter', {
 		bindings: { parentCtrl: '<' },
-		controller: 'hsgSandboxController',
 		template: `
 			<hsg-display-item-policy-component after-ctrl="$ctrl"></hsg-display-item-policy-component>
 		`

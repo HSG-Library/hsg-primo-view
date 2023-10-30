@@ -1790,12 +1790,15 @@ prm-location-items md-list {
 
 /*Hide "location" label for physical items*/
 
-prm-location-items>h5,
-prm-locations>div.layout-align-space-between-center.layout-row {
+prm-location-items>h5 {
     display: none;
 }
 
-
+/*
+prm-locations>div.layout-align-space-between-center.layout-row {
+    display: none;
+}
+*/
 /*Look of the section and icon*/
 
 #getit_link1_0>div>prm-full-view-service-container>div.section-body>div {
@@ -1936,29 +1939,15 @@ primo-explore.alert alma-htgi-svc {
     font-size: 1em;
 }
 
-
 /*442 Filter bar*/
 
-
-/*locations filter by default: hide filter button*/
-
-prm-locations button[ng-if='$ctrl.displayFiltersButton && !$ctrl.locationsPrefilterActive'] {
-    display: none !important;
-}
-
-prm-location-items button[ng-if='($ctrl.isFilter || $ctrl.isFiltered) && $ctrl.isAnyFilterFilled()'] {
-    display: none !important;
-}
-
-
-/*location filter "Clear" button*/
+/* Location filter "Clear" button */
 
 prm-locations-filter .md-button.button-as-link:hover:not([disabled]) {
     background-color: rgba(17, 17, 17, 0.10) !important;
 }
 
-
-/*filter bar*/
+/* Filter bar */
 
 prm-locations-filter md-select {
     margin-top: 1px;
@@ -1979,7 +1968,6 @@ html#primoExploreRoot {
     overflow-y: auto !important;
 }
 
-
 /* Filter bar background and border color */
 
 .bar.filter-bar {
@@ -1988,6 +1976,57 @@ html#primoExploreRoot {
     padding-left: 0px !important;
 }
 
+/* Filter bar button */
+
+prm-locations h3.section-title {
+    visibility: hidden;
+}
+
+
+button[ng-if="$ctrl.displayFiltersButton && !$ctrl.locationsPrefilterActive"],
+button[ng-if="($ctrl.isFilter || $ctrl.isFiltered) && $ctrl.isAnyFilterFilled()"] {
+    border-radius: 5px !important;
+    width: auto !important;
+    min-width: 80px !important;
+    margin-bottom: 2px !important;
+    /* border: 1px solid rgb(44, 44, 44); */
+    height: 26px !important;
+    min-height: 20px !important;
+    line-height: 8px !important;
+}
+
+span.filter-label {
+    position: absolute;
+    left: 14px;
+
+}
+
+.filter-label:after {
+    display: inline-block;
+    content: "\25BC";
+    position: relative;
+    top: 0px;
+    font-size: 13px;
+    margin-left: 5px;
+    transition: transform 2s ease;
+}
+
+prm-icon[ng-if="$ctrl.isLocationsFilterVisible"] .filter-label:after {
+    transform: scaleY(0.5) scaleX(1) rotate(180deg);
+}
+
+prm-icon[ng-if="!$ctrl.isLocationsFilterVisible"] .filter-label:after {
+    transform: scaleY(0.5) scaleX(1) rotate(0deg);
+
+}
+
+button[ng-if="$ctrl.displayFiltersButton && !$ctrl.locationsPrefilterActive"] md-icon {
+    display: inline-block;
+}
+
+prm-locations-filter div[ng-include="$ctrl.templateUrl"] {
+    border-top: 4px solid #ececec !important;
+}
 
 /*443 Items expand for mobiles*/
 
@@ -2951,6 +2990,11 @@ div[ng-if="$ctrl.isFinesFeatureFlagEnabled && $ctrl.finesTypeDropDownSelection =
     order: 3;
 }
 
+.bar.alert-bar[ng-if="$ctrl.showClosedFines"] {
+    height: auto !important;
+    padding: 0.75em 2em;
+}
+
 /*550 Block and messages*/
 
 
@@ -3227,12 +3271,12 @@ prm-request-services .md-button.button-as-link,
 prm-location-items md-list prm-service-button .md-button.button-as-link,
 #rapidoOffer prm-service-physical-best-offer .get_it_btn_digital,
 prm-service-physical-best-offer .get_it_btn_physical {
-    background-color: #3BBFAD !important;
+    background-color: #4E4A99 !important;
 }
 
 @media only screen and (max-width: 599px) {
     prm-topbar .top-nav-bar {
-        border-color: #3BBFAD !important;
+        border-color: #4E4A99 !important;
     }
 }
 
@@ -3250,7 +3294,7 @@ button.switch-to-simple:hover,
 .md-button.button-as-link:hover:not([disabled]),
 #rapidoOffer prm-service-physical-best-offer .get_it_btn_digital:hover,
 prm-service-physical-best-offer .get_it_btn_physical:hover {
-    background-color: #83dcd0 !important;
+    background-color: #393765 !important;
 }
 
 
@@ -3281,11 +3325,11 @@ prm-location-items md-list prm-service-button .md-button.button-as-link#rapidoOf
 prm-service-physical-best-offer .get_it_btn_physical,
 button#get_it_btn_digital,
 prm-service-button>button>span {
-    color: #14413c !important;
+    color: #fff !important;
 }
 
 button.switch-to-advanced.zero-margin.button-with-icon.md-button.md-primoExplore-theme.md-ink-ripple {
-    border-color: #14413c !important;
+    border-color: #fff !important;
 }
 
 
@@ -3312,13 +3356,13 @@ button.switch-to-advanced.zero-margin.button-with-icon.md-button.md-primoExplore
 .prm-alert-bg,
 #rapidoOffer prm-rapido-no-offer-message .main_tile,
 .diamond {
-    background-color: #8dd8d8 !important;
+    background-color: #99d0d0 !important;
 }
 
 .text-highlight,
 mark,
 prm-location-items>md-list>md-list-item>div>div>div>div>prm-service-button>button {
-    box-shadow: inset 0 -0.15em 0 0 #8dd8d8;
+    box-shadow: inset 0 -0.15em 0 0 #99d0d0;
 }
 
 
@@ -3329,7 +3373,7 @@ prm-location-items>md-list>md-list-item>div>div>div>div>prm-service-button>butto
 
 div.alert-bar .md-button:hover:not([disabled]),
 slsp-edit-personal-details-component a.bar.alert-bar:hover {
-    background-color: #aff7f7 !important;
+    background-color: #b6fafa !important;
 }
 
 
@@ -3382,3 +3426,30 @@ div.courier-info>span a,
 
 
 /*****************************************************************************/
+
+/************** Public note - will be published in the CP ******************
+p[ng-if="item.authNote"], span#public-note p  {
+    margin-bottom: 10px !important;
+}
+
+
+@media (min-width: 0) and (max-width: 959px) and (orientation: portrait) {
+prm-alma-viewit-items .separate-list-items .in-element-dialog-context.layout-row.flex {
+    flex-direction: column-reverse;
+}
+prm-alma-viewit-items .separate-list-items .in-element-dialog-context.layout-row.flex .md-list-item-text.layout-wrap.layout-row.flex {
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+prm-alma-viewit-items .separate-list-items ._md-secondary-container{
+    align-self: flex-end;
+    max-height: 32px;
+}
+}
+
+/*change on line 1201 (Physical items and e-resources boxes background colour and space between items)
+.separate-list-items md-list-item:hover {
+    background-color: #ffffff0d !important;
+}
+*/

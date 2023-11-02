@@ -34,6 +34,7 @@ import { hsgUserAreaExpandableAfterModule } from './modules/prm-user-area-expand
 import { hsgAlmaOtherUnitsAfterModule } from './modules/prm-alma-other-units-after/hsg-alma-other-units-after.module'
 import { slspHttpInterceptPickupInformation } from './modules/slsp-http-intercept-pickup-information/slsp-http-intercept-pickup-information.module'
 import { slspHttpInterceptRequestsModule } from './modules/slsp-http-intercept-requests/slsp-http-intercept-requests.module'
+import { hsgAlmaViewerAfterModule } from './modules/prm-alma-viewer-after/hsg-alma-viewer-after.module'
 
 let app = angular.module('viewCustom', ['angularLoad'])
 
@@ -43,6 +44,7 @@ app.requires.push(hsgExceptionHandlerModule.name)
 app.requires.push(hsgHowovpAfterModule.name)
 app.requires.push(hsgHtgiSvcAfterModule.name)
 app.requires.push(hsgAlmaOtherMembersAfterModule.name)
+app.requires.push(hsgAlmaViewerAfterModule.name)
 app.requires.push(hsgAlmaViewitAfterModule.name)
 app.requires.push(hsgAlmaViewitItemsAfterModule.name)
 app.requires.push(hsgFinesAfterModule.name)

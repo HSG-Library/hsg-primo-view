@@ -10,7 +10,7 @@ export class slspIconLabelViewitItemsController {
 		this.$timeout(() => {
 			this.parentCtrl = this.afterCtrl.parentCtrl
 			if (this.parentCtrl.serviceType == "ELECTRONIC" || this.parentCtrl.serviceType == "DIGITAL") {
-				let iconLabelViewitItems = this.parentCtrl.$element[0].querySelector("md-content > md-list")
+				let iconLabelViewitItems = this.parentCtrl.$element[0].querySelector("prm-alma-viewit > prm-alma-viewit-items > md-list")
 				let htmlViewitItems = `
 					<div class="icnWrp">
 					<div class="iconDiv">

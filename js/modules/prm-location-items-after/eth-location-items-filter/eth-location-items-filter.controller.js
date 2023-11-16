@@ -1,25 +1,23 @@
 export class ethLocationItemsFilterController {
 
-	constructor($timeout, $scope) {
+	constructor($timeout, $scope, $compile) {
 		this.$timeout = $timeout
 		this.$scope = $scope
+		this.$compile = $compile
+		this.filterLabel = '<span class="filter-label" translate="nui.aria.locationItems.filters"></span>'
 	}
 
-	$onInit() {
+	$doCheck() {
 		this.parentCtrl = this.afterCtrl.parentCtrl
-		this.$scope.$watch('this.$ctrl.parentCtrl.loc.location.librarycodeTranslation', (newValue, oldValue, scope) => {
-			if (!scope.$ctrl.parentCtrl.isLocationsFilterVisible && newValue && newValue != '') {
-				this.$scope.$watch('this.$ctrl.parentCtrl.loc.items', (currentItemsArray) => {
-					if (angular.isArray(currentItemsArray) && currentItemsArray.length > 1) {
-						this.$timeout(() => {
-							scope.$ctrl.parentCtrl.isLocationsFilterVisible = true
-						}, 0)
-					}
-				})
-			}
-
-		}, true)
+		// Check if the filter button exists
+		let filterButton = document.querySelectorAll('button[ng-if="($ctrl.isFilter || $ctrl.isFiltered) && $ctrl.isAnyFilterFilled()"] svg')
+		if (filterButton.length > 0) {
+			angular.element(filterButton).replaceWith(this.$compile(this.filterLabel)(this.$scope))
+		} else {
+			// Stop the loop if the element is replaced
+			this.filterButtonReplaced = true
+		}
 	}
 }
 
-ethLocationItemsFilterController.$inject = ['$timeout', '$scope']
+ethLocationItemsFilterController.$inject = ['$timeout', '$scope', '$compile']

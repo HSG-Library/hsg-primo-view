@@ -2,6 +2,20 @@
 /****** Report broken link *****/
 /*******************************/
 
+.hsg-report-broken-link-dialog {
+    width: 600px;
+}
+
+.hsg-report-broken-link-dialog .hsg-off-campus-info {
+    margin-top: 0;
+    margin-bottom: 0;
+    border-radius: 0;
+}
+
+.hsg-report-broken-link-dialog details summary {
+    cursor: pointer;
+}
+
 .hsg-broken-link-info-list {
     word-break: break-word;
 }

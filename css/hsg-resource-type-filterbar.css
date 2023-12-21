@@ -1,0 +1,22 @@
+/***********************************/
+/****** Resourcetype Filterbar *****/
+/***********************************/
+
+prm-resource-type-filter-bar div.container div.box button > div,
+prm-resource-type-filter-bar div.container div.box button prm-icon  {
+	color: #fff !important;
+}
+
+prm-resource-type-filter-bar  div.container div.box  button.selectedResourceTypeOption div,
+prm-resource-type-filter-bar div.container div.box button.selectedResourceTypeOption prm-icon {
+	color: #111 !important;
+}
+
+prm-resource-type-filter-bar button.md-button.md-primoExplore-theme.md-ink-ripple:hover {
+	background-color: #fff !important;
+}
+
+prm-resource-type-filter-bar div.container div.box button>div:hover,
+prm-resource-type-filter-bar div.container div.box button div:hover prm-icon {
+	color: #00802F !important;
+}

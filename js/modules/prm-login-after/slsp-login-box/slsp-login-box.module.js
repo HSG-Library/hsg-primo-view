@@ -1,5 +1,5 @@
 import { slspLoginBoxController } from './slsp-login-box.controller'
-
+import { slspLoginBoxHtml } from './slsp-login-box.html'
 
 export const slspLoginBoxModule = angular
 	.module('slspLoginBoxModule', [])
@@ -7,4 +7,5 @@ export const slspLoginBoxModule = angular
 	.component('slspLoginBoxComponent', {
 		bindings: { afterCtrl: '<' },
 		controller: 'slspLoginBoxController',
+		template: slspLoginBoxHtml
 	})

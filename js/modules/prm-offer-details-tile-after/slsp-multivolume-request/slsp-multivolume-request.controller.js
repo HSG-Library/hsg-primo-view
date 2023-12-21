@@ -6,10 +6,19 @@ export class slspMultivolumeRequestController {
 
 	$onInit() {
 		this.parentCtrl = this.afterCtrl.parentCtrl
+		this.domManipulated = false
 	}
 
 	$doCheck() {
 		const currentUnavailableVolume = this.parentCtrl.isNoOfferAfterRefine()
+
+		if (!this.domManipulated) {
+			let volumeField = angular.element(document.querySelector('prm-get-it-request .form_item[ng-if="::$ctrl.isCodeEnabledforForm(\'VOLUME\')"]'))
+			let refineButton = angular.element(document.querySelector('span[ng-if="::$ctrl._tempRapidoLocateSerialMultivolumeOffers"]'))
+			volumeField.append(refineButton)
+			this.domManipulated = true
+		}
+
 		if (currentUnavailableVolume !== this.previousUnavailableVolume) {
 			if (currentUnavailableVolume == true) {
 				this.disableRequestButton()

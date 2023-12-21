@@ -26,12 +26,20 @@ export const hsgReportBrokenLinkConfig = {
 			en: 'Comment, problem description'
 		},
 		contactLabel: {
-			de: 'Kontakt-Email (für Unterstützung/Feedback zu ihrer Meldung)',
-			en: 'Contact-Email (for support/feedback regarding your report)'
+			de: 'Ihre Kontakt-Email (für Unterstützung/Feedback zu ihrer Meldung)',
+			en: 'Your Contact-Email (for support/feedback regarding your report)'
 		},
 		errorMessage: {
 			de: 'Fehler beim Senden des Reports.',
 			en: 'Error sending report.'
+		},
+		noContactMessage: {
+			de: 'Keine Email Adresse angegeben<br>(für Unterstützung/Feedback zu ihrer Meldung)',
+			en: 'No email address given<br>(for support/feedback regarding your report)'
+		},
+		okAnywayLabel: {
+			de: 'Trotzdem senden',
+			en: 'Send anyway'
 		}
 	}
 }

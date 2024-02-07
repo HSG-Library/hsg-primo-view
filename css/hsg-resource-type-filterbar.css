@@ -20,3 +20,7 @@ prm-resource-type-filter-bar div.container div.box button>div:hover,
 prm-resource-type-filter-bar div.container div.box button div:hover prm-icon {
 	color: #00802F !important;
 }
+
+prm-resource-type-filter-bar div.container div.box button:hover span {
+	box-shadow: none !important;
+}

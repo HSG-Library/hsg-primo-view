@@ -2043,7 +2043,9 @@ span[translate="nui.item.brief.4"] {
     display: none !important;
 }
 
-/*441 How to get it sections' order*/
+/*441 How to get it*/
+
+/*How to get it sections' order*/
 
 prm-opac {
     order: 1;
@@ -2068,6 +2070,30 @@ primo-explore.alert alma-htgi-svc {
     font-size: 1em;
 }
 
+/*Holding fields display*/
+
+.weak-text.layout-row[ng-repeat="line in $ctrl.currLoc.summaryHoldings.baseSummaryShort track by $index"] {
+    display: none !important;
+}
+
+prm-location prm-location-holdings[ng-if="$ctrl.displayHoldingsInLocationsList"] {
+    display: none;
+}
+
+
+button.button-as-link.link-alt-color.md-button.md-primoExplore-theme.md-ink-ripple.holding-expand-button,
+button.button-as-link.link-alt-color.md-button.md-primoExplore-theme.md-ink-ripple.holding-collapse-button {
+    line-height: 23px !important;
+    padding: 1px 10px 1px 0px !important;
+    margin-top: 10px !important;
+    margin-left: 0px !important;
+    background-color: #fff !important;
+}
+
+button.button-as-link.link-alt-color.md-button.md-primoExplore-theme.md-ink-ripple.holding-expand-button:hover,
+button.button-as-link.link-alt-color.md-button.md-primoExplore-theme.md-ink-ripple.holding-collapse-button:hover {
+    background-color: #ddd !important;
+}
 
 /*442 Filter bar*/
 
@@ -3409,12 +3435,12 @@ prm-request-services .md-button.button-as-link,
 prm-location-items md-list prm-service-button .md-button.button-as-link,
 #rapidoOffer prm-service-physical-best-offer .get_it_btn_digital,
 prm-service-physical-best-offer .get_it_btn_physical {
-    background-color: #3BBFAD !important;
+    background-color: #4E4A99 !important;
 }
 
 @media only screen and (max-width: 599px) {
     prm-topbar .top-nav-bar {
-        border-color: #3BBFAD !important;
+        border-color: #4E4A99 !important;
     }
 }
 
@@ -3433,7 +3459,7 @@ button.switch-to-simple:hover,
 #rapidoOffer prm-service-physical-best-offer .get_it_btn_digital:hover,
 prm-service-physical-best-offer .get_it_btn_physical:hover,
 prm-resource-type-filter-bar button.md-button.md-primoExplore-theme.md-ink-ripple:hover {
-    background-color: #83dcd0 !important;
+    background-color: #393765 !important;
 }
 
 /*font color of the primary color*/
@@ -3465,11 +3491,11 @@ button#get_it_btn_digital,
 prm-service-button>button>span,
 prm-resource-type-filter-bar .container .box div,
 prm-resource-type-filter-bar prm-icon {
-    color: #14413c !important;
+    color: #fff !important;
 }
 
 button.switch-to-advanced.zero-margin.button-with-icon.md-button.md-primoExplore-theme.md-ink-ripple {
-    border-color: #14413c !important;
+    border-color: #fff !important;
 }
 
 
@@ -3496,13 +3522,13 @@ button.switch-to-advanced.zero-margin.button-with-icon.md-button.md-primoExplore
 .prm-alert-bg,
 #rapidoOffer prm-rapido-no-offer-message .main_tile,
 .diamond {
-    background-color: #8dd8d8 !important;
+    background-color: #99d0d0 !important;
 }
 
 .text-highlight,
 mark,
 prm-location-items>md-list>md-list-item>div>div>div>div>prm-service-button>button {
-    box-shadow: inset 0 -0.15em 0 0 #8dd8d8;
+    box-shadow: inset 0 -0.15em 0 0 #99d0d0;
 }
 
 
@@ -3513,7 +3539,7 @@ prm-location-items>md-list>md-list-item>div>div>div>div>prm-service-button>butto
 
 div.alert-bar .md-button:hover:not([disabled]),
 slsp-edit-personal-details-component a.bar.alert-bar:hover {
-    background-color: #aff7f7 !important;
+    background-color: #b6fafa !important;
 }
 
 

@@ -14,6 +14,7 @@ export class hsgServiceDetailsFoldableItemsController {
 	$onInit() {
 		this.parentCtrl = this.afterCtrl.parentCtrl
 
+		this.parentCtrl.NUMBER_OF_DETAILS_TO_SHOW = 1000
 		this.rootEl = this.$element.parent().parent().query('div').children()
 		let that = this
 		// add a watcher to the root element
@@ -47,9 +48,12 @@ export class hsgServiceDetailsFoldableItemsController {
 			let values = detail.values[0].values
 
 			let textLength = values[0].length
+			const configItem = this.config.itemCount
+			const lowerBound = configItem + 3
+
 			if (textLength > this.config.charCount) {
 				this.addMarkup(this.getItemContainer(key), 1, true)
-			} else if (values.length > this.config.itemCount) {
+			} else if (values.length > configItem && values.length >= lowerBound) {
 				this.addMarkup(this.getItemContainer(key), this.config.itemCount, false)
 			}
 		}
@@ -87,14 +91,14 @@ export class hsgServiceDetailsFoldableItemsController {
 		collapse.style.display = 'none'
 		item.appendChild(collapse)
 
-		expand.addEventListener('click', function () {
+		expand.addEventListener('click', () => {
 			expand.style.display = 'none'
 			collapse.style.display = 'inline-block'
 			itemContainer.classList.remove('hsg-collapsed')
 			itemContainer.classList.add('hsg-expanded')
 		})
 
-		collapse.addEventListener('click', function () {
+		collapse.addEventListener('click', () => {
 			itemContainer.classList.add('hsg-collapsed')
 			itemContainer.classList.remove('hsg-expanded')
 			expand.style.display = 'inline-block'

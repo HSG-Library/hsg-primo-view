@@ -3,10 +3,13 @@ import { hsgHowovpAfterModule } from './modules/alma-howovp-after/hsg-howovp-aft
 import { hsgHtgiSvcAfterModule } from './modules/alma-htgi-svc-after/hsg-htgi-svc-after.module'
 import { hsgAlertMessageModule } from './modules/hsg-alert-message/hsg-alert-message.module'
 import { hsgExceptionHandlerModule } from './modules/hsg-exception-handler/hsg-exception-handler.module'
-import { hsgAlmaOtherMembersAfterModule } from './modules/prm-alma-other-members-after/hsg-alma-other-members-after.module'
 import { hsgHomeModule } from './modules/hsg-home/hsg-home.module'
+import { hsgAlmaOtherMembersAfterModule } from './modules/prm-alma-other-members-after/hsg-alma-other-members-after.module'
+import { hsgAlmaOtherUnitsAfterModule } from './modules/prm-alma-other-units-after/hsg-alma-other-units-after.module'
+import { hsgAlmaViewerAfterModule } from './modules/prm-alma-viewer-after/hsg-alma-viewer-after.module'
 import { hsgAlmaViewitAfterModule } from './modules/prm-alma-viewit-after/hsg-alma-viewit-after.module'
 import { hsgAlmaViewitItemsAfterModule } from './modules/prm-alma-viewit-items-after/hsg-alma-viewit-items-after.module'
+import { hsgCitationAfterModule } from './modules/prm-citation-after/hsg-citation-after.module'
 import { hsgFinesAfterModule } from './modules/prm-fines-after/hsg-fines-after.module'
 import { hsgFullViewAfterModule } from './modules/prm-full-view-after/hsg-full-view-after.module'
 import { hsgGalleryItemAfterModule } from './modules/prm-gallery-item-after/hsg-gallery-item-after.module'
@@ -18,11 +21,13 @@ import { hsgLocationItemsAfterModule } from './modules/prm-location-items-after/
 import { hsgLocationsAfterModule } from './modules/prm-locations-after/hsg-locations-after.module'
 import { hsgLoginAfterModule } from './modules/prm-login-after/hsg-login-after.module'
 import { hsgOfferDetailsTileAfterModule } from './modules/prm-offer-details-tile-after/hsg-offer-details-tile-after.module'
+import { hsgOpacAfterModule } from './modules/prm-opac-after/hsg-opac-after.module'
 import { hsgPersonalInfoAfterModule } from './modules/prm-personal-info-after/hsg-personal-info-after.module'
 import { hsgRequestAfterModule } from './modules/prm-request-after/hsg-request-after.module'
 import { hsgRequestsAfterModule } from './modules/prm-requests-after/hsg-requests-after.module'
 import { hsgSearchBarAfterModule } from './modules/prm-search-bar-after/hsg-search-bar-after.module'
 import { hsgSearchResultAvailabilityLineAfterModule } from './modules/prm-search-result-availability-line-after/hsg-search-result-availabilty-line-after.module'
+import { hsgSendEmailAfterModule } from './modules/prm-send-email-after/hsg-send-email-after.module'
 import { hsgServiceButtonAfterModule } from './modules/prm-service-button-after/hsg-service-button-after.module'
 import { hsgServiceDetailsAfterModule } from './modules/prm-service-details-after/hsg-service-details-after.module'
 import { hsgServiceNgrsAfterModule } from './modules/prm-service-ngrs-after/hsg-service-ngrs-after.module'
@@ -32,10 +37,8 @@ import { hsgStandAloneLoginAfterModule } from './modules/prm-stand-alone-login-a
 import { hsgTabsAndScopesSelectorAfterModule } from './modules/prm-tabs-and-scopes-selector-after/hsg-tabs-and-scopes-selector-after.module'
 import { hsgUnionCatalogLoginAfterModule } from './modules/prm-union-catalog-login-after/hsg-union-catalog-login-after.module'
 import { hsgUserAreaExpandableAfterModule } from './modules/prm-user-area-expandable-after/hsg-user-ara-expandable-after.module'
-import { hsgAlmaOtherUnitsAfterModule } from './modules/prm-alma-other-units-after/hsg-alma-other-units-after.module'
 import { slspHttpInterceptPickupInformation } from './modules/slsp-http-intercept-pickup-information/slsp-http-intercept-pickup-information.module'
 import { slspHttpInterceptRequestsModule } from './modules/slsp-http-intercept-requests/slsp-http-intercept-requests.module'
-import { hsgAlmaViewerAfterModule } from './modules/prm-alma-viewer-after/hsg-alma-viewer-after.module'
 
 let app = angular.module('viewCustom', ['angularLoad'])
 
@@ -48,6 +51,7 @@ app.requires.push(hsgAlmaOtherMembersAfterModule.name)
 app.requires.push(hsgAlmaViewerAfterModule.name)
 app.requires.push(hsgAlmaViewitAfterModule.name)
 app.requires.push(hsgAlmaViewitItemsAfterModule.name)
+app.requires.push(hsgCitationAfterModule.name)
 app.requires.push(hsgFinesAfterModule.name)
 app.requires.push(hsgFullViewAfterModule.name)
 app.requires.push(hsgGalleryItemAfterModule.name)
@@ -59,11 +63,13 @@ app.requires.push(hsgLocationItemsAfterModule.name)
 app.requires.push(hsgLocationsAfterModule.name)
 app.requires.push(hsgLoginAfterModule.name)
 app.requires.push(hsgOfferDetailsTileAfterModule.name)
+app.requires.push(hsgOpacAfterModule.name)
 app.requires.push(hsgPersonalInfoAfterModule.name)
 app.requires.push(hsgRequestAfterModule.name)
 app.requires.push(hsgRequestsAfterModule.name)
 app.requires.push(hsgSearchBarAfterModule.name)
 app.requires.push(hsgSearchResultAvailabilityLineAfterModule.name)
+app.requires.push(hsgSendEmailAfterModule.name)
 app.requires.push(hsgServiceButtonAfterModule.name)
 app.requires.push(hsgServiceDetailsAfterModule.name)
 app.requires.push(hsgServiceNgrsAfterModule.name)

@@ -28,6 +28,8 @@ import { hsgRequestAfterModule } from './modules/prm-request-after/hsg-request-a
 import { hsgRequestsAfterModule } from './modules/prm-requests-after/hsg-requests-after.module'
 import { hsgSearchBarAfterModule } from './modules/prm-search-bar-after/hsg-search-bar-after.module'
 import { hsgSearchResultAvailabilityLineAfterModule } from './modules/prm-search-result-availability-line-after/hsg-search-result-availabilty-line-after.module'
+import { hsgSearchResultListAfterModule } from './modules/prm-search-result-list-after/hsg-search-result-list-after.module'
+import { hsgSearchResultToolBarAfterModule } from './modules/prm-search-result-tool-bar-after/hsg-search-result-tool-bar-after.module'
 import { hsgSendEmailAfterModule } from './modules/prm-send-email-after/hsg-send-email-after.module'
 import { hsgServiceButtonAfterModule } from './modules/prm-service-button-after/hsg-service-button-after.module'
 import { hsgServiceDetailsAfterModule } from './modules/prm-service-details-after/hsg-service-details-after.module'
@@ -71,6 +73,8 @@ app.requires.push(hsgRequestAfterModule.name)
 app.requires.push(hsgRequestsAfterModule.name)
 app.requires.push(hsgSearchBarAfterModule.name)
 app.requires.push(hsgSearchResultAvailabilityLineAfterModule.name)
+app.requires.push(hsgSearchResultListAfterModule.name)
+app.requires.push(hsgSearchResultToolBarAfterModule.name)
 app.requires.push(hsgSendEmailAfterModule.name)
 app.requires.push(hsgServiceButtonAfterModule.name)
 app.requires.push(hsgServiceDetailsAfterModule.name)

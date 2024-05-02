@@ -10,6 +10,7 @@ import { hsgAlmaViewerAfterModule } from './modules/prm-alma-viewer-after/hsg-al
 import { hsgAlmaViewitAfterModule } from './modules/prm-alma-viewit-after/hsg-alma-viewit-after.module'
 import { hsgAlmaViewitItemsAfterModule } from './modules/prm-alma-viewit-items-after/hsg-alma-viewit-items-after.module'
 import { hsgCitationAfterModule } from './modules/prm-citation-after/hsg-citation-after.module'
+import { hsgFavoritesEditLabelsMenuAfterModule } from './modules/prm-favorites-edit-labels-menu-after/hsg-favorites-edit-labels-menu-after.module'
 import { hsgFinesAfterModule } from './modules/prm-fines-after/hsg-fines-after.module'
 import { hsgFullViewAfterModule } from './modules/prm-full-view-after/hsg-full-view-after.module'
 import { hsgGalleryItemAfterModule } from './modules/prm-gallery-item-after/hsg-gallery-item-after.module'
@@ -53,6 +54,7 @@ app.requires.push(hsgAlmaViewitAfterModule.name)
 app.requires.push(hsgAlmaViewitItemsAfterModule.name)
 app.requires.push(hsgCitationAfterModule.name)
 app.requires.push(hsgFinesAfterModule.name)
+app.requires.push(hsgFavoritesEditLabelsMenuAfterModule.name)
 app.requires.push(hsgFullViewAfterModule.name)
 app.requires.push(hsgGalleryItemAfterModule.name)
 app.requires.push(hsgJournalsAfterModule.name)

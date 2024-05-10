@@ -10,6 +10,7 @@ import { hsgAlmaViewerAfterModule } from './modules/prm-alma-viewer-after/hsg-al
 import { hsgAlmaViewitAfterModule } from './modules/prm-alma-viewit-after/hsg-alma-viewit-after.module'
 import { hsgAlmaViewitItemsAfterModule } from './modules/prm-alma-viewit-items-after/hsg-alma-viewit-items-after.module'
 import { hsgCitationAfterModule } from './modules/prm-citation-after/hsg-citation-after.module'
+import { hsgFavoritesEditLabelsMenuAfterModule } from './modules/prm-favorites-edit-labels-menu-after/hsg-favorites-edit-labels-menu-after.module'
 import { hsgFinesAfterModule } from './modules/prm-fines-after/hsg-fines-after.module'
 import { hsgFullViewAfterModule } from './modules/prm-full-view-after/hsg-full-view-after.module'
 import { hsgGalleryItemAfterModule } from './modules/prm-gallery-item-after/hsg-gallery-item-after.module'
@@ -27,6 +28,8 @@ import { hsgRequestAfterModule } from './modules/prm-request-after/hsg-request-a
 import { hsgRequestsAfterModule } from './modules/prm-requests-after/hsg-requests-after.module'
 import { hsgSearchBarAfterModule } from './modules/prm-search-bar-after/hsg-search-bar-after.module'
 import { hsgSearchResultAvailabilityLineAfterModule } from './modules/prm-search-result-availability-line-after/hsg-search-result-availabilty-line-after.module'
+import { hsgSearchResultListAfterModule } from './modules/prm-search-result-list-after/hsg-search-result-list-after.module'
+import { hsgSearchResultToolBarAfterModule } from './modules/prm-search-result-tool-bar-after/hsg-search-result-tool-bar-after.module'
 import { hsgSendEmailAfterModule } from './modules/prm-send-email-after/hsg-send-email-after.module'
 import { hsgServiceButtonAfterModule } from './modules/prm-service-button-after/hsg-service-button-after.module'
 import { hsgServiceDetailsAfterModule } from './modules/prm-service-details-after/hsg-service-details-after.module'
@@ -53,6 +56,7 @@ app.requires.push(hsgAlmaViewitAfterModule.name)
 app.requires.push(hsgAlmaViewitItemsAfterModule.name)
 app.requires.push(hsgCitationAfterModule.name)
 app.requires.push(hsgFinesAfterModule.name)
+app.requires.push(hsgFavoritesEditLabelsMenuAfterModule.name)
 app.requires.push(hsgFullViewAfterModule.name)
 app.requires.push(hsgGalleryItemAfterModule.name)
 app.requires.push(hsgJournalsAfterModule.name)
@@ -69,6 +73,8 @@ app.requires.push(hsgRequestAfterModule.name)
 app.requires.push(hsgRequestsAfterModule.name)
 app.requires.push(hsgSearchBarAfterModule.name)
 app.requires.push(hsgSearchResultAvailabilityLineAfterModule.name)
+app.requires.push(hsgSearchResultListAfterModule.name)
+app.requires.push(hsgSearchResultToolBarAfterModule.name)
 app.requires.push(hsgSendEmailAfterModule.name)
 app.requires.push(hsgServiceButtonAfterModule.name)
 app.requires.push(hsgServiceDetailsAfterModule.name)

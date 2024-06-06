@@ -38,6 +38,7 @@ import { hsgServicePhysicalBestOfferAfterModule } from './modules/prm-service-ph
 import { hsgStackMapAfterModule } from './modules/prm-stack-map-after/hsg-stack-map-after.module'
 import { hsgStandAloneLoginAfterModule } from './modules/prm-stand-alone-login-after/hsg-stand-alone-login-after.module'
 import { hsgTabsAndScopesSelectorAfterModule } from './modules/prm-tabs-and-scopes-selector-after/hsg-tabs-and-scopes-selector-after.module'
+import { hsgTopBarBeforeModule } from './modules/prm-top-bar-before/hsg-top-bar-before.module'
 import { hsgUnionCatalogLoginAfterModule } from './modules/prm-union-catalog-login-after/hsg-union-catalog-login-after.module'
 import { hsgUserAreaExpandableAfterModule } from './modules/prm-user-area-expandable-after/hsg-user-ara-expandable-after.module'
 import { slspHttpInterceptPickupInformation } from './modules/slsp-http-intercept-pickup-information/slsp-http-intercept-pickup-information.module'
@@ -83,6 +84,7 @@ app.requires.push(hsgServicePhysicalBestOfferAfterModule.name)
 app.requires.push(hsgStackMapAfterModule.name)
 app.requires.push(hsgStandAloneLoginAfterModule.name)
 app.requires.push(hsgTabsAndScopesSelectorAfterModule.name)
+app.requires.push(hsgTopBarBeforeModule.name)
 app.requires.push(hsgUnionCatalogLoginAfterModule.name)
 app.requires.push(hsgUserAreaExpandableAfterModule.name)
 app.requires.push(hsgAlmaOtherUnitsAfterModule.name)

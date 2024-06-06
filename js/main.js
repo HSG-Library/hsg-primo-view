@@ -4,6 +4,7 @@ import { hsgHtgiSvcAfterModule } from './modules/alma-htgi-svc-after/hsg-htgi-sv
 import { hsgAlertMessageModule } from './modules/hsg-alert-message/hsg-alert-message.module'
 import { hsgExceptionHandlerModule } from './modules/hsg-exception-handler/hsg-exception-handler.module'
 import { hsgHomeModule } from './modules/hsg-home/hsg-home.module'
+import { hsgAdvancedSearchAfterModule } from './modules/prm-advanced-search-after/hsg-advanced-search-after.module'
 import { hsgAlmaOtherMembersAfterModule } from './modules/prm-alma-other-members-after/hsg-alma-other-members-after.module'
 import { hsgAlmaOtherUnitsAfterModule } from './modules/prm-alma-other-units-after/hsg-alma-other-units-after.module'
 import { hsgAlmaViewerAfterModule } from './modules/prm-alma-viewer-after/hsg-alma-viewer-after.module'
@@ -51,6 +52,7 @@ app.requires.push(hsgAlertMessageModule.name)
 app.requires.push(hsgExceptionHandlerModule.name)
 app.requires.push(hsgHowovpAfterModule.name)
 app.requires.push(hsgHtgiSvcAfterModule.name)
+app.requires.push(hsgAdvancedSearchAfterModule.name)
 app.requires.push(hsgAlmaOtherMembersAfterModule.name)
 app.requires.push(hsgAlmaViewerAfterModule.name)
 app.requires.push(hsgAlmaViewitAfterModule.name)

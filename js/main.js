@@ -4,6 +4,7 @@ import { hsgHtgiSvcAfterModule } from './modules/alma-htgi-svc-after/hsg-htgi-sv
 import { hsgAlertMessageModule } from './modules/hsg-alert-message/hsg-alert-message.module'
 import { hsgExceptionHandlerModule } from './modules/hsg-exception-handler/hsg-exception-handler.module'
 import { hsgHomeModule } from './modules/hsg-home/hsg-home.module'
+import { hsgAdvancedSearchAfterModule } from './modules/prm-advanced-search-after/hsg-advanced-search-after.module'
 import { hsgAlmaOtherMembersAfterModule } from './modules/prm-alma-other-members-after/hsg-alma-other-members-after.module'
 import { hsgAlmaOtherUnitsAfterModule } from './modules/prm-alma-other-units-after/hsg-alma-other-units-after.module'
 import { hsgAlmaViewerAfterModule } from './modules/prm-alma-viewer-after/hsg-alma-viewer-after.module'
@@ -38,6 +39,7 @@ import { hsgServicePhysicalBestOfferAfterModule } from './modules/prm-service-ph
 import { hsgStackMapAfterModule } from './modules/prm-stack-map-after/hsg-stack-map-after.module'
 import { hsgStandAloneLoginAfterModule } from './modules/prm-stand-alone-login-after/hsg-stand-alone-login-after.module'
 import { hsgTabsAndScopesSelectorAfterModule } from './modules/prm-tabs-and-scopes-selector-after/hsg-tabs-and-scopes-selector-after.module'
+import { hsgTopBarBeforeModule } from './modules/prm-top-bar-before/hsg-top-bar-before.module'
 import { hsgUnionCatalogLoginAfterModule } from './modules/prm-union-catalog-login-after/hsg-union-catalog-login-after.module'
 import { hsgUserAreaExpandableAfterModule } from './modules/prm-user-area-expandable-after/hsg-user-ara-expandable-after.module'
 import { slspHttpInterceptPickupInformation } from './modules/slsp-http-intercept-pickup-information/slsp-http-intercept-pickup-information.module'
@@ -50,6 +52,7 @@ app.requires.push(hsgAlertMessageModule.name)
 app.requires.push(hsgExceptionHandlerModule.name)
 app.requires.push(hsgHowovpAfterModule.name)
 app.requires.push(hsgHtgiSvcAfterModule.name)
+app.requires.push(hsgAdvancedSearchAfterModule.name)
 app.requires.push(hsgAlmaOtherMembersAfterModule.name)
 app.requires.push(hsgAlmaViewerAfterModule.name)
 app.requires.push(hsgAlmaViewitAfterModule.name)
@@ -83,6 +86,7 @@ app.requires.push(hsgServicePhysicalBestOfferAfterModule.name)
 app.requires.push(hsgStackMapAfterModule.name)
 app.requires.push(hsgStandAloneLoginAfterModule.name)
 app.requires.push(hsgTabsAndScopesSelectorAfterModule.name)
+app.requires.push(hsgTopBarBeforeModule.name)
 app.requires.push(hsgUnionCatalogLoginAfterModule.name)
 app.requires.push(hsgUserAreaExpandableAfterModule.name)
 app.requires.push(hsgAlmaOtherUnitsAfterModule.name)

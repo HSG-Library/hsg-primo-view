@@ -11,13 +11,13 @@ export class hsgOffCampusInfoController {
 	$onInit() {
 		this.processDoCheck = false
 		this.deliveryCategory = []
-		if (this.afterCtrl.parentCtrl.item.pnx.addata.openaccess && this.afterCtrl.parentCtrl.itm.pnx.addata.openaccess[0] === 'true') {
+		this.onCampusService.getIpAndCheck()
+		if (this.afterCtrl.parentCtrl.item.pnx.addata.openaccess && this.afterCtrl.parentCtrl.item.pnx.addata.openaccess[0] === 'true') {
 			return
 		}
 		let delivery = this.afterCtrl.parentCtrl.item.delivery
 		if (delivery && delivery.deliveryCategory && (delivery.deliveryCategory.indexOf('Alma-E') > -1 || delivery.deliveryCategory.indexOf('Remote Search Resource') > -1)) {
 			this.deliveryCategory = delivery.deliveryCategory
-			this.onCampusService.getIpAndCheck()
 			this.processDoCheck = true
 		}
 	}

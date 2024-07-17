@@ -1150,6 +1150,11 @@ md-card.cardbox.default-card.quicklinksbox._md.md-primoExplore-theme>md-card-con
 }
 */
 
+/* Fix color inversion for links after click */
+.quicklinks .md-button.md-focused:not([disabled]),
+.quicklinks .md-button:focus:not([disabled]) {
+    background: none !important;
+}
 /*230 Footer*/
 
 
@@ -1353,12 +1358,12 @@ div[data-facet-value="institution-5501"] {
 
 /*Hide the "Open Knowledge Maps" link fully (facet group and okm link)*/
 .okm-full {
-    display: block;
+    display: none;
 }
 
 /*Hide the "Open Knowledge Maps" link in the facet group*/
 eth-okm-link-component {
-    display: block;
+    display: none;
 }
 
 /*320 Top Bar*/
@@ -4023,6 +4028,15 @@ prm-resource-type-filter-bar button.selectedResourceTypeOption prm-icon {
 
 /*****************************************************************************/
 
+/*Display "Open Knowledge Maps" link fully (facet group and okm link)*/
+.okm-full {
+    display: block;
+}
+
+/*Display the "Open Knowledge Maps" link in the facet group*/
+eth-okm-link-component {
+    display: block;
+}
 
 /*****************************************************************************/
 

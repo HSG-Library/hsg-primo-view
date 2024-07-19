@@ -2,7 +2,7 @@ export class slspEditPersonalDetailsController {
 
 	constructor(hsgTranslatorService) {
 		let lang = hsgTranslatorService.getLang()
-		this.detailsBaseEdu = "https:\/\/eduid.ch\/web\/change-account-data\/2\/?lang=" + lang
+		this.detailsBaseEdu = "https:\/\/eduid.ch\/account\/profile\?lang=" + lang
 		this.detailsBaseReg = "https:\/\/registration.slsp.ch\/library-card\/?lang=" + lang
 		this.exclude = ['STAFF', '11', '12', '13', '14', '15', '16', '91', '92', '99']
 		this.grpA = ['11', '91', '92']

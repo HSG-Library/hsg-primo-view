@@ -1,0 +1,9 @@
+/*******************************/
+/****** Search in journal ******/
+/*******************************/
+
+prm-search-within-journal .classic-input {
+	min-width: 280px;
+	width: 50%;
+	max-width: 437px;
+}

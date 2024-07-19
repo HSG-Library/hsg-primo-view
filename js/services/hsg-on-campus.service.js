@@ -1,36 +1,21 @@
-export const hsgOnCampusService = ['$http', function ($http) {
+export const hsgOnCampusService = ['$http',function ($http) {
 
 	this.onCampus = false
 	this.checkDone = false
 
-	this.getIpAndCheck = function (fallbackUrl = '') {
+	this.getIpAndCheck = function () {
 		this.checkDone = false
 		this.onCampus = false
-		this.stopRetrying = false
-		if (fallbackUrl) {
-			this.url = fallbackUrl
-		} else {
-			this.url = 'https://ipv4.icanhazip.com'
-		}
-		console.log('Calling IP address service', this.url)
-		$http({
-			method: 'GET',
-			url: this.url,
-			headers: { 'Accept': 'text/plain' }
-		}).then(
+		this.url = 'https://api.seeip.org/jsonip'
+  		$http.jsonp(this.url)
+		.then(
 			response => {
-				this.stopRetrying = false
-				const ip = response.data
+				const ip = response.data.ip
 				console.log('current ip', ip)
 				this.checkOnCampus(ip)
 			},
 			response => {
-				console.log('checking ip failed. stopRetrying:  ', this.stopRetrying, response)
-				if (!this.stopRetrying) {
-					console.log('previous check failed, switch to fallback service and retry')
-					this.stopRetrying = true
-					this.getIpAndCheck('https://api.ipify.org')
-				}
+				console.log('checking ip failed.', response)
 			})
 	}
 

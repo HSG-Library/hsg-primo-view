@@ -1,5 +1,3 @@
-
-import { bcuFeesLinkModule } from './bcu-fees-link/bcu-fees-link.module'
 import { hsgPickupInfoModule } from './hsg-pickup-info/hsg-pickup-info.module'
 import { slspAlmaRequestModule } from './slsp-alma-request/slsp-alma-request.module'
 import { slspCourierInfoModule } from './slsp-courier-info/slsp-courier-info.module'
@@ -13,7 +11,6 @@ export const hsgRequestAfterModule = angular
 		<hsg-pickup-info-component after-ctrl="$ctrl"></hsg-pickup-info-component>
 		<slsp-alma-request-component after-ctrl="$ctrl"></slsp-alma-request-component>
 		<slsp-courier-info-component after-ctrl="$ctrl"></slsp-courier-info-component>
-		<bcu-fees-link-component after-ctrl="$ctrl"></bcu-fees-link-component>
 		`
 		// <hsg-reading-room-info-component after-ctrl="$ctrl"></hsg-reading-room-info-component>
 	})
@@ -21,5 +18,4 @@ export const hsgRequestAfterModule = angular
 hsgRequestAfterModule.requires.push(slspAlmaRequestModule.name)
 hsgRequestAfterModule.requires.push(slspCourierInfoModule.name)
 hsgRequestAfterModule.requires.push(hsgPickupInfoModule.name)
-hsgRequestAfterModule.requires.push(bcuFeesLinkModule.name)
 //hsgRequestAfterModule.requires.push(hsgReadingRoomInfoModule.name);

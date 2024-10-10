@@ -1,42 +1,30 @@
 export class slspGitHintController {
 
 	constructor($scope, $compile, slspGitHintService) {
-		this.$scope = $scope
-		this.$compile = $compile
-		this.slspGitHintService = slspGitHintService
+		this.$scope = $scope;
+		this.$compile = $compile;
+		this.slspGitHintService = slspGitHintService;
 	}
 
 	$onInit() {
-		const currentTime = new Date() // Aktuelle Zeit
-
-
+		const currentTime = new Date(); // Aktuelle Zeit
 		this.slspGitHintService.getMessage()
 			.then((data) => {
 				// Überprüfung, ob Daten vorhanden sind
 				if (!data) {
-					return
+					return;
 				}
-
 				// Daten und Sprache aus der JSON-Datei
-				this.data = data
+				this.data = data;
 				this.lang = angular.element(document.querySelector('primo-explore')).injector().get('$rootScope').$$childHead.$ctrl.userSessionManagerService.getUserLanguage() ||
-					window.appConfig['primo-view']['attributes-map'].interfaceLanguage
-
+					window.appConfig['primo-view']['attributes-map'].interfaceLanguage;
 				// Start- und Endzeiten aus der JSON-Datei
-				console.log("Raw startTime:", data.startTime)
-				console.log("Raw endTime:", data.endTime)
-
-				const startTime = new Date(data.startTime)
-				const endTime = new Date(data.endTime)
-
-				console.log("Converted startTime:", startTime)
-				console.log("Converted endTime:", endTime)
-
-
+				const startTime = new Date(data.startTime);
+				const endTime = new Date(data.endTime);
 				// Vergleich der aktuellen Zeit mit den Zeitfenstern
-				if (currentTime <= startTime && currentTime >= endTime) {
+				if (currentTime >= startTime && currentTime <= endTime) {
 					// Anzeige des Textes in der entsprechenden Sprache
-					const topBarBefore = document.querySelector('prm-explore-main, prm-back-to-search-results-button md-toolbar, prm-account')
+					const topBarBefore = document.querySelector('prm-explore-main, prm-back-to-search-results-button md-toolbar, prm-account');
 					const html = `
                         <div class="slsp-git-topbar" layout="row">
                             <svg fill="#a8322d" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
@@ -45,10 +33,11 @@ export class slspGitHintController {
                             </svg>
                             <span ng-bind-html="$ctrl.data[$ctrl.lang]"></span>
                         </div>
-                    `
-					angular.element(topBarBefore).prepend(this.$compile(html)(this.$scope))
+                    `;
+					angular.element(topBarBefore).prepend(this.$compile(html)(this.$scope));
 				}
-			})
+			});
 	}
 }
-slspGitHintController.$inject = ['$scope', '$compile', 'slspGitHintService']
+
+slspGitHintController.$inject = ['$scope', '$compile', 'slspGitHintService'];

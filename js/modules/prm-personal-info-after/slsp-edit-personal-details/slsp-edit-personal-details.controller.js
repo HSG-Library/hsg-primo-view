@@ -1,62 +1,73 @@
 export class slspEditPersonalDetailsController {
 
-	constructor(hsgTranslatorService) {
-		let lang = hsgTranslatorService.getLang()
-		this.detailsBaseEdu = "https:\/\/eduid.ch\/account\/profile\?lang=" + lang
-		this.detailsBaseReg = "https:\/\/registration.slsp.ch\/library-card\/?lang=" + lang
-		this.exclude = ['STAFF', '11', '12', '13', '14', '15', '16', '91', '92', '99']
-		this.grpA = ['11', '91', '92']
-		this.grpB = ['12', '13', '14', '15', '16']
+	constructor($scope, $element, $rootScope, $window) {
+		this.$scope = $scope;
+		this.$element = $element;
+		this.$rootScope = $rootScope;
+		this.$window = $window;
 	}
 
-	$onInit() {
-		this.parentCtrl = this.afterCtrl.parentCtrl
+	$doCheck() {
+		this.parentCtrl = this.afterCtrl.parentCtrl;
+
+		this.detailsBaseEdu = "https:\/\/eduid.ch\/account\/profile";
+		this.detailsBaseReg = "https:\/\/registration.slsp.ch\/library-card";
+		this.exclude = ['STAFF', '11', '12', '13', '14', '15', '16', '17', '18', '91', '92', '99'];
+		this.grpA = ['11', '91', '92'];
+		this.grpB = ['12', '13', '14', '15', '16', '17', '18'];
+
+		this.getPatronGrp = function () {
+			if (this.parentCtrl.personalInfoService.personalInfo !== undefined) {
+				let patron = this.parentCtrl.personalInfoService.personalInfo.patronstatus[0].registration[0].institution[0].patronstatuscode;
+				if (!this.exclude.includes(patron)) {
+						return true;
+					} else {
+						return false;
+					}
+			}
+			return false;
+		};
+
+		this.grpLabelA = function () {
+			if (this.parentCtrl.personalInfoService.personalInfo !== undefined) {
+				let labelA = this.parentCtrl.personalInfoService.personalInfo.patronstatus[0].registration[0].institution[0].patronstatuscode;
+				if (this.grpA.includes(labelA)) {
+						return true;
+					} else {
+						return false;
+					}
+			}
+			return false;
+		};
+
+		this.grpLabelB = function () {
+			if (this.parentCtrl.personalInfoService.personalInfo !== undefined) {
+				let labelB = this.parentCtrl.personalInfoService.personalInfo.patronstatus[0].registration[0].institution[0].patronstatuscode;
+				if (this.grpB.includes(labelB)) {
+					return true;
+				} else {
+					return false;
+				}
+			}
+			return false;
+		};
+
+		this.buttonMove = function () {
+			let parentElement = angular.element(document.querySelector('md-card > md-card-content > prm-personal-settings > prm-personal-settings-after'));
+			let element = angular.element(document.querySelector('#SLSPeditPersonalDetails'));
+			parentElement.append(element);
+		};
 	}
 
-	getPatronGrp() {
-		if (this.parentCtrl.personalInfoService.personalInfo !== undefined) {
-			let patron = this.parentCtrl.personalInfoService.personalInfo.patronstatus[0].registration[0].institution[0].patronstatuscode
-			if (!this.exclude.includes(patron)) {
-				return true
-			}
-			else {
-				return false
-			}
+	getLanguage() {
+		let sms = this.$rootScope.$$childHead.$ctrl.userSessionManagerService;
+
+		if (!sms) {
+			return 'en';
+		} else {
+			return sms.getUserLanguage() || this.$window.appConfig['primo-view']['attributes-map'].interfaceLanguage;
 		}
-		return false
-	}
-
-	grpLabelA() {
-		if (this.parentCtrl.personalInfoService.personalInfo !== undefined) {
-			let labelA = this.parentCtrl.personalInfoService.personalInfo.patronstatus[0].registration[0].institution[0].patronstatuscode
-			if (this.grpA.includes(labelA)) {
-				return true
-			}
-			else {
-				return false
-			}
-		}
-		return false
-	}
-
-	grpLabelB() {
-		if (this.parentCtrl.personalInfoService.personalInfo !== undefined) {
-			let labelB = this.parentCtrl.personalInfoService.personalInfo.patronstatus[0].registration[0].institution[0].patronstatuscode
-			if (this.grpB.includes(labelB)) {
-				return true
-			}
-			else {
-				return false
-			}
-		}
-		return false
-	}
-
-	buttonMove() {
-		let parentElement = angular.element(document.querySelector('prm-personal-info > div.layout-wrap.layout-align-center-start.layout-row > md-card:nth-child(2)'))
-		let element = angular.element(document.querySelector('#SLSPeditPersonalDetails'))
-		parentElement.append(element)
 	}
 }
 
-slspEditPersonalDetailsController.$inject = ['hsgTranslatorService']
+slspEditPersonalDetailsController.$inject = ['$scope', '$element', '$rootScope', '$window'];

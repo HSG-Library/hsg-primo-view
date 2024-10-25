@@ -11,9 +11,11 @@ export class slspUnionLoginBoxController {
 	$onInit() {
 		this.parentCtrl = this.afterCtrl.parentCtrl;
 	}
+
 	cancelUnionLogin() {
 		this.parentCtrl.cancelLogin();
 	}
+
 	getLanguage() {
 		let sms = this.$rootScope.$$childHead.$ctrl.userSessionManagerService;
 		if (!sms) {

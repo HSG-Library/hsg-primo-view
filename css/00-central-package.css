@@ -115,6 +115,7 @@
 
 
 /*439 Other*/
+
 /*440 How to get it -  locations, holdings and items*/
 
 
@@ -140,6 +141,7 @@
 
 
 /*447 Other IZs online availability*/
+
 /*449 Other*/
 
 
@@ -1330,6 +1332,7 @@ button.button-as-link.link-alt-color.zero-margin.md-button.md-primoExplore-theme
     color: #aaa !important;
     cursor: not-allowed;
 }
+
 /*Hide NZ as IZ (import of Recherche Patrimonial data)*/
 div[data-facet-value="institution-5501"] {
     display: none !important;
@@ -1393,7 +1396,7 @@ eth-okm-link-component {
 
 prm-search-result-tool-bar span.text.tiny-uppercase-text {
     text-transform: unset;
-        font-size: 1em;
+    font-size: 1em;
 }
 
 prm-search-result-tool-bar .results-title {
@@ -1454,6 +1457,7 @@ prm-search-result-tool-bar .main-checkbox.animate-enter-leave-scale-bounce.stagg
     text-transform: none;
     font-size: 1em !important;
 }
+
 @media only screen and (max-width: 959px) {
 
     prm-add-query-to-saved-searches button.button-as-link.link-alt-color.md-button.md-primoExplore-theme.md-ink-ripple,
@@ -1829,6 +1833,7 @@ alma-htgi-svc.alma-alert-bar-hide prm-alert-bar {
 .logged-out alma-htgi-svc.alma-alert-bar-hide prm-alert-bar {
     display: block;
 }
+
 /*410 Sections' order*/
 
 #full-view-container>*:first-child {
@@ -2623,7 +2628,7 @@ prm-locations-filter div[ng-include="$ctrl.templateUrl"] {
     border: 1px solid #a4a4a4;
     border-radius: 2px;
     padding: 0 8px;
-        display: block;
+    display: block;
 }
 
 [ng-if="$ctrl.relatedLocations.length>$ctrl.relatedLocationsListLimit"] {
@@ -2820,9 +2825,14 @@ prm-alma-other-members .info-text {
     }
 }
 
+/*Info box temporary hidden*/
+
+.info-text {
+    display: none;
+}
 /*Hide "Online Access"*/
 
-span.availability-status.available_online[translate="fulldisplay.otherMembers.availabilty.available_online"] {
+prm-alma-other-members span.availability-status.available_online[translate="fulldisplay.otherMembers.availabilty.available_online"] {
     display: none;
 }
 
@@ -4161,6 +4171,7 @@ prm-resource-type-filter-bar button.selectedResourceTypeOption prm-icon {
 
 
 
+
 /*****************************************************************************/
 
 
@@ -4180,4 +4191,5 @@ prm-resource-type-filter-bar button.selectedResourceTypeOption prm-icon {
 
 
 /*****************************************************************************/
+
 /*****************************************************************************/

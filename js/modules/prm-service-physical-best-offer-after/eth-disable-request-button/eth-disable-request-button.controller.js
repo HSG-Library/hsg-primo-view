@@ -1,18 +1,49 @@
 export class ethDisableRequestButtonController {
-	$onInit() {
-		this.parentCtrl = this.afterCtrl.parentCtrl
-		this.processDoCheck = true
+
+	constructor($timeout) {
+		this.$timeout = $timeout;
 	}
 
-	$doCheck() {
-		if (!this.processDoCheck || !document.querySelector('prm-service-physical-best-offer .offer_details .rota_line > div > span')) {
-			return
+	$onInit() {
+		this.parentCtrl = this.afterCtrl.parentCtrl;
+		this.observeDomChanges();
+	}
+
+	observeDomChanges() {
+		const targetNode = document.querySelector('prm-service-physical-best-offer'); // Das zu beobachtende Element
+
+		if (!targetNode) {
+			console.error('***slsp*** Target element not found for DOM observation');
+			return;
 		}
-		let noAvailableCopies = document.querySelector('[translate="rapido.tiles.physical.no_best_offer.line_2"]')
-		if (noAvailableCopies) {
-			let requestButton = document.querySelector('#get_it_btn_physical')
-			angular.element(requestButton).attr('disabled', 'disabled')
+
+		const config = { childList: true, subtree: true }; // Konfiguration für Änderungen in den Kind-Elementen und Unterelementen
+
+		const observer = new MutationObserver((mutationsList) => {
+			for (const mutation of mutationsList) {
+				if (mutation.type === 'childList') {
+					this.checkAndDisableButton();
+				}
+			}
+		});
+		// Start der Beobachtung
+		observer.observe(targetNode, config);
+	}
+
+	checkAndDisableButton() {
+		try {
+			let noAvailableCopies = document.querySelector('[translate="rapido.tiles.physical.no_best_offer.line_2"]');
+			if (noAvailableCopies) {
+				let requestButton = document.querySelector('#get_it_btn_physical');
+				if (requestButton) {
+					angular.element(requestButton).attr('disabled', 'disabled');
+				}
+			}
+		} catch (e) {
+			console.error("***slsp*** an error occurred in checkAndDisableButton\n\n");
+			console.error(e.message);
 		}
-		this.processDoCheck = false
 	}
 }
+
+ethDisableRequestButtonController.$inject = ['$timeout'];

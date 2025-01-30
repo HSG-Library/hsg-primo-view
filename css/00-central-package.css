@@ -1756,13 +1756,13 @@ prm-get-it-request .margin-buttons {
     border: 1px solid gray;
     margin-right: 0px;
     margin-left: 30px;
-        min-width: 128%;
+    min-width: 128%;
 }
 
 #offer_request_main_tile>div.getItNgrs>form>div.margin-buttons>button.button-with-icon.button-confirm.md-button.md-primoExplore-theme.md-ink-ripple {
     margin-right: 0px;
     margin-left: 30px;
-        min-width: 128%;
+    min-width: 128%;
 }
 
 md-tabs.md-dynamic-height md-tabs-content-wrapper md-content>prm-request>div>div.service-form-dynamic-panel.zero-margin.layout-padding.layout-column.flex>form>div.layout-align-end-stretch.layout-column>div>button {
@@ -1845,6 +1845,7 @@ alma-htgi-svc.alma-alert-bar-hide prm-alert-bar {
 prm-alma-other-members .bar.alert-bar.zero-margin-bottom.layout-align-center-center.layout-row:nth-child(2) {
     display: none;
 }
+
 /*410 Sections' order*/
 
 #full-view-container>*:first-child {
@@ -2134,6 +2135,7 @@ prm-opac .ill-form,
 prm-blank_ill .digitization-form {
     display: none;
 }
+
 
 /*Show icon*/
 
@@ -2847,6 +2849,7 @@ prm-alma-other-members .info-text {
     display: none;
 }
 
+
 /*Hide "Online Access"*/
 
 prm-alma-other-members span.availability-status.available_online[translate="fulldisplay.otherMembers.availabilty.available_online"] {
@@ -3002,53 +3005,53 @@ prm-get-it-request .offer_details_main_tail {
     border-left: none;
     background: #ffffff;
     width: 5%;
-    }
-    
-    prm-offer-details-tile {
-        display: none;
-    }
-    
-    .slsp-request-details-box {
-        padding: 8px;
-    }
-    
-    .slsp-request-details,
-    .slsp-request-alert {
-        padding: 8px;
-    }
-    
-    .slsp-request-details .request-details-label,
-    .slsp-request-alert .request-details-label {
-        color: #707070;
-        font-size: 13px;
-    }
-    
-    div#physicalGetItRequest .digital-only,
-    div#digitalGetItRequest .physical-only,
-    div#physicalGetItRequest .slsp-request-alert,
-    div#physicalGetItRequest.is-unavailbl-resource div.slsp-request-details.physical-only.deliverd-in,
-    div#physicalGetItRequest.no-best-offer .slsp-request-details,
-    div#physicalGetItRequest.is-unavailbl-resource .slsp-request-alert.physical-only.no-best-offer,
-    prm-service-ngrs div#physicalGetItRequest span.reading-Room-Pod {
-        display: none;
-    }
-    
-    div#physicalGetItRequest.is-unavailbl-resource .slsp-request-alert.physical-only.delivery-unknown,
-    div#physicalGetItRequest.no-best-offer .slsp-request-alert.physical-only.no-best-offer {
-        display: inline-block;
-        font-size: 15px;
-        font-weight: 600;
-    }
-    
-    prm-service-ngrs.reading-room div#physicalGetItRequest span.reading-Room-Pod {
-        display: inline-block;
-        margin-left: 0;
-    }
-    
-    .slsp-request-alert.physical-only.delivery-unknown svg,
-    .slsp-request-alert.physical-only.no-best-offer svg {
-        width: 18px;
-        vertical-align: text-top;
+}
+
+prm-offer-details-tile {
+    display: none;
+}
+
+.slsp-request-details-box {
+    padding: 8px;
+}
+
+.slsp-request-details,
+.slsp-request-alert {
+    padding: 8px;
+}
+
+.slsp-request-details .request-details-label,
+.slsp-request-alert .request-details-label {
+    color: #707070;
+    font-size: 13px;
+}
+
+div#physicalGetItRequest .digital-only,
+div#digitalGetItRequest .physical-only,
+div#physicalGetItRequest .slsp-request-alert,
+div#physicalGetItRequest.is-unavailbl-resource div.slsp-request-details.physical-only.deliverd-in,
+div#physicalGetItRequest.no-best-offer .slsp-request-details,
+div#physicalGetItRequest.is-unavailbl-resource .slsp-request-alert.physical-only.no-best-offer,
+prm-service-ngrs div#physicalGetItRequest span.reading-Room-Pod {
+    display: none;
+}
+
+div#physicalGetItRequest.is-unavailbl-resource .slsp-request-alert.physical-only.delivery-unknown,
+div#physicalGetItRequest.no-best-offer .slsp-request-alert.physical-only.no-best-offer {
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+prm-service-ngrs.reading-room div#physicalGetItRequest span.reading-Room-Pod {
+    display: inline-block;
+    margin-left: 0;
+}
+
+.slsp-request-alert.physical-only.delivery-unknown svg,
+.slsp-request-alert.physical-only.no-best-offer svg {
+    width: 18px;
+    vertical-align: text-top;
 }
 
 #rapidoOffer prm-rapido-no-offer-message .main_tile {
@@ -3269,7 +3272,7 @@ span[translate="nui.ngrs.search.brief.digital.getDigitalCopy"] span strong {
     font-size: 16px !important;
     display: flex;
     padding: 0 5px 0 0 !important;
-        color: #3a3a3a;
+    color: #3a3a3a;
         font-weight: normal !important;
     align-items: center;
 }
@@ -3277,7 +3280,7 @@ span[translate="nui.ngrs.search.brief.digital.getDigitalCopy"] span strong {
 span[translate="nui.ngrs.search.brief.digital.getAChapter"] span b,
 span[translate="nui.ngrs.search.brief.digital.getDigitalCopy"] span b {
     font-size: 16px !important;
-        font-weight: normal !important;
+    font-weight: normal !important;
         color: #3a3a3a;
     text-align: left;
 }
@@ -3285,6 +3288,7 @@ span[translate="nui.ngrs.search.brief.digital.getDigitalCopy"] span b {
 prm-get-it-request div.relative-position {
     min-width: 75%;
 }
+
 @media only screen and (min-width: 766px) {
     div#digitalGetItRequest prm-offer-details-tile .offer_detail {
         width: 100%;
@@ -3373,6 +3377,7 @@ slsp-close-pickup-anywhere-form-component button {
 div#pickup_information_form button#form-close-btn {
     display: none;
 }
+
 /*470 Special external collections*/
 
 .slsp-archives md-list-item {
@@ -3550,6 +3555,7 @@ prm-account-overview md-list-item.md-2-line.zero-padding.md-no-proxy._md.md-clic
 .md-button:focus:not([disabled]) prm-icon {
     color: #fff !important;
 }
+
 /* Fix for cut labels */
 
 #accountoverview>md-tabs>md-tabs-wrapper {
@@ -4126,12 +4132,12 @@ prm-location-items md-list prm-service-button .md-button.button-as-link,
 prm-service-physical-best-offer .get_it_btn_physical,
 md-input-container:after,
 .slsp-citation-select-radio.md-active .md-on {
-    background-color: #4E4A99 !important;
+    background-color: #3BBFAD !important;
 }
 
 @media only screen and (max-width: 599px) {
     prm-topbar .top-nav-bar {
-        border-color: #4E4A99 !important;
+        border-color: #3BBFAD !important;
     }
 }
 
@@ -4150,7 +4156,7 @@ button.switch-to-simple:hover,
 #rapidoOffer prm-service-physical-best-offer .get_it_btn_digital:hover,
 prm-service-physical-best-offer .get_it_btn_physical:hover,
 prm-resource-type-filter-bar button.md-button.md-primoExplore-theme.md-ink-ripple:hover {
-    background-color: #393765 !important;
+    background-color: #83dcd0 !important;
 }
 
 /*font color of the primary color*/
@@ -4182,12 +4188,12 @@ button#get_it_btn_digital,
 prm-service-button>button>span,
 prm-resource-type-filter-bar .container .box div,
 prm-resource-type-filter-bar prm-icon {
-    color: #fff !important;
+    color: #14413c !important;
 }
 
 button.switch-to-advanced.zero-margin.button-with-icon.md-button.md-primoExplore-theme.md-ink-ripple,
 prm-resource-type-filter-bar button.md-button.md-primoExplore-theme.md-ink-ripple:hover {
-    border-color: #fff !important;
+    border-color: #14413c !important;
 }
 
 
@@ -4214,13 +4220,13 @@ prm-resource-type-filter-bar button.md-button.md-primoExplore-theme.md-ink-rippl
 .prm-alert-bg,
 #rapidoOffer prm-rapido-no-offer-message .main_tile,
 .diamond {
-    background-color: #99d0d0 !important;
+    background-color: #8dd8d8 !important;
 }
 
 .text-highlight,
 mark,
 prm-location-items>md-list>md-list-item>div>div>div>div>prm-service-button>button {
-    box-shadow: inset 0 -0.15em 0 0 #99d0d0;
+    box-shadow: inset 0 -0.15em 0 0 #8dd8d8;
 }
 
 
@@ -4230,7 +4236,7 @@ prm-location-items>md-list>md-list-item>div>div>div>div>prm-service-button>butto
 
 div.alert-bar .md-button:hover:not([disabled]),
 slsp-edit-personal-details-component a.bar.alert-bar:hover {
-    background-color: #b6fafa !important;
+    background-color: #aff7f7 !important;
 }
 
 
@@ -4271,12 +4277,12 @@ prm-resource-type-filter-bar button.selectedResourceTypeOption prm-icon {
 
 /*Display "Open Knowledge Maps" link fully (facet group and okm link)*/
 .okm-full {
-    display: block;
+    display: none;
 }
 
 /*Display the "Open Knowledge Maps" link in the facet group*/
 eth-okm-link-component {
-    display: block;
+    display: none;
 }
 
 /*****************************************************************************/

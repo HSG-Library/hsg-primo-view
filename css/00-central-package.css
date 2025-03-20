@@ -1410,6 +1410,7 @@ md-checkbox .md-icon {
 .available-facets .section-content .md-chips .md-chip .md-button:before {
     background-color: #ffffff;
 }
+
 /*320 Top Bar*/
 
 #mainResults>prm-search-result-tool-bar>div>md-toolbar>div.search-toolbar-title.hide-xs.layout-row>prm-add-query-to-saved-searches>.md-button:hover:not([disabled]) {
@@ -1479,6 +1480,7 @@ prm-search-result-tool-bar .main-checkbox.animate-enter-leave-scale-bounce.stagg
 prm-add-query-to-saved-searches button {
     border-radius: 5px !important;
 }
+
 /*Mobiles*/
 
 .mobile-page-range span.text.tiny-uppercase-text {
@@ -2855,7 +2857,7 @@ label[translate="email.note"] {
 /*Info box*/
 
 prm-alma-other-members .info-text {
-    margin: 0 10px 20px 81px;
+    margin: 10px 10px 20px 81px;
     border: 1px solid #222;
     border-radius: 3px;
     padding: 20px 10px;
@@ -2871,9 +2873,11 @@ prm-alma-other-members .info-text {
 
 /*Info box temporary hidden*/
 
-.info-text {
+/* .info-text {
     display: none;
 }
+
+*/
 
 
 /*Hide "Online Access"*/
@@ -4068,6 +4072,7 @@ div#actionsList prm-action-list prm-action-container,
 .favorites-action-list prm-action-list prm-action-container {
     order: 3;
 }
+
 /*950 Alma viewer*/
 
 /*Hide OTB logo in alma viewer*/
@@ -4216,12 +4221,12 @@ prm-location-items md-list prm-service-button .md-button.button-as-link,
 prm-service-physical-best-offer .get_it_btn_physical,
 md-input-container:after,
 .slsp-citation-select-radio.md-active .md-on {
-    background-color: #4E4A99 !important;
+    background-color: #3BBFAD !important;
 }
 
 @media only screen and (max-width: 599px) {
     prm-topbar .top-nav-bar {
-        border-color: #4E4A99 !important;
+        border-color: #3BBFAD !important;
     }
 }
 
@@ -4240,7 +4245,7 @@ button.switch-to-simple:hover,
 #rapidoOffer prm-service-physical-best-offer .get_it_btn_digital:hover,
 prm-service-physical-best-offer .get_it_btn_physical:hover,
 prm-resource-type-filter-bar button.md-button.md-primoExplore-theme.md-ink-ripple:hover {
-    background-color: #393765 !important;
+    background-color: #83dcd0 !important;
 }
 
 /*font color of the primary color*/
@@ -4272,12 +4277,12 @@ button#get_it_btn_digital,
 prm-service-button>button>span,
 prm-resource-type-filter-bar .container .box div,
 prm-resource-type-filter-bar prm-icon {
-    color: #fff !important;
+    color: #14413c !important;
 }
 
 button.switch-to-advanced.zero-margin.button-with-icon.md-button.md-primoExplore-theme.md-ink-ripple,
 prm-resource-type-filter-bar button.md-button.md-primoExplore-theme.md-ink-ripple:hover {
-    border-color: #fff !important;
+    border-color: #14413c !important;
 }
 
 
@@ -4304,13 +4309,13 @@ prm-resource-type-filter-bar button.md-button.md-primoExplore-theme.md-ink-rippl
 .prm-alert-bg,
 #rapidoOffer prm-rapido-no-offer-message .main_tile,
 .diamond {
-    background-color: #99d0d0 !important;
+    background-color: #8dd8d8 !important;
 }
 
 .text-highlight,
 mark,
 prm-location-items>md-list>md-list-item>div>div>div>div>prm-service-button>button {
-    box-shadow: inset 0 -0.15em 0 0 #99d0d0;
+    box-shadow: inset 0 -0.15em 0 0 #8dd8d8;
 }
 
 
@@ -4320,7 +4325,7 @@ prm-location-items>md-list>md-list-item>div>div>div>div>prm-service-button>butto
 
 div.alert-bar .md-button:hover:not([disabled]),
 slsp-edit-personal-details-component a.bar.alert-bar:hover {
-    background-color: #b6fafa !important;
+    background-color: #aff7f7 !important;
 }
 
 
@@ -4352,7 +4357,7 @@ prm-resource-type-filter-bar button.selectedResourceTypeOption prm-icon {
 /*****************************************************************************/
 
 
-/*******************************03 Other local code***************************/
+/*******************************03 Other local code for the NZ***************************/
 
 
 /*****************************************************************************/
@@ -4361,60 +4366,13 @@ prm-resource-type-filter-bar button.selectedResourceTypeOption prm-icon {
 
 /*Display "Open Knowledge Maps" link fully (facet group and okm link)*/
 .okm-full {
-    display: block;
+    display: none;
 }
 
 /*Display the "Open Knowledge Maps" link in the facet group*/
 eth-okm-link-component {
-    display: block;
+    display: none;
     }
-    
-    /************Temporary alert box**************/
-    
-    .iheid-alert::after,
-    .iheid-alert::before {
-        content: "";
-        display: table;
-        clear: both;
-    }
-    
-    .iheid-alert:hover {
-        color: #000 !important;
-        background-color: #99d0d0 !important;
-    }
-    
-    .iheid-alert {
-        background-color: #99d0d0 !important;
-        color: black;
-        box-shadow: 2px 1px 3px 0px rgb(0 0 0 / 8%), 0 2px 5px 0 rgb(0 0 0 / 8%);
-        margin: 8px 8px 4px 8px;
-        padding: 10px;
-        position: relative;
-        opacity: 1;
-        border-radius: 3px;
-    }
-    
-    .iheid-alert a {
-        color: #000;
-        text-decoration: underline !important;
-    }
-    
-    /*Alert box close button*/
-    
-    .iheid-alert-close {
-        margin-left: 15px;
-        color: #000;
-        float: right;
-        cursor: pointer;
-    }
-    
-    .iheid-alert-close:hover {
-        color: #00802F;
-    }
-    
-    a:hover#alert {
-        background-color: rgba(47, 47, 47, 0.1) !important;
-}
 
 /*****************************************************************************/
 

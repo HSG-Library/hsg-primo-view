@@ -1,0 +1,10 @@
+body::before {
+  content: "12/07/2025 07:00 - 13/07/25 07:00: Systemunterbrechung für Unterhaltsarbeiten / System disruption due to maintenance work";
+  display: inline-block;
+  background: #ff9cdb;
+  text-align: center;
+  padding: 10px;
+  width: 100%;
+  font-weight: normal;
+  color: black;
+}

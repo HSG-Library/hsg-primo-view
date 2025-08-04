@@ -1,7 +1,6 @@
 
 import { hsgHowovpAfterModule } from './modules/alma-howovp-after/hsg-howovp-after.module';
 import { hsgHtgiSvcAfterModule } from './modules/alma-htgi-svc-after/hsg-htgi-svc-after.module';
-import { hsgAlertMessageModule } from './modules/hsg-alert-message/hsg-alert-message.module';
 import { hsgExceptionHandlerModule } from './modules/hsg-exception-handler/hsg-exception-handler.module';
 import { hsgHomeModule } from './modules/hsg-home/hsg-home.module';
 import { hsgPickupAnywhereFormAfterModule } from './modules/pickup-anywhere-form-after/hsg-pickup-anywhere-form-after.module';
@@ -51,7 +50,6 @@ import { hsgExploreMainAfterModule } from './modules/prm-explore-main/hsg-explor
 let app = angular.module('viewCustom', ['angularLoad']);
 
 app.requires.push(hsgHomeModule.name);
-app.requires.push(hsgAlertMessageModule.name);
 app.requires.push(hsgExceptionHandlerModule.name);
 app.requires.push(hsgHowovpAfterModule.name);
 app.requires.push(hsgHtgiSvcAfterModule.name);

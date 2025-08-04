@@ -1,12 +1,23 @@
-/* body::before {
-  content: "";
-  display: inline-block;
+body::before {
+  content: var(--alert-message, );
+  display: block;
+  overflow: hidden;
   background: #ff9cdb;
+  animation: slideInDown 0.2s ease-in-out forwards;
   text-align: center;
-  padding: 10px;
   width: 100%;
   font-weight: normal;
+  line-height: 45px;
   color: black;
+  height: 0;
 }
 
-*/
+@keyframes slideInDown {
+  from {
+    height: 0;
+  }
+
+  to {
+    height: 45px;
+  }
+}

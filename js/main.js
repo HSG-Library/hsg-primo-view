@@ -46,6 +46,7 @@ import { hsgUnionCatalogLoginAfterModule } from './modules/prm-union-catalog-log
 import { hsgUserAreaExpandableAfterModule } from './modules/prm-user-area-expandable-after/hsg-user-ara-expandable-after.module';
 import { slspHttpInterceptPickupInformation } from './modules/slsp-http-intercept-pickup-information/slsp-http-intercept-pickup-information.module';
 import { slspHttpInterceptRequestsModule } from './modules/slsp-http-intercept-requests/slsp-http-intercept-requests.module';
+import { hsgExploreMainAfterModule } from './modules/prm-explore-main/hsg-explore-main-after.module';
 
 let app = angular.module('viewCustom', ['angularLoad']);
 
@@ -60,6 +61,7 @@ app.requires.push(hsgAlmaViewerAfterModule.name);
 app.requires.push(hsgAlmaViewitAfterModule.name);
 app.requires.push(hsgAlmaViewitItemsAfterModule.name);
 app.requires.push(hsgCitationAfterModule.name);
+app.requires.push(hsgExploreMainAfterModule.name);
 app.requires.push(hsgFinesAfterModule.name);
 app.requires.push(hsgFavoritesEditLabelsMenuAfterModule.name);
 app.requires.push(hsgFullViewAfterModule.name);

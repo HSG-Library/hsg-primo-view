@@ -11,7 +11,7 @@ A quick A short guide on how to install the dev environment can be found in the 
 * Make changes
 * To run the current state of development use the following gulp task in the root directory of the Primo DevEnv:
 
-		gulp run --view 41SLSP_HSG-HSGswisscovery --browserify --ve
+		gulp run --view 41SLSP_HSG-sandbox_jfu --browserify --ve
 	* `--view`: the name of the view which should be run
 	* `--browserify`: lets you require('modules') in the browser by bundling up all of your dependencies
 	* `--ve`: the Primo DevEnv documentation states 'For Primo VE customers, add the --ve flag', but I could not notice any effects.

@@ -1,20 +1,42 @@
+
+
+
+//-----------------------------------------------
+
+
 export class slspPickupInformationController {
 
   constructor($scope) {
     this.$scope = $scope;
+
   }
+
 
   $onInit() {
-    this.parentCtrl = this.afterCtrl.parentCtrl;
-    this.getInstitutionName = this.getInstitutionName.bind(this);
-    this.getLibraryName = this.getLibraryName.bind(this);
-    this.getSupplyTime = this.getSupplyTime.bind(this);
-    this.getLoanPeriod = this.getLoanPeriod.bind(this);
-    this.getPatronCost = this.getPatronCost.bind(this);
-    this.getCurrency = this.getCurrency.bind(this);
-    this.getChosenPlaceRadio = this.getChosenPlaceRadio.bind(this);
-  }
+    try {
+      this.parentCtrl = this.afterCtrl.parentCtrl;
+      this.getInstitutionName = this.getInstitutionName.bind(this);
+      this.getLibraryName = this.getLibraryName.bind(this);
+      this.getSupplyTime = this.getSupplyTime.bind(this);
+      this.getLoanPeriod = this.getLoanPeriod.bind(this);
+      this.getPatronCost = this.getPatronCost.bind(this);
+      this.getCurrency = this.getCurrency.bind(this);
+      this.getChosenPlaceRadio = this.getChosenPlaceRadio.bind(this);
+      //this.getIsUnavailableResource = this.getIsUnavailableResource.bind(this);
 
+      //console.log(this.parentCtrl);
+      //console.log(this.parentCtrl.jwtUtilService.getDecodedToken());             
+      //if="!$ctrl.isDigitalOffer() && !$ctrl.isUnavailableResource()"
+
+    }
+
+
+    catch (e) {
+      console.error("***SLSP*** an error occured: slsp Pickup Information Controller\n\n");
+      console.error(e.message);
+    }
+
+  }
   getInstitutionName() {
     if (this.parentCtrl.pickupAnywhereService !== undefined) {
       return this.parentCtrl.pickupAnywhereService.getSelectedPickupInformation().institutionName;
@@ -22,7 +44,6 @@ export class slspPickupInformationController {
       return;
     }
   }
-
   getLibraryName() {
     if (this.parentCtrl.pickupAnywhereService !== undefined) {
       return this.parentCtrl.pickupAnywhereService.getSelectedPickupInformation().libraryName;
@@ -30,39 +51,37 @@ export class slspPickupInformationController {
       return;
     }
   }
-
   getSupplyTime() {
-    if (this.parentCtrl.bestoffer !== null) {
-      return this.parentCtrl.bestoffer.supplyTime;
+    if (this.parentCtrl && this.parentCtrl._bestOffer && this.parentCtrl._bestOffer.supplyTime) {
+      return this.parentCtrl._bestOffer.supplyTime;
     } else {
-      return;
+      return null; // Rückgabe von null, wenn kein Wert vorhanden ist
     }
   }
 
   getLoanPeriod() {
-    if (this.parentCtrl.bestoffer !== null) {
-      return this.parentCtrl.bestoffer.loanPeriod;
+    if (this.parentCtrl && this.parentCtrl._bestOffer && this.parentCtrl._bestOffer.loanPeriod) {
+      return this.parentCtrl._bestOffer.loanPeriod;
     } else {
-      return;
+      return null; // Rückgabe von null, wenn kein Wert vorhanden ist
     }
   }
 
   getPatronCost() {
-    if (this.parentCtrl.bestoffer !== null) {
-      return this.parentCtrl.bestoffer.patronCost;
+    if (this.parentCtrl && this.parentCtrl._bestOffer && this.parentCtrl._bestOffer.patronCost) {
+      return this.parentCtrl._bestOffer.patronCost;
     } else {
-      return;
+      return null; // Rückgabe von null, wenn kein Wert vorhanden ist
     }
   }
 
   getCurrency() {
-    if (this.parentCtrl.bestoffer !== null) {
-      return this.parentCtrl.bestoffer.currency;
+    if (this.parentCtrl && this.parentCtrl._bestOffer && this.parentCtrl._bestOffer.currency) {
+      return this.parentCtrl._bestOffer.currency;
     } else {
-      return;
+      return null; // Rückgabe von null, wenn kein Wert vorhanden ist
     }
   }
-
   getChosenPlaceRadio() {
     if (this.parentCtrl.pickupAnywhereService !== undefined) {
       return this.parentCtrl.pickupAnywhereService.getSelectedPickupInformation().chosenPlaceRadio;
@@ -70,6 +89,6 @@ export class slspPickupInformationController {
       return;
     }
   }
-}
 
+}
 slspPickupInformationController.$inject = ['$scope'];

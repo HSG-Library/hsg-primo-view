@@ -1,3 +1,4 @@
+
 export class slspMultivolumeRequestController {
 	constructor($scope) {
 		this.$scope = $scope;
@@ -7,32 +8,50 @@ export class slspMultivolumeRequestController {
 	$onInit() {
 		this.parentCtrl = this.afterCtrl.parentCtrl;
 		this.domManipulated = false;
+
 	}
 
 	$doCheck() {
-		const currentUnavailableVolume = this.parentCtrl.isNoOfferAfterRefine();
-		const isUnavailableResource = this.parentCtrl.isUnavailableResource();
+		try {
+			const currentUnavailableVolume = this.parentCtrl.isNoOfferAfterRefine();
+			const isUnavailableResource = this.parentCtrl.isUnavailableResource();
+			const resourceType = this.parentCtrl.getResourceType();
+			// console.log('currentUnavailableVolume: ' + currentUnavailableVolume);
+			// console.log('isUnavailableResource: ' + isUnavailableResource);
+			//console.log('resourceType: ' + resourceType);
 
-		if (!this.domManipulated) {
-			let volumeField = angular.element(document.querySelector('prm-get-it-request .form_item[ng-if="::$ctrl.isCodeEnabledforForm(\'VOLUME\')"]'));
-			let refineButton = angular.element(document.querySelector('span[ng-if="::$ctrl._tempRapidoLocateSerialMultivolumeOffers"]'));
+			if (!this.domManipulated && resourceType != 'journal') {
+				// let volumeField = angular.element(document.querySelector('prm-get-it-request .form_item[ng-if="::$ctrl.isCodeEnabledforForm(\'VOLUME\')"]'));
+				// let refineButton = angular.element(document.querySelector('prm-get-it-request .margin-buttons span[ng-if="::!$ctrl.isEbookOffer()"]'));
 
-			volumeField.append(refineButton);
+				// volumeField.append(refineButton);
 
-			this.domManipulated = true;
-		}
+				let resetButton = angular.element(document.querySelector('span[translate="nui.reset"]'));
+				if (resetButton && resetButton.parent()) {
+					resetButton.parent().addClass('hidden');
+				}
 
-		if (currentUnavailableVolume !== this.previousUnavailableVolume) {
-			if (currentUnavailableVolume === true) {
-				this.disableRequestButton();
-			} else {
-				this.enableRequestButton();
+				this.domManipulated = true;
 			}
 
-			this.previousUnavailableVolume = currentUnavailableVolume;
-		}
+			// Check und Button steuern
+			if (currentUnavailableVolume !== this.previousUnavailableVolume) {
+				if (currentUnavailableVolume === true) {
+					this.disableRequestButton();
+				} else {
+					this.enableRequestButton();
+				}
 
-		this.updatePhysicalGetItRequestClass(isUnavailableResource, currentUnavailableVolume);
+				this.previousUnavailableVolume = currentUnavailableVolume;
+			}
+
+			// Klassen hinzufügen/entfernen
+			this.updatePhysicalGetItRequestClass(isUnavailableResource, currentUnavailableVolume);
+
+		} catch (e) {
+			console.error("***SLSP*** an error occurred: Multivolume Request\n\n");
+			console.error(e.message);
+		}
 	}
 
 	disableRequestButton() {

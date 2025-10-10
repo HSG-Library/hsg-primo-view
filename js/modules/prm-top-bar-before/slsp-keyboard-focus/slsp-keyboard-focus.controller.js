@@ -6,13 +6,7 @@ export class slspKeyboardFocusController {
     }
 
     $onInit() {
-        try {
             this.parentCtrl = this.afterCtrl.parentCtrl;
-        }
-        catch (e) {
-            console.error("***SLSP*** an error occured: Rapido Fees Link\n\n");
-            console.error(e.message);
-        }
 
         // === Fokussteuerung hinzufügen ===
         const body = angular.element(document.body);

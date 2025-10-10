@@ -13,7 +13,6 @@ export class slspPickupInformationController {
 
 
   $onInit() {
-    try {
       this.parentCtrl = this.afterCtrl.parentCtrl;
       this.getInstitutionName = this.getInstitutionName.bind(this);
       this.getLibraryName = this.getLibraryName.bind(this);
@@ -28,15 +27,8 @@ export class slspPickupInformationController {
       //console.log(this.parentCtrl.jwtUtilService.getDecodedToken());             
       //if="!$ctrl.isDigitalOffer() && !$ctrl.isUnavailableResource()"
 
-    }
-
-
-    catch (e) {
-      console.error("***SLSP*** an error occured: slsp Pickup Information Controller\n\n");
-      console.error(e.message);
-    }
-
   }
+
   getInstitutionName() {
     if (this.parentCtrl.pickupAnywhereService !== undefined) {
       return this.parentCtrl.pickupAnywhereService.getSelectedPickupInformation().institutionName;

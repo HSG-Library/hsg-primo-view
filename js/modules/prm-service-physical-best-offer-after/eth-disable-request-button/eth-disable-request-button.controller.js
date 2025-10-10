@@ -8,13 +8,9 @@ export class ethDisableRequestButtonController {
 	}
 
 	$onInit() {
-		try {
 			this.parentCtrl = this.afterCtrl.parentCtrl;
 			this.observeDomChanges();
-		} catch (e) {
-			console.error("***ETH*** an error occurred: ethDisableRequestButtonController $onInit\n\n");
-			console.error(e.message);
-		}
+
 	}
 
 	observeDomChanges() {
@@ -39,7 +35,6 @@ export class ethDisableRequestButtonController {
 	}
 
 	checkAndHandleButton(targetNode) {
-		try {
 			let noAvailableCopies = targetNode.querySelector('[translate="rapido.tiles.physical.no_best_offer.line_2"]');
 			let noAvailableCopiesLine1 = targetNode.querySelector('[translate="rapido.tiles.physical.no_best_offer.line_1"]');
 			let requestButton = targetNode.querySelector('#get_it_btn_physical');
@@ -86,10 +81,6 @@ export class ethDisableRequestButtonController {
 			} else {
 				console.log('Conditions not met: Button remains disabled');
 			}
-		} catch (e) {
-			console.error("***ETH*** an error occurred in checkAndHandleButton\n\n");
-			console.error(e.message);
-		}
 	}
 }
 

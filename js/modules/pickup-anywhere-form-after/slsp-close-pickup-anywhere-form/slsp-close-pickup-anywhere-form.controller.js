@@ -7,13 +7,8 @@ export class slspClosePickupAnywhereFormController {
     }
 
     $onInit() {
-        try {
             this.parentCtrl = this.afterCtrl.parentCtrl;
             //console.log(this.parentCtrl);
-        } catch (e) {
-            console.error("***SLSP*** An error occurred: ClosePickupAnywhereForm");
-            console.error(e.message);
-        }
     }
 
     closePickupAnywhereForm() {

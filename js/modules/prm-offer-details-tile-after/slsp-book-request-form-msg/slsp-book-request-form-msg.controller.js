@@ -10,7 +10,6 @@ export class slspBookRequestFormMsgController {
 
     $doCheck() {
         this.$timeout(() => {
-            try {
 
                 this.parentCtrl = this.afterCtrl.parentCtrl;
                 // console.log('parentCtrl', this.parentCtrl);
@@ -25,10 +24,6 @@ export class slspBookRequestFormMsgController {
                 // console.log('formMessageText', formMessageText);
                 // console.log('newFormMessageText', newFormMessageText);
 
-            } catch (e) {
-                console.error("***SLSP*** an error occurred: Book Request Form Message\n\n");
-                console.error(e.message);
-            }
         }, 0);
     }
 }

@@ -11,7 +11,6 @@ export class slspRefineJournalRequestController {
 
 
     $doCheck() {
-        try {
             this.parentCtrl = this.afterCtrl.parentCtrl;
 
             let isRefined = this.parentCtrl._refined;
@@ -122,12 +121,7 @@ export class slspRefineJournalRequestController {
                 let getItNgrs = angular.element(document.querySelector('div.getItNgrs'));
                 getItNgrs.addClass('physical-book');
             }
-        }
 
-        catch (e) {
-            console.error("***SLSP*** an error occured: slsp Pickup Information Controller\n\n");
-            console.error(e.message);
-        }
 
     }
 

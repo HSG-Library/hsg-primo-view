@@ -12,7 +12,6 @@ export class slspMultivolumeRequestController {
 	}
 
 	$doCheck() {
-		try {
 			const currentUnavailableVolume = this.parentCtrl.isNoOfferAfterRefine();
 			const isUnavailableResource = this.parentCtrl.isUnavailableResource();
 			const resourceType = this.parentCtrl.getResourceType();
@@ -48,10 +47,7 @@ export class slspMultivolumeRequestController {
 			// Klassen hinzufügen/entfernen
 			this.updatePhysicalGetItRequestClass(isUnavailableResource, currentUnavailableVolume);
 
-		} catch (e) {
-			console.error("***SLSP*** an error occurred: Multivolume Request\n\n");
-			console.error(e.message);
-		}
+
 	}
 
 	disableRequestButton() {

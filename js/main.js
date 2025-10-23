@@ -99,17 +99,6 @@ app.requires.push(slspHttpInterceptRequestsModule.name);
 
 app.run(function () { console.log('** app running **'); });
 
-// Allow external resource URLs needed by customizations and Primo services
-app.config(['$sceDelegateProvider', function ($sceDelegateProvider) {
-	$sceDelegateProvider.resourceUrlWhitelist([
-		'self',
-		'https://api.seeip.org/**',
-		'https://**.exlibrisgroup.com/**',
-		'https://**.exlibris.co.il/**',
-		'https://**.serialssolutions.com/**',
-	]);
-}]);
-
 window.isSandbox = function () {
 	const sandboxView = "41SLSP_HSG:sandbox_jfu";
 	const params = new URLSearchParams(window.location.search);

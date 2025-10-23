@@ -1,4 +1,6 @@
-export const hsgOnCampusService = ['$http',function ($http) {
+export const hsgOnCampusService = ['$http', function ($http) {
+
+	const IP_ENDPOINT = 'https://api.seeip.org/jsonip';
 
 	this.onCampus = false
 	this.checkDone = false
@@ -6,16 +8,18 @@ export const hsgOnCampusService = ['$http',function ($http) {
 	this.getIpAndCheck = function () {
 		this.checkDone = false
 		this.onCampus = false
-		this.url = 'https://api.seeip.org/jsonip'
-  		$http.jsonp(this.url)
+		$http.get(IP_ENDPOINT, { cache: true })
 		.then(
 			response => {
-				const ip = response.data.ip
+				const ip = (response && response.data && (response.data.ip || response.data.client_ip || response.data.ip_address))
 				console.log('current ip', ip)
 				this.checkOnCampus(ip)
 			},
-			response => {
-				console.log('checking ip failed.', response)
+			error => {
+				const url = error && error.config && error.config.url;
+				console.log('checking ip failed.', error, url ? `url: ${url}` : '');
+				this.checkDone = true;
+				this.onCampus = false
 			})
 	}
 

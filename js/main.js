@@ -99,13 +99,6 @@ app.requires.push(slspHttpInterceptRequestsModule.name);
 
 app.run(function () { console.log('** app running **'); });
 
-app.config(['$sceDelegateProvider', function ($sceDelegateProvider) {
-	$sceDelegateProvider.resourceUrlWhitelist([
-		'self',
-		'https://api.seeip.org/**'
-	]);
-}]);
-
 window.isSandbox = function () {
 	const sandboxView = "41SLSP_HSG:sandbox_jfu";
 	const params = new URLSearchParams(window.location.search);

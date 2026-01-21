@@ -10,7 +10,7 @@ body::before {
   line-height: 45px;
   color: black;
   height: 0;
-}
+} 
 
 @keyframes slideInDown {
   from {

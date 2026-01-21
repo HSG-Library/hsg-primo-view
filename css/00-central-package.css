@@ -4241,20 +4241,3 @@ prm-gallery-collection[collection-id="81546771520005501"] {
 
 /*****************************************************************************/
 
-/*Temporary info bar*/
-body::before { 
-  content:
-    "Ihre Rechnungen für Bibliotheksgebühren finden Sie jetzt auch im swisscovery-Konto unter «Mein Konto → Rechnungen».\A"
-    "Vous trouverez désormais vos factures de frais de bibliothèque dans votre compte swisscovery, dans la rubrique « Mon compte → Factures ».\A"
-    "Le fatture relative ai costi della biblioteca sono ora disponibili anche nell'account personale swisscovery, alla voce 'Il mio conto > Fatture'.\A"
-    "You can now access your library fee invoices via your Swisscovery account, under 'My account' > 'Invoices'.";
-  
-  white-space: pre-line;
-  display: block;
-  background: #8dd8d8;
-  text-align: center;
-  padding: 10px;
-  width: 100%;
-  font-weight: bold;
-  color: black;
-}

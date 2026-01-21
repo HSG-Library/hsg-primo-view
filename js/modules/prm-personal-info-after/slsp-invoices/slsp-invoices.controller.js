@@ -382,6 +382,7 @@ export class slspInvoicesController {
 
 
     $onInit() {
+        try {
             this.parentCtrl = this.afterCtrl.parentCtrl;
 
             this.invoices = [];
@@ -408,6 +409,10 @@ export class slspInvoicesController {
                 }
             });
 
+        } catch (e) {
+            console.error("***SLSP*** an initialization error occured: InvoicesController\n\n");
+            // console.error(e.message);
+        }
     }
 
 }

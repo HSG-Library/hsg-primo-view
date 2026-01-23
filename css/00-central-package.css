@@ -4210,6 +4210,13 @@ prm-resource-type-filter-bar button.selectedResourceTypeOption prm-icon {
 a:hover#alert {
     background-color: rgba(47, 47, 47, 0.1) !important;
 }*/
+/************Hide collections**************/
+
+/*Hide Juscovery*/
+
+prm-gallery-collection[collection-id="81546771520005501"] {
+    display: none;
+}
 
 /*****************************************************************************/
 
@@ -4233,3 +4240,4 @@ a:hover#alert {
 
 
 /*****************************************************************************/
+

@@ -2,8 +2,8 @@ import { slspGitHintModule } from './slsp-git-hint/slsp-git-hint.module';
 import { slspKeyboardFocusModule } from "./slsp-keyboard-focus/slsp-keyboard-focus.module";
 
 
-export const prmTopBarBeforeModule = angular
-    .module('prmTopBarBeforeModule', [])
+export const hsgTopBarBeforeModule = angular
+    .module('hsgTopBarBeforeModule', [])
     .component('prmTopBarBefore', {
         bindings: { parentCtrl: '<' },
         template: `
@@ -13,5 +13,5 @@ export const prmTopBarBeforeModule = angular
     });
 
 
-prmTopBarBeforeModule.requires.push(slspGitHintModule.name);
-prmTopBarBeforeModule.requires.push(slspKeyboardFocusModule.name);
+hsgTopBarBeforeModule.requires.push(slspGitHintModule.name);
+hsgTopBarBeforeModule.requires.push(slspKeyboardFocusModule.name);

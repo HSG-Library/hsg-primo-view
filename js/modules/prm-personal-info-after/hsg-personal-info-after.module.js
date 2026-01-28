@@ -11,5 +11,5 @@ export const hsgPersonalInfoAfterModule = angular
 	});
 
 hsgPersonalInfoAfterModule.requires.push(slspEditPersonalDetailsModule.name)
-//hsgPersonalInfoAfterModule.requires.push(slspInvoicesModule.name);
+hsgPersonalInfoAfterModule.requires.push(slspInvoicesModule.name);
 

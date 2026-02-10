@@ -1,0 +1,16 @@
+<div ng-if="$ctrl.openurl" class="layout-row hsg-openurl-container">
+    <div class="hsg-openurl">
+        <span>{{::$ctrl.translate('text')}}</span>
+        <br>
+        <a href={{::$ctrl.translate('link_interlib')}} target="_blank" rel="noopener">
+            <span>{{::$ctrl.translate('linktext_interlib')}}</span>
+            <prm-icon external-link icon-type="svg" svg-icon-set="primo-ui" icon-definition="open-in-new"></prm-icon>
+        </a>
+        <br>
+        <a href={{::$ctrl.translate('link_article')}} target="_blank" rel="noopener">
+            <span>{{::$ctrl.translate('linktext_article')}}</span>
+            <prm-icon external-link icon-type="svg" svg-icon-set="primo-ui" icon-definition="open-in-new"></prm-icon>
+        </a>
+
+    </div>
+</div>

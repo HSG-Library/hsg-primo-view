@@ -15,8 +15,28 @@ export class hsgOpenurlInterlibraryController {
                 return;
             }
 
-            if(this.$location.$$path.indexOf('openurl')>-1){
+            if (this.$location.$$path.indexOf('openurl')>-1){
+                let s = this.$location.$$search;
+                console.log('s: ', s);
                 this.openurl = true;
+
+                if(s['issn'] && s['issn'] != ''){
+                    this.issn = s['issn'];
+                    console.log('issn: ', this.issn);
+                }
+                else if(s['rft.issn'] && s['rft.issn'] != ''){
+                    this.issn = s['rft.issn'];
+                    console.log('issn: ', this.issn);
+                }
+                if(s['isbn'] && s['isbn'] != ''){
+                    this.isbn = s['isbn'];
+                    console.log('isbn: ', this.isbn);
+                }
+                else if(s['rft.isbn'] && s['rft.isbn'] != ''){
+                    this.isbn = s['rft.isbn'];
+                    console.log('isbn: ', this.isbn);
+                }
+                
             }
         
     }

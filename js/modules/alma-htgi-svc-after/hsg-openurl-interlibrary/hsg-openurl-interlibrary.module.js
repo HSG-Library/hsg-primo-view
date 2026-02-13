@@ -1,3 +1,5 @@
+// Wurde von der ETH übernommen und basiert auf dem Modul eth-openurl-interlibrary
+
 import {hsgTranslatorService} from '../../../services/hsg-translator.service';
 import {hsgOpenurlInterlibraryConfig} from './hsg-openurl-interlibrary.config';
 import {hsgOpenurlInterlibraryController} from './hsg-openurl-interlibrary.controller';

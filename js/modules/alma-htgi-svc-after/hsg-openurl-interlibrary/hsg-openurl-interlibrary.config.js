@@ -20,9 +20,7 @@ export const hsgOpenurlInterlibraryConfig = function(){
             link_article: {
                 de: 'https://www.unisg.ch/de/universitaet/bibliothek/suchen-und-nutzen/medienbeschaffung/zeitschriftenartikel/',
                 en: 'https://www.unisg.ch/en/university/library/search-and-use/document-retrieval/order-form-journal-articles/'
-            }           
-
-
+            }        
         }
     }
 }

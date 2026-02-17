@@ -1,0 +1,26 @@
+services:
+  primo-dev:
+    build:
+      context: ../../..
+      dockerfile: primo-explore/custom/41SLSP_HSG-sandbox_jfu/Dockerfile
+    container_name: primo-explore-dev
+    working_dir: /primo-explore-devenv
+    volumes:
+      # Mount the entire primo-explore-devenv directory
+      - ../../../:/primo-explore-devenv
+      # Persist node_modules to avoid reinstalling
+      - node_modules:/primo-explore-devenv/node_modules
+    ports:
+      - "8003:8003"
+    environment:
+      # Enable polling for file watchers (required for Docker on macOS)
+      - CHOKIDAR_USEPOLLING=true
+      - CHOKIDAR_INTERVAL=1000
+      # Disable browser-sync ghost mode for better reliability
+      - BROWSERSYNC_DISABLE_HOST_CHECK=true
+    command: bash -c "npm install && gulp run --ve --browserify --view 41SLSP_HSG-sandbox_jfu"
+    stdin_open: true
+    tty: true
+
+volumes:
+  node_modules:

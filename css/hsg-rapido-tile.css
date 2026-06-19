@@ -15,19 +15,19 @@ prm-service-physical-best-offer div.main_tiles {
 	padding-left: 10px;
 }
 
-#rapidoOffer button#get_it_btn_physical,
-#rapidoOffer button#get_it_btn_digital {
+#rapidoOffer prm-service-physical-best-offer .get_it_btn_physical,
+#rapidoOffer prm-service-physical-best-offer .get_it_btn_digital {
 	color: #fff !important;
 	background-color: #00802F !important;
 }
 
-#rapidoOffer button#get_it_btn_physical:hover,
-#rapidoOffer button#get_it_btn_digital:hover {
+#rapidoOffer prm-service-physical-best-offer .get_it_btn_physical:hover,
+#rapidoOffer prm-service-physical-best-offer .get_it_btn_digital:hover {
 	color: #fff !important;
 	background-color: #49cb90 !important;
 }
 
-#rapidoOffer button#get_it_btn_physical:disabled,
-#rapidoOffer button#get_it_btn_digital:disabled {
+#rapidoOffer prm-service-physical-best-offer .get_it_btn_physical:disabled,
+#rapidoOffer prm-service-physical-best-offer .get_it_btn_digital:disabled {
 	background-color: #49cb90 !important;
 }

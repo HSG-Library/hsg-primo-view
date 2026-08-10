@@ -1,6 +1,6 @@
 export const hsgOnCampusService = ['$http', function ($http) {
 
-	const IP_ENDPOINT = 'https://api.seeip.org/jsonip';
+	const IP_ENDPOINT = 'https://checkip.amazonaws.com/';
 
 	this.onCampus = false
 	this.checkDone = false
@@ -8,10 +8,13 @@ export const hsgOnCampusService = ['$http', function ($http) {
 	this.getIpAndCheck = function () {
 		this.checkDone = false
 		this.onCampus = false
-		$http.get(IP_ENDPOINT, { cache: true })
+		$http.get(IP_ENDPOINT, {
+			responseType: 'text',
+			transformResponse: [function (data) { return data; }]
+		})
 		.then(
 			response => {
-				const ip = (response && response.data && (response.data.ip || response.data.client_ip || response.data.ip_address))
+				const ip = this.extractIp(response)
 				console.log('current ip', ip)
 				this.checkOnCampus(ip)
 			},
@@ -29,6 +32,20 @@ export const hsgOnCampusService = ['$http', function ($http) {
 
 	this.isCheckDone = function () {
 		return this.checkDone
+	}
+
+	this.extractIp = function (response) {
+		const data = response && response.data;
+
+		if (typeof data === 'string') {
+			return data.trim();
+		}
+
+		if (data && typeof data === 'object') {
+			return (data.ip || data.client_ip || data.ip_address || '').trim();
+		}
+
+		return '';
 	}
 
 	this.checkOnCampus = function (ip) {
@@ -82,6 +99,7 @@ export const hsgOnCampusService = ['$http', function ($http) {
 		getIpAndCheck: this.getIpAndCheck,
 		isOnCampus: this.isOnCampus,
 		isCheckDone: this.isCheckDone,
+		extractIp: this.extractIp,
 		checkOnCampus: this.checkOnCampus,
 		looksLikeIp: this.looksLikeIp,
 		isInRange: this.isInRange,

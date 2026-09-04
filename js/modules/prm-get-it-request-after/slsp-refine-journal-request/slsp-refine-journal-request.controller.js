@@ -53,7 +53,7 @@ export class slspRefineJournalRequestController {
         //console.log('requestSubmitted:',this.parentCtrl._requestSubmitted);
 
         if (isPhysicalJournal && isPhysicalForm) {
-            if (!hasPublicationDat) {
+            if (!hasPublicationDate) {
                 this.disableRefineButton();
             } else {
                 this.enableRefineButton();
@@ -130,6 +130,7 @@ export class slspRefineJournalRequestController {
         const requestButton = angular.element(document.querySelectorAll('#physicalGetItRequest .refine-offer-button button, #physicalGetItRequest button.slsp-refine-button'));
         if (requestButton) {
             requestButton.attr('disabled', 'disabled');
+            this.parentCtrl._refineOfferDisabled = true;
         }
     }
 
